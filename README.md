@@ -37,4 +37,13 @@ Workflow:
 4. Scan the urls with axe and save the JSON results.
 5. Once all 50 urls in your ticket are scanned with all 3 tools in all three browsers. Note: if you are running Windows or Linux, you may need to download Safari 5.1.10 for Snow Leopard.  You may also ask another Code4Gooder running a MacOS to assist in scanning your urls in Safari.
 6. Save all of your JSON results using the template provided.
-7. When you are finished scanning and recording the JSON results, commit your work and put in a pull request.  Post the link to the pull request in the comments of your JIRA ticket and change the ticket status to In Progress.
+7. When you are finished scanning and recording the JSON results, commit your work and put in a pull request.
+8. Post the link to the pull request in the comments of your JIRA ticket and change the ticket status to In Progress.
+
+How to use the documentation template:
+1. In your local fork in the scan-results folder, make a copy of the folder results.ticketnumber.example.  Remove the .example from the name and replacing ticket number with your JIRA ticket number. (e.g. results.CG4-16)
+2. Inside your newly created folder, make a copy of the file results.rownumber.example.js.  Remove the .example from the name and replace rownumber with the actual row number in the master Red Cross sitemap spreadsheet of the url you are scanning. (e.g. results.401.js)
+3. Inside your newly created file, complete the template with the actual url and the JSON results from your scans.
+
+
+Questions, concerns, and suggestions?  Post questions in Slack in the #code-for-good channel.
