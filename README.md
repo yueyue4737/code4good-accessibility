@@ -43,7 +43,9 @@ Workflow:
 How to use the documentation template:
 1. In your local fork in the scan-results folder, make a copy of the folder results.ticketnumber.example.  Remove the .example from the name and replacing ticket number with your JIRA ticket number. (e.g. results.CG4-16)
 2. Inside your newly created folder, make a copy of the file results.rownumber.example.js.  Remove the .example from the name and replace rownumber with the actual row number in the master Red Cross sitemap spreadsheet of the url you are scanning. (e.g. results.401.js)
-3. Inside your newly created file, complete the template with the actual url and the JSON results from your scans.
+3. Inside your newly created file, complete the template with the actual url, scanning tools used, and the JSON results from your scans.
+4. Commit your work often, at least after adding new JSON data for each url.
+5. Put in a pull request when you are finished scanning and saving results for all of the urls in your ticket.
 
 
 Questions, concerns, and suggestions?  Post questions in Slack in the #code-for-good channel.
