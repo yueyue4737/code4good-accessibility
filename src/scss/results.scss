@@ -1,0 +1,102 @@
+@import 'settings';
+
+.averages {
+  @media screen and (min-width: $breakpoint-mobile-sm)  {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    
+    .average-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 100px;
+      justify-content: flex-end;
+
+      .avg {
+        height: 100px;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 50px;
+        justify-content: center;
+        text-align: center;
+        color: $color-white;
+        font-size: $font-size-xxl;
+        margin-top: 10px;
+
+        &.performance {
+          background-color: $color-red-tabasco;
+        }
+        &.accessibility {
+          background-color: $color-blue-eastern;
+        }
+        &.best-practices {
+          background-color: $color-purple;
+        }
+        &.seo {
+          background-color: $color-gray-mid;
+        }
+        &.progressive {
+          background-color: $color-green-woodland;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint-mobile-sm)  {
+    .average-item {
+      margin-bottom: 15px;
+      text-align: center;
+      h3, .avg {
+        font-size: $font-size-md;
+      }
+    }
+  }
+}
+
+.table-container {
+    overflow-x: auto;
+
+    .results {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    
+      th, td {
+        width: 16.6%;
+        border-top: 1px solid #000;
+        font-size: $font-size-md;
+        &.url {
+          min-width: 200px;
+        }
+      }
+      th {
+        padding: 0;
+        background-color: $color-gray-gallery;
+        button {
+          background: none;
+          border: 0;
+          width: 100%;
+          height: 100%;
+          font-size: $font-size-md;
+          font-weight: 700;
+          padding: 10px;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+    
+          svg {
+            align-self: center;
+            margin-left: 10px;
+          }
+        }
+        &.sorted svg {
+          color: $color-red-tabasco;
+        }
+      }
+      td {
+        padding: 5px 10px;
+      }
+    }
+}

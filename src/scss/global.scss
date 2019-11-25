@@ -1,0 +1,75 @@
+@import 'settings';
+
+body {
+  font-family: $font-family-roboto;
+  min-width: $breakpoint-min;
+  font-size: $font-size-md;
+  margin: 0;
+}
+
+.container {
+    max-width: $breakpoint-max;
+    margin: 0 auto;
+    padding: 20px;
+    @media screen and (max-width: $breakpoint-mobile-sm)  {
+        padding: 10px;
+    }
+}
+
+h1 {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    margin: 0;
+    text-align: right;
+}
+h2 {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+h3 {
+    font-size: $font-size-md;
+    font-weight: 700;
+    margin: 0;
+}
+.fa-sm {
+    font-size: $font-size-sm;
+}
+.fa-md {
+    font-size: $font-size-md;
+}
+.fa-lg {
+    font-size: $font-size-lg;
+    margin-top: -1px;
+    margin-right: 10px;
+    color: $color-red-tabasco;
+}
+.section-heading {
+    display: flex;
+    margin: 20px 0;
+}
+header {
+    background-color: $color-gray-gallery;
+    width: 100%;
+    box-shadow: 0 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.3);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        .logo, h1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+.disclaimer {
+    margin-top: 20px;
+    font-size: $font-size-sm;
+    text-align: center;
+}
