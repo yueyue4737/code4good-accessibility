@@ -20,6 +20,7 @@ How to Meet WCAG (Quick Reference): https://www.w3.org/WAI/WCAG21/quickref/?vers
 Guidelines for scanning urls:
 We will be using the following tools to scan each url:
 1. Chrome Dev Tools in-browser audit tool: https://developers.google.com/web/tools/chrome-devtools/accessibility/reference
+  a. Check both boxes for Accessibility & Performance.
 2. Microsoft Accessibility Insights: https://accessibilityinsights.io/
 3. axe: https://www.deque.com/axe/
 
