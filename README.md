@@ -42,9 +42,24 @@ Workflow:
 8. Post the link to the pull request in the comments of your JIRA ticket and change the ticket status to In Progress.
 
 How to use the documentation template:
-1. In your local fork in the scan-results folder, make a copy of the folder results.ticketnumber.example.  Remove the .example from the name and replacing ticket number with your JIRA ticket number. (e.g. results.CG4-16)
-2. Inside your newly created folder, make a copy of the file results.rownumber.example.js.  Remove the .example from the name and replace rownumber with the actual row number in the master Red Cross sitemap spreadsheet of the url you are scanning. (e.g. results.401.js)
+1. In your local fork in the scan-results folder, make a copy of the folder results_ticketnumber_example.  Remove the .example from the name and replacing ticket number with your JIRA ticket number. (e.g. results.CG4-16)
+
+2. Inside your newly created folder, make a copy of the file results_jiraId_toolAbbreviation_sequence_example.js.  Remove the _example from the name.
+
+Replace jiraId with your JIRA ticket number and toolAbbreviation with the audit tool you are using.
+
+Audit Tool abbreviations:
+AT = allyTools
+AX = Axe
+CD = ChromeDev
+FF = Firefox
+IN = MS Insights
+
+Replace sequence with the row number in your ticket's list of urls that you are scanning. (e.g. C4G-16_AT_1.json = allyTools audit, site 1
+C4G-16_AT_2.json = allyTools audit, site 2...50).
+
 3. Inside your newly created file, complete the template with the actual url, scanning tools used, and the JSON results from your scans.
+
 4. Commit your work often, at least after adding new JSON data for each url.
 5. Put in a pull request when you are finished scanning and saving results for all of the urls in your ticket.
 
