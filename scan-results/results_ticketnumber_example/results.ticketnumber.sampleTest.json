@@ -1,7 +1,3 @@
-// URL scanned: https://www.redcross.org/home
-// Scanning tool used: Chrome Dev Tools Accessibility Audit
-// JSON results:
-
 {
   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
     "environment": {
