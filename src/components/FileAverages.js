@@ -11,31 +11,31 @@ class FileAverages extends React.Component {
                     <div className="average-item">
                         <h3>Performance</h3>
                         <div className="avg performance">
-                            {this.props.averages.avgPerf}
+                            {this.props.averages.performance == 0 ? "n/a" : this.props.averages.performance}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>Accessibility</h3>
                         <div className="avg accessibility">
-                            {this.props.averages.avgADA}
+                            {this.props.averages.accessibility == 0 ? "n/a" : this.props.averages.accessibility}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>Best Practices</h3>
                         <div className="avg best-practices">
-                            {this.props.averages.avgBP}
+                            {this.props.averages["best-practices"] == 0 ? "n/a" : this.props.averages["best-practices"]}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>SEO</h3>
                         <div className="avg seo">
-                            {this.props.averages.avgSEO}
+                            {this.props.averages.seo == 0 ? "n/a" : this.props.averages.seo}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>Progressive Web App</h3>
                         <div className="avg progressive">
-                            {this.props.averages.avgPWA}
+                            {this.props.averages.pwa == 0 ? "n/a" : this.props.averages.pwa}
                         </div>
                     </div>
                 </div>

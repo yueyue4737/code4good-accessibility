@@ -62,7 +62,11 @@
       width: 100%;
       border-collapse: collapse;
       text-align: center;
-    
+      .result-item td:first-child {
+        text-align: left;
+        min-width: 500px;
+        word-break: break-all;
+      }
       th, td {
         width: 16.6%;
         border-top: 1px solid #000;
