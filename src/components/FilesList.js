@@ -1,9 +1,10 @@
 import React from 'react';
 import '../scss/results.scss';
 import FileResults from './FileResults.js';
+import TopIssues from './TopIssues.js';
 import FileAverages from './FileAverages';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList } from '@fortawesome/free-solid-svg-icons';
+import { faList, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import SortableHeaderCell from './SortableHeaderCell';
 
 class FilesList extends React.Component {
@@ -12,28 +13,32 @@ class FilesList extends React.Component {
 		this.state = {
             data: [],
             averages: {
-                avgPerf: null,
-                avgADA: null,
-                avgBP: null,
-                avgSEO: null,
-                avgPWA: null
+                performance: null,
+                accessibility: null,
+                "best-practices": null,
+                seo: null,
+                pwa: null
             },
             sorting: {
                 sortOn: "",
                 sortAsc: false
-            }
+            },
+            fetchComplete: false,
+            //url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/scan-results/data-chrome-dev"
+            url: "https://api.github.com/repos/rbitting/testing/contents/audits"
         }
-        this.sortNestedItems = this.sortNestedItems.bind(this)
+        this.sortNestedItems = this.sortNestedItems.bind(this);
     };
 
     componentDidMount() {
-        fetch("https://api.github.com/repos/rbitting/testing/contents/audits")
+        fetch(this.state.url)
 		.then( (response) => {
 			return response.json() })
 		.then( (json) => { 
             this.getAllFileData(json).then(data => {
                 this.setState({
-                    data: data
+                    data: data,
+                    fetchComplete: true
                 });
                 this.setAverages(data);
             });
@@ -43,34 +48,41 @@ class FilesList extends React.Component {
     getAllFileData(listOfFiles) {
         let data = [];
         for (let i=1; i<listOfFiles.length; i++) {
-            data.push(fetch(listOfFiles[i].download_url).then(response => response.json()));
+            data.push(fetch(listOfFiles[i].download_url)
+            .then(response => response.json())
+            .then(json => {
+                json.url = listOfFiles[i].download_url;
+                return json;
+            }));
         }
         return Promise.all(data);
     }
-
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     setAverages(data) {
         let averages = {
-            avgPerf: 0,
-            avgADA: 0,
-            avgBP: 0,
-            avgSEO: 0,
-            avgPWA: 0
+            performance: 0,
+            accessibility: 0,
+            "best-practices": 0,
+            seo: 0,
+            pwa: 0
         }
         for (let i=0;i<data.length;i++) {
-            averages.avgPerf += (data[i].categories.performance.score * 100);
-            averages.avgADA += (data[i].categories.accessibility.score * 100);
-            averages.avgBP += (data[i].categories["best-practices"].score * 100);
-            averages.avgSEO += (data[i].categories.seo.score * 100);
-            averages.avgPWA += (data[i].categories.pwa.score * 100);
+            for (let key in data[i].categories) {
+                averages[key] += (data[i].categories[key].score * 100);
+            }
         }
-        
         this.setState({
             averages: {
-                avgPerf: Math.ceil(averages.avgPerf / data.length),
-                avgADA: Math.ceil(averages.avgADA / data.length),
-                avgBP: Math.ceil(averages.avgBP / data.length),
-                avgSEO: Math.ceil(averages.avgSEO / data.length),
-                avgPWA: Math.ceil(averages.avgPWA / data.length)
+                performance: Math.ceil(averages.performance / data.length),
+                accessibility: Math.ceil(averages.accessibility / data.length),
+                "best-practices": Math.ceil(averages["best-practices"] / data.length),
+                seo: Math.ceil(averages.seo / data.length),
+                pwa: Math.ceil(averages.pwa / data.length)
             }
         });
     }
@@ -132,28 +144,38 @@ class FilesList extends React.Component {
     render() {
         return (
             <div className="container">
-                <FileAverages averages={this.state.averages} />
-                <div className="section-heading">
-                    <FontAwesomeIcon icon={faList} size="lg" /><h2>All Data</h2>
-                </div>
-                <div className="table-container">
-                    <table className="results" cellPadding="0" cellSpacing="0">
-                        <thead>
-                            <tr className="result-item heading">
-                                <SortableHeaderCell title="URL" category="requestedUrl" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                <SortableHeaderCell title="Performance" category="categories.performance.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                <SortableHeaderCell title="Accessibility" category="categories.accessibility.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                <SortableHeaderCell title="Best Practices" category="categories.best-practices.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                <SortableHeaderCell title="SEO" category="categories.seo.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                <SortableHeaderCell title="Progressive Web App" category="categories.pwa.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                            </tr>
-                        </thead>
-                        <FileResults data={this.state.data} />
-                    </table>
-                </div>
-                <div className="disclaimer">
-                    Accessibility data pulled from GitHub: <a href="https://github.com/rbitting/testing/tree/master/audits" target="_blank" rel="noopener noreferrer">https://github.com/rbitting/testing/tree/master/audits</a>
-                </div>
+                {!this.state.fetchComplete && <div className="waiting">
+                    <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <p className="mt-20">Please wait, results are processing.</p>
+                </div>}
+                {this.state.fetchComplete && <div>
+                    <FileAverages averages={this.state.averages} />
+                    <TopIssues data={this.state.data}/>
+                    <div className="section-heading">
+                        <FontAwesomeIcon icon={faList} size="lg" /><h2>All Data</h2>
+                    </div>
+                    <div className="table-container">
+                        <table className="results" cellPadding="0" cellSpacing="0">
+                            <thead>
+                                <tr className="result-item heading">
+                                    <SortableHeaderCell title="URL" category="requestedUrl" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
+                                    <SortableHeaderCell title="Performance" category="categories.performance.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
+                                    <SortableHeaderCell title="Accessibility" category="categories.accessibility.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
+                                    <SortableHeaderCell title="Best Practices" category="categories.best-practices.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
+                                    <SortableHeaderCell title="SEO" category="categories.seo.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
+                                    <SortableHeaderCell title="Progressive Web App" category="categories.pwa.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
+                                </tr>
+                            </thead>
+                            <FileResults data={this.state.data} />
+                        </table>
+                    </div>
+                    <div className="back-to-top center mt-20">
+                        <button onClick={this.scrollToTop}><FontAwesomeIcon icon={faArrowUp} size="md" /><br/>Back to Top</button>
+                    </div>
+                    <div className="disclaimer mt-20">
+                        Accessibility data pulled from GitHub: <a href={this.state.url} target="_blank" rel="noopener noreferrer">{this.state.url}</a>. Use Chrome for best experience.
+                    </div>
+                </div>}
             </div>
         );
     }
