@@ -27,10 +27,10 @@ class FileResults extends React.Component {
                     </td>
                 </tr>)
             }
-            return "";
+            return null;
         });
         return (
-            <tbody>{this.props.data ? listItems : <tr></tr>}</tbody>
+            <tbody>{this.props.data ? listItems : <tr><td colSpan="3">No results returned.</td></tr>}</tbody>
         );
     }
 }

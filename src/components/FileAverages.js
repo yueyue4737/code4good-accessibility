@@ -11,31 +11,31 @@ class FileAverages extends React.Component {
                     <div className="average-item">
                         <h3>Performance</h3>
                         <div className="avg performance">
-                            {this.props.averages.performance == 0 ? "n/a" : this.props.averages.performance}
+                            {this.props.averages.performance === 0 ? "n/a" : this.props.averages.performance}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>Accessibility</h3>
                         <div className="avg accessibility">
-                            {this.props.averages.accessibility == 0 ? "n/a" : this.props.averages.accessibility}
+                            {this.props.averages.accessibility === 0 ? "n/a" : this.props.averages.accessibility}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>Best Practices</h3>
                         <div className="avg best-practices">
-                            {this.props.averages["best-practices"] == 0 ? "n/a" : this.props.averages["best-practices"]}
+                            {this.props.averages["best-practices"] === 0 ? "n/a" : this.props.averages["best-practices"]}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>SEO</h3>
                         <div className="avg seo">
-                            {this.props.averages.seo == 0 ? "n/a" : this.props.averages.seo}
+                            {this.props.averages.seo === 0 ? "n/a" : this.props.averages.seo}
                         </div>
                     </div>
                     <div className="average-item">
                         <h3>Progressive Web App</h3>
                         <div className="avg progressive">
-                            {this.props.averages.pwa == 0 ? "n/a" : this.props.averages.pwa}
+                            {this.props.averages.pwa === 0 ? "n/a" : this.props.averages.pwa}
                         </div>
                     </div>
                 </div>

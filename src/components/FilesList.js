@@ -1,9 +1,10 @@
 import React from 'react';
 import '../scss/results.scss';
 import FileResults from './FileResults.js';
+import TopIssues from './TopIssues.js';
 import FileAverages from './FileAverages';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList } from '@fortawesome/free-solid-svg-icons';
+import { faList, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import SortableHeaderCell from './SortableHeaderCell';
 
 class FilesList extends React.Component {
@@ -22,14 +23,15 @@ class FilesList extends React.Component {
                 sortOn: "",
                 sortAsc: false
             },
-            fetchComplete: false
+            fetchComplete: false,
+            //url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/scan-results/data-chrome-dev"
+            url: "https://api.github.com/repos/rbitting/testing/contents/audits"
         }
         this.sortNestedItems = this.sortNestedItems.bind(this);
     };
 
     componentDidMount() {
-        fetch("https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/scan-results/data-chrome-dev")
-        //fetch("https://api.github.com/repos/rbitting/testing/contents/audits")
+        fetch(this.state.url)
 		.then( (response) => {
 			return response.json() })
 		.then( (json) => { 
@@ -55,7 +57,12 @@ class FilesList extends React.Component {
         }
         return Promise.all(data);
     }
-
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     setAverages(data) {
         let averages = {
             performance: 0,
@@ -67,10 +74,8 @@ class FilesList extends React.Component {
         for (let i=0;i<data.length;i++) {
             for (let key in data[i].categories) {
                 averages[key] += (data[i].categories[key].score * 100);
-                console.log(averages[key])
             }
         }
-        console.log(averages)
         this.setState({
             averages: {
                 performance: Math.ceil(averages.performance / data.length),
@@ -140,11 +145,12 @@ class FilesList extends React.Component {
         return (
             <div className="container">
                 {!this.state.fetchComplete && <div className="waiting">
-                    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                     <p className="mt-20">Please wait, results are processing.</p>
                 </div>}
                 {this.state.fetchComplete && <div>
                     <FileAverages averages={this.state.averages} />
+                    <TopIssues data={this.state.data}/>
                     <div className="section-heading">
                         <FontAwesomeIcon icon={faList} size="lg" /><h2>All Data</h2>
                     </div>
@@ -163,8 +169,11 @@ class FilesList extends React.Component {
                             <FileResults data={this.state.data} />
                         </table>
                     </div>
+                    <div className="back-to-top center mt-20">
+                        <button onClick={this.scrollToTop}><FontAwesomeIcon icon={faArrowUp} size="md" /><br/>Back to Top</button>
+                    </div>
                     <div className="disclaimer mt-20">
-                        Accessibility data pulled from GitHub: <a href="https://github.com/rbitting/testing/tree/master/audits" target="_blank" rel="noopener noreferrer">https://github.com/rbitting/testing/tree/master/audits</a>
+                        Accessibility data pulled from GitHub: <a href={this.state.url} target="_blank" rel="noopener noreferrer">{this.state.url}</a>. Use Chrome for best experience.
                     </div>
                 </div>}
             </div>
