@@ -24,7 +24,7 @@ class FilesList extends React.Component {
                 sortAsc: false
             },
             fetchComplete: false,
-            url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/scan-results/data-chrome-dev"
+            url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/public/scan-results/data-chrome-dev"
             //url: "https://api.github.com/repos/rbitting/testing/contents/audits"
         }
         this.sortNestedItems = this.sortNestedItems.bind(this);
@@ -45,16 +45,21 @@ class FilesList extends React.Component {
 		})
     }
 
-    getAllFileData(listOfFiles) {
+    async getAllFileData(listOfFiles) {
         let data = [];
         for (let i=1; i<listOfFiles.length; i++) {
             console.log(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""));
-            data.push(fetch(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""))
+            let resp = await fetch(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""))
             .then(response => response.json())
             .then(json => {
                 json.url = listOfFiles[i].download_url;
                 return json;
-            }));
+            }).catch(function() {
+                console.log("error");
+                return null;
+            });
+            if (resp !== null)
+                data.push(resp);
         }
         return Promise.all(data);
     }
@@ -171,7 +176,7 @@ class FilesList extends React.Component {
                         </table>
                     </div>
                     <div className="back-to-top center mt-20">
-                        <button onClick={this.scrollToTop}><FontAwesomeIcon icon={faArrowUp} size="md" /><br/>Back to Top</button>
+                        <button onClick={this.scrollToTop}><FontAwesomeIcon icon={faArrowUp} /><br/>Back to Top</button>
                     </div>
                     <div className="disclaimer mt-20">
                         Accessibility data pulled from GitHub: <a href={this.state.url} target="_blank" rel="noopener noreferrer">{this.state.url}</a>. Use Chrome for best experience.
