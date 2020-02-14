@@ -44,20 +44,21 @@ class FilesList extends React.Component {
                 });
                 this.setAverages(data);
             });
-		})
+        });
     }
 
     async getAllFileData(listOfFiles) {
         let data = [];
         for (let i=1; i<listOfFiles.length; i++) {
             //console.log(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""));
-            let resp = await fetch(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master/public",""))
+            let fetchUrl = (window.location.href.includes("localhost") ? "" : "/code4good-accessibility") + listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master/public","");
+            let resp = await fetch(fetchUrl)
             .then(response => response.json())
             .then(json => {
                 json.url = listOfFiles[i].download_url;
                 return json;
             }).catch(function() {
-                console.log("Error in file: " + listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master/public",""));
+                console.log("Error in file: " + fetchUrl);
                 return null;
             });
             if (resp !== null)

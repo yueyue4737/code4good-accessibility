@@ -36,7 +36,7 @@ class FileResults extends React.Component {
         this.setState({
             rendered: listItems
         })
-        this.props.setNoOfResults(id);
+        this.props.setNoOfResults(id-1);
     }
     render() {
         return (
