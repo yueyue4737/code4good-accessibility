@@ -1,0 +1,8 @@
+{
+  "short_name": "Accessibility Dashboard",
+  "name": "Web Accessibility Dashboard",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
