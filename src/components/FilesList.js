@@ -24,7 +24,7 @@ class FilesList extends React.Component {
                 sortAsc: false
             },
             fetchComplete: false,
-            url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/public/scan-results/data-chrome-dev"
+            url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/scan-results/data-chrome-dev"
             //url: "https://api.github.com/repos/rbitting/testing/contents/audits"
         }
         this.sortNestedItems = this.sortNestedItems.bind(this);
