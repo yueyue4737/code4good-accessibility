@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/code4good-accessibility/static/css/main.e9471b9e.chunk.css",
+    "main.js": "/code4good-accessibility/static/js/main.cf59d88d.chunk.js",
+    "main.js.map": "/code4good-accessibility/static/js/main.cf59d88d.chunk.js.map",
+    "runtime-main.js": "/code4good-accessibility/static/js/runtime-main.06f47c70.js",
+    "runtime-main.js.map": "/code4good-accessibility/static/js/runtime-main.06f47c70.js.map",
+    "static/js/2.981a7b77.chunk.js": "/code4good-accessibility/static/js/2.981a7b77.chunk.js",
+    "static/js/2.981a7b77.chunk.js.map": "/code4good-accessibility/static/js/2.981a7b77.chunk.js.map",
+    "index.html": "/code4good-accessibility/index.html",
+    "precache-manifest.4fa7ce27adb894fd7146a11e02c0ff8c.js": "/code4good-accessibility/precache-manifest.4fa7ce27adb894fd7146a11e02c0ff8c.js",
+    "service-worker.js": "/code4good-accessibility/service-worker.js",
+    "static/css/main.e9471b9e.chunk.css.map": "/code4good-accessibility/static/css/main.e9471b9e.chunk.css.map",
+    "static/js/2.981a7b77.chunk.js.LICENSE.txt": "/code4good-accessibility/static/js/2.981a7b77.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.06f47c70.js",
+    "static/js/2.981a7b77.chunk.js",
+    "static/css/main.e9471b9e.chunk.css",
+    "static/js/main.cf59d88d.chunk.js"
+  ]
+}

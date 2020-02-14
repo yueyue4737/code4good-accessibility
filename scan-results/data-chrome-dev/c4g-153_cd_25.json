@@ -1,0 +1,3772 @@
+{
+  "requestedUrl": "https://prod.arcphss.org/tsc-nat-leads",
+  "finalUrl": "https://prod.arcphss.org/tsc-nat-leads",
+  "lighthouseVersion": "5.6.0",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/78.0.3904.74 Safari/537.36",
+  "fetchTime": "2020-01-30T18:29:00.821Z",
+  "environment": {
+    "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Safari/537.36 Chrome-Lighthouse",
+    "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/78.0.3904.74 Safari/537.36",
+    "benchmarkIndex": 926
+  },
+  "runWarnings": [],
+  "configSettings": {
+    "emulatedFormFactor": "desktop",
+    "locale": "en-US",
+    "onlyCategories": [
+      "performance",
+      "accessibility"
+    ],
+    "channel": "lr"
+  },
+  "audits": {
+    "uses-rel-preload": {
+      "id": "uses-rel-preload",
+      "title": "Preload key requests",
+      "description": "Consider using `<link rel=preload>` to prioritize fetching resources that are currently requested later in page load. [Learn more](https://web.dev/uses-rel-preload).",
+      "score": 0.59,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Potential savings of 590 ms",
+      "details": {
+        "overallSavingsMs": 590,
+        "headings": [
+          {
+            "label": "URL",
+            "key": "url",
+            "valueType": "url"
+          },
+          {
+            "valueType": "timespanMs",
+            "label": "Potential Savings",
+            "key": "wastedMs"
+          }
+        ],
+        "items": [
+          {
+            "url": "https://prod.arcphss.org/css/font/standard-extrabold-2011.07.01-webfont.woff",
+            "wastedMs": 590
+          }
+        ],
+        "type": "opportunity"
+      },
+      "numericValue": 590
+    },
+    "tabindex": {
+      "id": "tabindex",
+      "title": "No element has a `[tabindex]` value greater than 0",
+      "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more](https://web.dev/tabindex/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "performance-budget": {
+      "id": "performance-budget",
+      "title": "Performance budget",
+      "description": "Keep the quantity and size of network requests under the targets set by the provided performance budget. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/budgets).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "valid-lang": {
+      "id": "valid-lang",
+      "title": "`[lang]` attributes have a valid value",
+      "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more](https://web.dev/valid-lang/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "unminified-javascript": {
+      "id": "unminified-javascript",
+      "title": "Minify JavaScript",
+      "description": "Minifying JavaScript files can reduce payload sizes and script parse time. [Learn more](https://web.dev/unminified-javascript).",
+      "score": 0.85,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Potential savings of 82 KB",
+      "details": {
+        "overallSavingsMs": 180,
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Size"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Potential Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "https://code.jquery.com/jquery-1.12.3.js",
+            "totalBytes": 87745,
+            "wastedBytes": 42632,
+            "wastedPercent": 48.586412395709175
+          },
+          {
+            "url": "https://code.jquery.com/ui/1.11.4/jquery-ui.js",
+            "totalBytes": 114598,
+            "wastedBytes": 38135,
+            "wastedPercent": 33.276950930309646
+          },
+          {
+            "wastedPercent": 13.077682482877773,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/s-code-contents-7237aa4c43588e0204eb668d5e6a907c9b4e11bb.js",
+            "totalBytes": 21811,
+            "wastedBytes": 2852
+          }
+        ],
+        "type": "opportunity",
+        "overallSavingsBytes": 83619
+      },
+      "warnings": [],
+      "numericValue": 180
+    },
+    "aria-valid-attr": {
+      "id": "aria-valid-attr",
+      "title": "`[aria-*]` attributes are valid and not misspelled",
+      "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid names. [Learn more](https://web.dev/aria-valid-attr/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "items": [],
+        "type": "table"
+      }
+    },
+    "first-meaningful-paint": {
+      "id": "first-meaningful-paint",
+      "title": "First Meaningful Paint",
+      "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://web.dev/first-meaningful-paint).",
+      "score": 0.83,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "1.1 s",
+      "numericValue": 1077.5
+    },
+    "resource-summary": {
+      "id": "resource-summary",
+      "title": "Keep request counts low and transfer sizes small",
+      "description": "To set budgets for the quantity and size of page resources, add a budget.json file. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/budgets).",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "displayValue": "71 requests • 610 KB",
+      "details": {
+        "headings": [
+          {
+            "key": "label",
+            "itemType": "text",
+            "text": "Resource Type"
+          },
+          {
+            "key": "requestCount",
+            "itemType": "numeric",
+            "text": "Requests"
+          },
+          {
+            "key": "size",
+            "itemType": "bytes",
+            "text": "Transfer Size"
+          }
+        ],
+        "type": "table",
+        "items": [
+          {
+            "label": "Total",
+            "size": 624846,
+            "requestCount": 71,
+            "resourceType": "total"
+          },
+          {
+            "resourceType": "script",
+            "label": "Script",
+            "size": 370653,
+            "requestCount": 14
+          },
+          {
+            "requestCount": 23,
+            "resourceType": "image",
+            "label": "Image",
+            "size": 117894
+          },
+          {
+            "resourceType": "stylesheet",
+            "label": "Stylesheet",
+            "size": 61319,
+            "requestCount": 9
+          },
+          {
+            "resourceType": "font",
+            "label": "Font",
+            "size": 51098,
+            "requestCount": 2
+          },
+          {
+            "resourceType": "other",
+            "label": "Other",
+            "size": 14143,
+            "requestCount": 21
+          },
+          {
+            "requestCount": 2,
+            "resourceType": "document",
+            "label": "Document",
+            "size": 9739
+          },
+          {
+            "resourceType": "media",
+            "label": "Media",
+            "size": 0,
+            "requestCount": 0
+          },
+          {
+            "label": "Third-party",
+            "size": 419029,
+            "requestCount": 51,
+            "resourceType": "third-party"
+          }
+        ]
+      }
+    },
+    "link-name": {
+      "id": "link-name",
+      "title": "Links have a discernible name",
+      "description": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn more](https://web.dev/link-name/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      }
+    },
+    "custom-controls-roles": {
+      "id": "custom-controls-roles",
+      "title": "Custom controls have ARIA roles",
+      "description": "Custom interactive controls have appropriate ARIA roles. [Learn more](https://web.dev/custom-control-roles/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "efficient-animated-content": {
+      "id": "efficient-animated-content",
+      "title": "Use video formats for animated content",
+      "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more](https://web.dev/efficient-animated-content)",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "details": {
+        "type": "opportunity",
+        "items": [],
+        "overallSavingsBytes": 0,
+        "overallSavingsMs": 0,
+        "headings": []
+      },
+      "numericValue": 0
+    },
+    "final-screenshot": {
+      "id": "final-screenshot",
+      "title": "Final Screenshot",
+      "description": "The last screenshot captured of the pageload.",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "type": "screenshot",
+        "timing": 1850,
+        "timestamp": 5364094510970,
+        "data": "data:image/jpeg;base64,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ICIiAiIgIiICIiAiIgIiICIiAiIgIiICzev0nvUPWFpX8Y1H/wAiX/mf3V7RaPxXF5sYwy9z3KdDw4pzxZ54/GP9f2L6/R+9QdYT1+j96g6wv4/ioaiam18UZfHiwezmb2vsVv8ACK8uAFLIb7CBcFXflFP9PbuzPqGuf1e/Z/Xfr9H71B1hWwzwz31MrJLbcLr2X8aTxPgmfFKML2EtcL3sV9q/6cf/AI+n/wDnB+z1x1O2xYtTc4s46d1jRb1Oqv02ZoxnPPpn0fZURFlN8REQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQF/GVS13rEvsn8Z8Piv7NSw3K9otb4Xi8uc9WXuW2+O4fNw8OeWfzjrHo/janqqunaGwSSMAN/ZU/X67Ex3rE92XDTc5X2r+xrDclhuV35xH8/fszPp2f6+3d/GEhkke578TnONySMyV9r/AOnIEU+nrgj24dvyevslhuRcdTufx7U2+HGevZZ0WyeFvU3viZxnl0x6iIiym8IiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiD//Z"
+      }
+    },
+    "metrics": {
+      "id": "metrics",
+      "title": "Metrics",
+      "description": "Collects all available metrics.",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "items": [
+          {
+            "firstContentfulPaint": 1078,
+            "observedFirstPaintTs": 5364094094894,
+            "speedIndex": 1431,
+            "observedSpeedIndexTs": 5364094098487,
+            "observedFirstContentfulPaint": 1434,
+            "observedNavigationStartTs": 5364092661393,
+            "observedLargestContentfulPaintTs": 5364094094894,
+            "observedFirstVisualChange": 1432,
+            "observedLoadTs": 5364094502092,
+            "firstMeaningfulPaint": 1078,
+            "observedFirstMeaningfulPaint": 1434,
+            "observedTraceEnd": 2898,
+            "firstCPUIdle": 1325,
+            "observedTraceEndTs": 5364095559072,
+            "observedFirstMeaningfulPaintTs": 5364094094894,
+            "observedDomContentLoaded": 1137,
+            "interactive": 1325,
+            "observedNavigationStart": 0,
+            "observedFirstVisualChangeTs": 5364094093393,
+            "observedFirstContentfulPaintTs": 5364094094894,
+            "observedLoad": 1841,
+            "observedLastVisualChangeTs": 5364094510393,
+            "observedLargestContentfulPaint": 1434,
+            "observedDomContentLoadedTs": 5364093798263,
+            "observedSpeedIndex": 1437,
+            "estimatedInputLatency": 13,
+            "totalBlockingTime": 8,
+            "observedFirstPaint": 1434,
+            "observedLastVisualChange": 1849
+          },
+          {
+            "lcpInvalidated": false
+          }
+        ],
+        "type": "debugdata"
+      },
+      "numericValue": 1325
+    },
+    "network-requests": {
+      "id": "network-requests",
+      "title": "Network Requests",
+      "description": "Lists the network requests that were made during page load.",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "headings": [
+          {
+            "key": "url",
+            "itemType": "url",
+            "text": "URL"
+          },
+          {
+            "text": "Start Time",
+            "granularity": 1,
+            "key": "startTime",
+            "itemType": "ms"
+          },
+          {
+            "text": "End Time",
+            "granularity": 1,
+            "key": "endTime",
+            "itemType": "ms"
+          },
+          {
+            "key": "transferSize",
+            "itemType": "bytes",
+            "text": "Transfer Size",
+            "granularity": 1,
+            "displayUnit": "kb"
+          },
+          {
+            "key": "resourceSize",
+            "itemType": "bytes",
+            "text": "Resource Size",
+            "displayUnit": "kb",
+            "granularity": 1
+          },
+          {
+            "key": "statusCode",
+            "itemType": "text",
+            "text": "Status Code"
+          },
+          {
+            "key": "mimeType",
+            "itemType": "text",
+            "text": "MIME Type"
+          },
+          {
+            "itemType": "text",
+            "key": "resourceType",
+            "text": "Resource Type"
+          }
+        ],
+        "items": [
+          {
+            "resourceType": "Document",
+            "mimeType": "text/html",
+            "resourceSize": 25315,
+            "endTime": 413.1350005045533,
+            "startTime": 0,
+            "transferSize": 6325,
+            "url": "https://prod.arcphss.org/tsc-nat-leads",
+            "statusCode": 200
+          },
+          {
+            "url": "https://fonts.googleapis.com/css?family=Lato|Tangerine|Raleway|Dancing%20Script|Inconsolata|Droid+Sans",
+            "statusCode": 200,
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css",
+            "resourceSize": 4676,
+            "endTime": 433.02400037646294,
+            "startTime": 423.46700001508,
+            "transferSize": 1396
+          },
+          {
+            "mimeType": "text/css",
+            "endTime": 440.28300046920776,
+            "resourceSize": 35212,
+            "startTime": 424.0620005875826,
+            "transferSize": 8531,
+            "url": "https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css",
+            "statusCode": 200,
+            "resourceType": "Stylesheet"
+          },
+          {
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css",
+            "statusCode": 200,
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css",
+            "resourceSize": 1934,
+            "endTime": 441.0690004006028,
+            "startTime": 424.2280004546046,
+            "transferSize": 1478
+          },
+          {
+            "startTime": 424.39200077205896,
+            "transferSize": 20019,
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css",
+            "statusCode": 200,
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css",
+            "resourceSize": 165184,
+            "endTime": 459.4840006902814
+          },
+          {
+            "endTime": 443.55900026857853,
+            "resourceSize": 19508,
+            "startTime": 424.51600078493357,
+            "transferSize": 4026,
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css",
+            "statusCode": 200,
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css"
+          },
+          {
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/css/main.css",
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css",
+            "resourceSize": 145614,
+            "endTime": 807.9730002209544,
+            "startTime": 424.65800046920776,
+            "transferSize": 20126
+          },
+          {
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/css/api.css",
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css",
+            "endTime": 728.2040007412434,
+            "resourceSize": 1206,
+            "startTime": 424.98400062322617,
+            "transferSize": 740
+          },
+          {
+            "resourceSize": 125765,
+            "endTime": 471.5040000155568,
+            "startTime": 425.09100027382374,
+            "transferSize": 39082,
+            "statusCode": 200,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/satelliteLib-3ef4ac4d84e8e5eb36754c0d2b50e0093140a63e.js",
+            "resourceType": "Script",
+            "mimeType": "application/x-javascript"
+          },
+          {
+            "startTime": 425.2600008621812,
+            "transferSize": 87745,
+            "url": "https://code.jquery.com/jquery-1.12.3.js",
+            "statusCode": 200,
+            "resourceType": "Script",
+            "mimeType": "application/javascript",
+            "resourceSize": 293650,
+            "endTime": 478.2210001721978
+          },
+          {
+            "transferSize": 114598,
+            "url": "https://code.jquery.com/ui/1.11.4/jquery-ui.js",
+            "statusCode": 200,
+            "resourceType": "Script",
+            "mimeType": "application/javascript",
+            "resourceSize": 470596,
+            "endTime": 453.3310001716018,
+            "startTime": 425.40800012648106
+          },
+          {
+            "resourceSize": 11084,
+            "endTime": 455.5920008569956,
+            "startTime": 425.5930008366704,
+            "transferSize": 5006,
+            "statusCode": 200,
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js",
+            "resourceType": "Script",
+            "mimeType": "application/javascript"
+          },
+          {
+            "resourceType": "Script",
+            "mimeType": "application/javascript",
+            "resourceSize": 109102,
+            "endTime": 606.9590002298355,
+            "startTime": 425.69500021636486,
+            "transferSize": 28218,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/js/foundation.min.js"
+          },
+          {
+            "resourceSize": 1230,
+            "endTime": 736.2649999558926,
+            "startTime": 425.80100055783987,
+            "transferSize": 891,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/js/login.js",
+            "resourceType": "Script",
+            "mimeType": "application/javascript"
+          },
+          {
+            "transferSize": 8107,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/images/redcross-logo.png",
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "resourceSize": 7821,
+            "endTime": 748.7150002270937,
+            "startTime": 425.89000053703785
+          },
+          {
+            "transferSize": 4042,
+            "url": "https://prod.arcphss.org/css/sweetalert.css",
+            "statusCode": 200,
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css",
+            "endTime": 780.7200001552701,
+            "resourceSize": 22879,
+            "startTime": 425.9710004553199
+          },
+          {
+            "resourceType": "Script",
+            "mimeType": "application/javascript",
+            "endTime": 880.1490003243089,
+            "resourceSize": 16977,
+            "startTime": 749.5780000463128,
+            "transferSize": 5762,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/js/sweetalert.min.js"
+          },
+          {
+            "transferSize": 6334,
+            "url": "https://prod.arcphss.org/images/home/footer-promo.png",
+            "statusCode": 200,
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "endTime": 867.6820006221533,
+            "resourceSize": 6049,
+            "startTime": 781.6040003672242
+          },
+          {
+            "resourceSize": 1139,
+            "endTime": 890.0630008429289,
+            "startTime": 809.5390005037189,
+            "transferSize": 961,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/css/reset.css",
+            "resourceType": "Stylesheet",
+            "mimeType": "text/css"
+          },
+          {
+            "statusCode": 302,
+            "url": "https://dpm.demdex.net/id?d_visid_ver=2.3.0&d_fieldgroup=MC&d_rtbd=json&d_ver=2&d_verify=1&d_orgid=723A22C757518E2C7F000101%40AdobeOrg&d_nsid=0&ts=1580408942300",
+            "endTime": 946.7290006577969,
+            "resourceSize": 0,
+            "startTime": 912.0170008391142,
+            "transferSize": 822
+          },
+          {
+            "resourceType": "Script",
+            "mimeType": "application/x-javascript",
+            "endTime": 941.5700007230043,
+            "resourceSize": 108860,
+            "startTime": 917.0200005173683,
+            "transferSize": 34792,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/mbox-contents-5fffb365a0fed68a66c49ad75c066df76e8cd5b6.js",
+            "statusCode": 200
+          },
+          {
+            "resourceType": "Script",
+            "mimeType": "application/x-javascript",
+            "resourceSize": 212,
+            "endTime": 943.1500006467104,
+            "startTime": 919.5170002058148,
+            "transferSize": 621,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/scripts/satellite-5a84754964746d4ce200076f.js",
+            "statusCode": 200
+          },
+          {
+            "statusCode": 302,
+            "url": "https://dpm.demdex.net/id?d_visid_ver=2.3.0&d_fieldgroup=MC&d_rtbd=json&d_ver=2&d_verify=1&d_orgid=723A22C757518E2C7F000101%40AdobeOrg&d_nsid=0&ts=1580408942300",
+            "resourceType": "XHR",
+            "endTime": 946.8050003051758,
+            "resourceSize": 0,
+            "startTime": 912.0170008391142,
+            "transferSize": 850
+          },
+          {
+            "resourceType": "XHR",
+            "mimeType": "application/json",
+            "endTime": 979.2640004307032,
+            "resourceSize": 2311,
+            "startTime": 947.2020007669926,
+            "transferSize": 1756,
+            "url": "https://dpm.demdex.net/id/rd?d_visid_ver=2.3.0&d_fieldgroup=MC&d_rtbd=json&d_ver=2&d_verify=1&d_orgid=723A22C757518E2C7F000101%40AdobeOrg&d_nsid=0&ts=1580408942300",
+            "statusCode": 200
+          },
+          {
+            "endTime": 1137.895000167191,
+            "resourceSize": 0,
+            "startTime": 1072.2940005362034,
+            "transferSize": 1016,
+            "statusCode": 302,
+            "url": "https://ad.doubleclick.net/ddm/activity/src=4706068;type=takea0;cat=nat-l0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;ord=8532530495067.407?",
+            "mimeType": "text/html"
+          },
+          {
+            "mimeType": "text/javascript",
+            "endTime": 1077.8810000047088,
+            "resourceSize": 44470,
+            "startTime": 1072.9510001838207,
+            "transferSize": 18396,
+            "url": "https://www.google-analytics.com/analytics.js",
+            "statusCode": 200,
+            "resourceType": "Script"
+          },
+          {
+            "resourceType": "Document",
+            "mimeType": "text/html",
+            "endTime": 1176.9080003723502,
+            "resourceSize": 6939,
+            "startTime": 1085.9900005161762,
+            "transferSize": 3414,
+            "url": "https://redcross.demdex.net/dest5.html?d_nsid=0",
+            "statusCode": 200
+          },
+          {
+            "resourceType": "XHR",
+            "mimeType": "application/x-javascript",
+            "endTime": 1253.7120003253222,
+            "resourceSize": 49,
+            "startTime": 1087.8300005570054,
+            "transferSize": 694,
+            "statusCode": 200,
+            "url": "https://smetrics.redcross.org/id?d_visid_ver=2.3.0&d_fieldgroup=A&mcorgid=723A22C757518E2C7F000101%40AdobeOrg&mid=44257353331739943793395641913792742612&ts=1580408942476"
+          },
+          {
+            "endTime": 1152.139000594616,
+            "resourceSize": 0,
+            "startTime": 1088.5460004210472,
+            "transferSize": 517,
+            "url": "https://cm.everesttech.net/cm/dd?d_uuid=44643785770221087903422815069307937577",
+            "statusCode": 302
+          },
+          {
+            "transferSize": 1393,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/images/bg/checkout-steps-inner-bg.png",
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "endTime": 1172.673000022769,
+            "resourceSize": 1109,
+            "startTime": 1090.6980000436306
+          },
+          {
+            "resourceSize": 143,
+            "endTime": 1836.2230006605387,
+            "startTime": 1092.6950005814433,
+            "transferSize": 426,
+            "url": "https://prod.arcphss.org/images/form/select-arrow.png?1360164509",
+            "statusCode": 200,
+            "resourceType": "Image",
+            "mimeType": "image/png"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2",
+            "statusCode": 200,
+            "resourceType": "Font",
+            "mimeType": "font/woff2",
+            "resourceSize": 20724,
+            "endTime": 1098.952000029385,
+            "startTime": 1094.4180004298687,
+            "transferSize": 21294
+          },
+          {
+            "resourceType": "Script",
+            "mimeType": "application/x-javascript",
+            "resourceSize": 253,
+            "endTime": 1130.15800062567,
+            "startTime": 1106.4430000260472,
+            "transferSize": 619,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/scripts/satellite-59529d1464746d6e69003653.js",
+            "statusCode": 200
+          },
+          {
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/s-code-contents-7237aa4c43588e0204eb668d5e6a907c9b4e11bb.js",
+            "statusCode": 200,
+            "resourceType": "Script",
+            "mimeType": "application/x-javascript",
+            "endTime": 1151.3710003346205,
+            "resourceSize": 64828,
+            "startTime": 1107.5840005651116,
+            "transferSize": 21811
+          },
+          {
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "resourceSize": 201,
+            "endTime": 1387.6010002568364,
+            "startTime": 1111.413000151515,
+            "transferSize": 484,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/images/bg/footer-bg-wide.png"
+          },
+          {
+            "transferSize": 580,
+            "url": "https://prod.arcphss.org/images/bg/footer-social-tab-right.png",
+            "statusCode": 200,
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "endTime": 1191.2180008366704,
+            "resourceSize": 297,
+            "startTime": 1111.8100006133318
+          },
+          {
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "resourceSize": 527,
+            "endTime": 1183.9990001171827,
+            "startTime": 1112.1600000187755,
+            "transferSize": 810,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/images/bg/footer-social-tab-left.png"
+          },
+          {
+            "mimeType": "image/png",
+            "resourceSize": 88908,
+            "endTime": 1595.8879999816418,
+            "startTime": 1112.7070002257824,
+            "transferSize": 89196,
+            "url": "https://prod.arcphss.org/images/sprite/icon-s041f892b40.png",
+            "statusCode": 200,
+            "resourceType": "Image"
+          },
+          {
+            "resourceSize": 76,
+            "endTime": 1402.4410005658865,
+            "startTime": 1113.714000210166,
+            "transferSize": 358,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/images/icon/red-square.png",
+            "resourceType": "Image",
+            "mimeType": "image/png"
+          },
+          {
+            "startTime": 1115.0100007653236,
+            "transferSize": 647,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/images/bg/curl-left.png?1360164509",
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "resourceSize": 363,
+            "endTime": 1388.1510002538562
+          },
+          {
+            "startTime": 1115.2690006420016,
+            "transferSize": 613,
+            "statusCode": 200,
+            "url": "https://prod.arcphss.org/images/bg/curl-right.png?1360164509",
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "resourceSize": 329,
+            "endTime": 1434.2710003256798
+          },
+          {
+            "resourceType": "Font",
+            "mimeType": "application/x-font-woff",
+            "resourceSize": 29504,
+            "endTime": 1292.242000810802,
+            "startTime": 1116.3340006023645,
+            "transferSize": 29804,
+            "url": "https://prod.arcphss.org/css/font/standard-extrabold-2011.07.01-webfont.woff",
+            "statusCode": 200
+          },
+          {
+            "endTime": 1153.5010002553463,
+            "resourceSize": 0,
+            "startTime": 1137.9850003868341,
+            "transferSize": 1148,
+            "statusCode": 302,
+            "url": "https://ad.doubleclick.net/ddm/activity/src=4706068;dc_pre=CKyi9oz6q-cCFf0YrQYdruYOOA;type=takea0;cat=nat-l0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;ord=8532530495067.407?",
+            "mimeType": "text/html"
+          },
+          {
+            "mimeType": "image/gif",
+            "endTime": 1173.0210008099675,
+            "resourceSize": 42,
+            "startTime": 1152.2870007902384,
+            "transferSize": 915,
+            "url": "https://dpm.demdex.net/ibs:dpid=411&dpuuid=XjMgbgAAAFlkH_eS",
+            "statusCode": 200,
+            "resourceType": "Image"
+          },
+          {
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "resourceSize": 42,
+            "endTime": 1163.943000137806,
+            "startTime": 1153.5690007731318,
+            "transferSize": 963,
+            "statusCode": 200,
+            "url": "https://adservice.google.com/ddm/fls/z/src=4706068;dc_pre=CKyi9oz6q-cCFf0YrQYdruYOOA;type=takea0;cat=nat-l0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;ord=8532530495067.407"
+          },
+          {
+            "mimeType": "text/html",
+            "resourceSize": 0,
+            "endTime": 1193.0490005761385,
+            "startTime": 1173.2350001111627,
+            "transferSize": 723,
+            "url": "https://www.google-analytics.com/r/collect?v=1&_v=j79&a=2120420853&t=pageview&_s=1&dl=https%3A%2F%2Fprod.arcphss.org%2Ftsc-nat-leads&ul=en-us&de=UTF-8&dt=American%20Red%20Cross%20%7C&sd=24-bit&sr=800x600&vp=1350x940&je=0&_u=IEBAAEAB~&jid=1982977266&gjid=377567549&cid=2032793567.1580408943&tid=UA-2955916-8&_gid=2106889341.1580408943&_r=1&z=1124290797",
+            "statusCode": 302
+          },
+          {
+            "mimeType": "application/javascript",
+            "resourceSize": 34918,
+            "endTime": 1204.378000460565,
+            "startTime": 1173.7330006435513,
+            "transferSize": 12749,
+            "url": "https://s.btstatic.com/tag.js",
+            "statusCode": 200,
+            "resourceType": "Script"
+          },
+          {
+            "transferSize": 750,
+            "statusCode": 302,
+            "url": "https://stats.g.doubleclick.net/r/collect?v=1&aip=1&t=dc&_r=3&tid=UA-2955916-8&cid=2032793567.1580408943&jid=1982977266&_gid=2106889341.1580408943&gjid=377567549&_v=j79&z=1124290797",
+            "mimeType": "text/html",
+            "resourceSize": 0,
+            "endTime": 1200.747000053525,
+            "startTime": 1193.154999986291
+          },
+          {
+            "resourceSize": 42,
+            "endTime": 1210.0980002433062,
+            "startTime": 1200.8500006049871,
+            "transferSize": 641,
+            "url": "https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-2955916-8&cid=2032793567.1580408943&jid=1982977266&_v=j79&z=1124290797",
+            "statusCode": 200,
+            "resourceType": "Image",
+            "mimeType": "image/gif"
+          },
+          {
+            "endTime": 1238.87600004673,
+            "resourceSize": 0,
+            "startTime": 1204.9480006098747,
+            "transferSize": 486,
+            "url": "https://sync-tm.everesttech.net/upi/pid/5w3jqr4k?redir=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dg8f47s39e399f3fe%26google_push%26google_sc%26google_hm%3D%24%7BTM_USER_ID_BASE64ENC_URLENC%7D",
+            "statusCode": 302
+          },
+          {
+            "resourceType": "Script",
+            "mimeType": "text/javascript",
+            "resourceSize": 0,
+            "endTime": 1313.81700001657,
+            "startTime": 1217.4070002511144,
+            "transferSize": 363,
+            "statusCode": 200,
+            "url": "https://s.thebrighttag.com/tag?site=T1PaHIC&H=3cso058"
+          },
+          {
+            "transferSize": 936,
+            "statusCode": 200,
+            "url": "https://cm.g.doubleclick.net/pixel?google_nid=g8f47s39e399f3fe&google_push&google_sc&google_hm=WGpNZ2JnQUFBRmxrSF9lUw==",
+            "resourceType": "Image",
+            "mimeType": "image/png",
+            "resourceSize": 170,
+            "endTime": 1243.9670003950596,
+            "startTime": 1239.015000872314
+          },
+          {
+            "statusCode": 200,
+            "url": "https://theamericannationalr.tt.omtrdc.net/m2/theamericannationalr/mbox/json?mbox=target-global-mbox&mboxSession=33ec65eb1be2440684bc1713ebc671ac&mboxPC=&mboxPage=1d467ec3514543d8a684ba05cb0b8dbc&mboxVersion=1.1.0&mboxCount=1&mboxTime=1580380142649&mboxHost=prod.arcphss.org&mboxURL=https%3A%2F%2Fprod.arcphss.org%2Ftsc-nat-leads&mboxReferrer=&browserHeight=940&browserWidth=1350&browserTimeOffset=-480&screenHeight=600&screenWidth=800&colorDepth=24&mboxMCGVID=44257353331739943793395641913792742612&mboxAAMB=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&mboxMCAVID=&mboxMCGLH=9&vst.trk=metrics.redcross.org&vst.trks=smetrics.redcross.org&mboxMCSDID=7C218640E9499354-7705A8E96332E5A3",
+            "resourceType": "XHR",
+            "mimeType": "application/json",
+            "endTime": 1389.4580006599426,
+            "resourceSize": 96,
+            "startTime": 1262.3020000755787,
+            "transferSize": 519
+          },
+          {
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "resourceSize": 43,
+            "endTime": 1390.7880000770092,
+            "startTime": 1276.0580005124211,
+            "transferSize": 601,
+            "statusCode": 200,
+            "url": "https://smetrics.redcross.org/b/ss/tanrcoprod,tanrcglobalprod/1/JS-2.3.0-D7QN/s46325599908507?AQB=1&ndh=1&pf=1&t=30%2F0%2F2020%2010%3A29%3A2%204%20480&sdid=7C218640E9499354-7705A8E96332E5A3&D=D%3D&mid=44257353331739943793395641913792742612&aamlh=9&ce=UTF-8&cdp=2&pageName=rco%7Ctsc-nat-leads&g=https%3A%2F%2Fprod.arcphss.org%2Ftsc-nat-leads&cc=USD&ch=rco%7Ctsc-nat-leads&aamb=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&c1=D%3Dv1&v1=New&v5=D%3Dmid&v6=D%3Dg&v8=D%3DpageName&c20=D%3Dv20&v20=12&c21=D%3Dv21&v21=1%3A00PM&c22=D%3Dv22&v22=1&c23=D%3Dv23&v23=First%20Visit&c25=D%3Dv25&v25=Thursday&c26=D%3Dv26&v26=Weekday&s=800x600&c=24&j=1.6&v=N&k=Y&bw=1350&bh=940&mcorgid=723A22C757518E2C7F000101%40AdobeOrg&AQE=1"
+          },
+          {
+            "endTime": 1340.531000867486,
+            "resourceSize": 0,
+            "startTime": 1305.8900004252791,
+            "transferSize": 470,
+            "statusCode": 302,
+            "url": "https://sync-tm.everesttech.net/upi/pid/btu4jd3a?redir=https%3A%2F%2Fpixel.rubiconproject.com%2Ftap.php%3Fv%3D7941%26nid%3D2243%26put%3D%24%7BUSER_ID%7D%26expires%3D90"
+          },
+          {
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "endTime": 1371.0090005770326,
+            "resourceSize": 42,
+            "startTime": 1340.663000009954,
+            "transferSize": 753,
+            "url": "https://pixel.rubiconproject.com/tap.php?v=7941&nid=2243&put=XjMgbgAAAFlkH_eS&expires=90",
+            "statusCode": 200
+          },
+          {
+            "endTime": 1442.2860005870461,
+            "resourceSize": 0,
+            "startTime": 1407.9230008646846,
+            "transferSize": 465,
+            "url": "https://sync-tm.everesttech.net/upi/pid/ZMAwryCI?redir=https%3A%2F%2Fdsum-sec.casalemedia.com%2Frum%3Fcm_dsp_id%3D88%26external_user_id%3D%24%7BTM_USER_ID%7D",
+            "statusCode": 302
+          },
+          {
+            "endTime": 1559.7690008580685,
+            "resourceSize": 0,
+            "startTime": 1442.4090003594756,
+            "transferSize": 655,
+            "url": "https://dsum-sec.casalemedia.com/rum?cm_dsp_id=88&external_user_id=XjMgbgAAAFlkH_eS",
+            "statusCode": 302,
+            "mimeType": "text/html"
+          },
+          {
+            "startTime": 1509.9800005555153,
+            "transferSize": 427,
+            "statusCode": 302,
+            "url": "https://sync-tm.everesttech.net/upi/pid/UH6TUt9n?redir=https%3A%2F%2Fib.adnxs.com%2Fsetuid%3Fentity%3D158%26code%3D%24%7BTM_USER_ID%7D",
+            "resourceSize": 0,
+            "endTime": 1559.4640001654625
+          },
+          {
+            "startTime": 1559.5680000260472,
+            "transferSize": 618,
+            "statusCode": 200,
+            "url": "https://ib.adnxs.com/setuid?entity=158&code=XjMgbgAAAFlkH_eS",
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "endTime": 1596.4140007272363,
+            "resourceSize": 43
+          },
+          {
+            "startTime": 1559.851000085473,
+            "transferSize": 975,
+            "statusCode": 200,
+            "url": "https://dsum-sec.casalemedia.com/rum?cm_dsp_id=88&external_user_id=XjMgbgAAAFlkH_eS&C=1",
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "endTime": 1656.9400001317263,
+            "resourceSize": 43
+          },
+          {
+            "endTime": 1645.8840006962419,
+            "resourceSize": 0,
+            "startTime": 1611.5500004962087,
+            "transferSize": 432,
+            "url": "https://sync-tm.everesttech.net/upi/pid/ny75r2x0?redir=https%3A%2F%2Fus-u.openx.net%2Fw%2F1.0%2Fsd%3Fid%3D537148856%26val%3D%24%7BTM_USER_ID%7D",
+            "statusCode": 302
+          },
+          {
+            "endTime": 1707.6910007745028,
+            "resourceSize": 0,
+            "startTime": 1646.0370002314448,
+            "transferSize": 397,
+            "url": "https://us-u.openx.net/w/1.0/sd?id=537148856&val=XjMgbgAAAFlkH_eS",
+            "statusCode": 302
+          },
+          {
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "endTime": 1774.6770000085235,
+            "resourceSize": 43,
+            "startTime": 1707.821000367403,
+            "transferSize": 352,
+            "url": "https://us-u.openx.net/w/1.0/sd?cc=1&id=537148856&val=XjMgbgAAAFlkH_eS",
+            "statusCode": 200
+          },
+          {
+            "endTime": 1747.0160005614161,
+            "resourceSize": 0,
+            "startTime": 1713.055000640452,
+            "transferSize": 495,
+            "url": "https://sync-tm.everesttech.net/upi/pid/b9pj45k4?redir=https%3A%2F%2Fimage2.pubmatic.com%2FAdServer%2FPug%3Fvcode%3Dbz0yJnR5cGU9MSZqcz0xJmNvZGU9MjE5MSZ0bD0yNTkyMDA%3D%26piggybackCookie%3D%24%7BUSER_ID%7D",
+            "statusCode": 302
+          },
+          {
+            "transferSize": 888,
+            "url": "https://image2.pubmatic.com/AdServer/Pug?vcode=bz0yJnR5cGU9MSZqcz0xJmNvZGU9MjE5MSZ0bD0yNTkyMDA=&piggybackCookie=XjMgbgAAAFlkH_eS",
+            "statusCode": 200,
+            "resourceType": "Image",
+            "mimeType": "text/html",
+            "endTime": 1772.5570006296039,
+            "resourceSize": 1,
+            "startTime": 1747.1880000084639
+          },
+          {
+            "resourceSize": 0,
+            "endTime": 1903.5460008308291,
+            "startTime": 1814.898000098765,
+            "transferSize": 450,
+            "statusCode": 302,
+            "url": "https://sync-tm.everesttech.net/upi/pid/h0r58thg?redir=https%3A%2F%2Fsync.search.spotxchange.com%2Fpartner%3Fadv_id%3D6409%26uid%3D%24%7BUSER_ID%7D%26img%3D1"
+          },
+          {
+            "mimeType": "text/plain",
+            "endTime": 1960.4810001328588,
+            "resourceSize": 0,
+            "startTime": 1903.6840004846454,
+            "transferSize": 619,
+            "url": "https://sync.search.spotxchange.com/partner?adv_id=6409&uid=XjMgbgAAAFlkH_eS&img=1",
+            "statusCode": 302
+          },
+          {
+            "endTime": 1951.9520001485944,
+            "resourceSize": 0,
+            "startTime": 1916.3940008729696,
+            "transferSize": 452,
+            "statusCode": 302,
+            "url": "https://sync-tm.everesttech.net/upi/pid/r7ifn0SL?redir=https%3A%2F%2Fwww.facebook.com%2Ffr%2Fb.php%3Fp%3D1531105787105294%26e%3D%24%7BTM_USER_ID%7D%26t%3D2592000%26o%3D0"
+          },
+          {
+            "startTime": 1952.0960003137589,
+            "transferSize": 755,
+            "statusCode": 200,
+            "url": "https://www.facebook.com/fr/b.php?p=1531105787105294&e=XjMgbgAAAFlkH_eS&t=2592000&o=0",
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "endTime": 2008.4930006414652,
+            "resourceSize": 43
+          },
+          {
+            "resourceType": "Image",
+            "mimeType": "image/gif",
+            "endTime": 2093.7410006299615,
+            "resourceSize": 43,
+            "startTime": 1960.6130002066493,
+            "transferSize": 549,
+            "url": "https://sync.search.spotxchange.com/partner?adv_id=6409&uid=XjMgbgAAAFlkH_eS&img=1&__user_check__=1&sync_id=642a592c-438e-11ea-934e-132873c72201",
+            "statusCode": 200
+          }
+        ],
+        "type": "table"
+      },
+      "numericValue": 71
+    },
+    "meta-viewport": {
+      "id": "meta-viewport",
+      "title": "`[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5.",
+      "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more](https://web.dev/meta-viewport/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "td-headers-attr": {
+      "id": "td-headers-attr",
+      "title": "Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.",
+      "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more](https://web.dev/td-headers-attr/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "uses-long-cache-ttl": {
+      "id": "uses-long-cache-ttl",
+      "title": "Serve static assets with an efficient cache policy",
+      "description": "A long cache lifetime can speed up repeat visits to your page. [Learn more](https://web.dev/uses-long-cache-ttl).",
+      "score": 0.24,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "26 resources found",
+      "details": {
+        "items": [
+          {
+            "url": "https://prod.arcphss.org/images/sprite/icon-s041f892b40.png",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 89196,
+            "wastedBytes": 89196,
+            "cacheHitProbability": 0
+          },
+          {
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/css/font/standard-extrabold-2011.07.01-webfont.woff",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 29804,
+            "wastedBytes": 29804
+          },
+          {
+            "totalBytes": 28218,
+            "wastedBytes": 28218,
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/js/foundation.min.js",
+            "cacheLifetimeMs": 0
+          },
+          {
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/css/main.css",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 20126,
+            "wastedBytes": 20126
+          },
+          {
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/images/redcross-logo.png",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 8107,
+            "wastedBytes": 8107
+          },
+          {
+            "url": "https://prod.arcphss.org/images/home/footer-promo.png",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 6334,
+            "wastedBytes": 6334,
+            "cacheHitProbability": 0
+          },
+          {
+            "url": "https://prod.arcphss.org/js/sweetalert.min.js",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 5762,
+            "wastedBytes": 5762,
+            "cacheHitProbability": 0
+          },
+          {
+            "url": "https://prod.arcphss.org/css/sweetalert.css",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 4042,
+            "wastedBytes": 4042,
+            "cacheHitProbability": 0
+          },
+          {
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/images/bg/checkout-steps-inner-bg.png",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 1393,
+            "wastedBytes": 1393
+          },
+          {
+            "url": "https://prod.arcphss.org/css/reset.css",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 961,
+            "wastedBytes": 961,
+            "cacheHitProbability": 0
+          },
+          {
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/js/login.js",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 891,
+            "wastedBytes": 891
+          },
+          {
+            "url": "https://prod.arcphss.org/images/bg/footer-social-tab-left.png",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 810,
+            "wastedBytes": 810,
+            "cacheHitProbability": 0
+          },
+          {
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/css/api.css",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 740,
+            "wastedBytes": 740
+          },
+          {
+            "url": "https://prod.arcphss.org/images/bg/curl-left.png?1360164509",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 647,
+            "wastedBytes": 647,
+            "cacheHitProbability": 0
+          },
+          {
+            "url": "https://prod.arcphss.org/images/bg/curl-right.png?1360164509",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 613,
+            "wastedBytes": 613,
+            "cacheHitProbability": 0
+          },
+          {
+            "url": "https://prod.arcphss.org/images/bg/footer-social-tab-right.png",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 580,
+            "wastedBytes": 580,
+            "cacheHitProbability": 0
+          },
+          {
+            "totalBytes": 484,
+            "wastedBytes": 484,
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/images/bg/footer-bg-wide.png",
+            "cacheLifetimeMs": 0
+          },
+          {
+            "totalBytes": 426,
+            "wastedBytes": 426,
+            "cacheHitProbability": 0,
+            "url": "https://prod.arcphss.org/images/form/select-arrow.png?1360164509",
+            "cacheLifetimeMs": 0
+          },
+          {
+            "url": "https://prod.arcphss.org/images/icon/red-square.png",
+            "cacheLifetimeMs": 0,
+            "totalBytes": 358,
+            "wastedBytes": 358,
+            "cacheHitProbability": 0
+          },
+          {
+            "debugData": {
+              "type": "debugdata",
+              "max-age": 3600
+            },
+            "cacheLifetimeMs": 3600000,
+            "totalBytes": 39082,
+            "cacheHitProbability": 0.2,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/satelliteLib-3ef4ac4d84e8e5eb36754c0d2b50e0093140a63e.js",
+            "wastedBytes": 31265.600000000002
+          },
+          {
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/mbox-contents-5fffb365a0fed68a66c49ad75c066df76e8cd5b6.js",
+            "wastedBytes": 27833.600000000002,
+            "debugData": {
+              "type": "debugdata",
+              "max-age": 3600
+            },
+            "cacheLifetimeMs": 3600000,
+            "totalBytes": 34792,
+            "cacheHitProbability": 0.2
+          },
+          {
+            "totalBytes": 21811,
+            "cacheHitProbability": 0.2,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/s-code-contents-7237aa4c43588e0204eb668d5e6a907c9b4e11bb.js",
+            "wastedBytes": 17448.8,
+            "debugData": {
+              "type": "debugdata",
+              "max-age": 3600
+            },
+            "cacheLifetimeMs": 3600000
+          },
+          {
+            "wastedBytes": 496.8,
+            "debugData": {
+              "max-age": 3600,
+              "type": "debugdata"
+            },
+            "cacheLifetimeMs": 3600000,
+            "totalBytes": 621,
+            "cacheHitProbability": 0.2,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/scripts/satellite-5a84754964746d4ce200076f.js"
+          },
+          {
+            "wastedBytes": 495.20000000000005,
+            "debugData": {
+              "type": "debugdata",
+              "max-age": 3600
+            },
+            "cacheLifetimeMs": 3600000,
+            "totalBytes": 619,
+            "cacheHitProbability": 0.2,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/scripts/satellite-59529d1464746d6e69003653.js"
+          },
+          {
+            "wastedBytes": 13797,
+            "debugData": {
+              "type": "debugdata",
+              "max-age": 7200,
+              "public": true
+            },
+            "cacheLifetimeMs": 7200000,
+            "totalBytes": 18396,
+            "cacheHitProbability": 0.25,
+            "url": "https://www.google-analytics.com/analytics.js"
+          },
+          {
+            "url": "https://s.btstatic.com/tag.js",
+            "wastedBytes": 8669.32,
+            "debugData": {
+              "public": true,
+              "max-age": 14400,
+              "type": "debugdata"
+            },
+            "cacheLifetimeMs": 14400000,
+            "totalBytes": 12749,
+            "cacheHitProbability": 0.32
+          }
+        ],
+        "type": "table",
+        "summary": {
+          "wastedBytes": 299498.32
+        },
+        "headings": [
+          {
+            "key": "url",
+            "itemType": "url",
+            "text": "URL"
+          },
+          {
+            "key": "cacheLifetimeMs",
+            "itemType": "ms",
+            "text": "Cache TTL",
+            "displayUnit": "duration"
+          },
+          {
+            "itemType": "bytes",
+            "key": "totalBytes",
+            "text": "Size",
+            "displayUnit": "kb",
+            "granularity": 1
+          }
+        ]
+      },
+      "numericValue": 299498.32
+    },
+    "max-potential-fid": {
+      "id": "max-potential-fid",
+      "title": "Max Potential First Input Delay",
+      "description": "The maximum potential First Input Delay that your users could experience is the duration, in milliseconds, of the longest task. [Learn more](https://developers.google.com/web/updates/2018/05/first-input-delay).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "70 ms",
+      "numericValue": 65
+    },
+    "interactive": {
+      "id": "interactive",
+      "title": "Time to Interactive",
+      "description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "1.3 s",
+      "numericValue": 1325
+    },
+    "screenshot-thumbnails": {
+      "id": "screenshot-thumbnails",
+      "title": "Screenshot Thumbnails",
+      "description": "This is what the load of your site looked like.",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "items": [
+          {
+            "timing": 300,
+            "timestamp": 5364092961393,
+            "data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRQBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIAFMAeAMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP1ToAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgD//Z"
+          },
+          {
+            "timing": 600,
+            "timestamp": 5364093261393,
+            "data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRQBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIAFMAeAMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP1ToAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgD//Z"
+          },
+          {
+            "timing": 900,
+            "timestamp": 5364093561393,
+            "data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRQBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIAFMAeAMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP1ToAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgD//Z"
+          },
+          {
+            "timestamp": 5364093861393,
+            "data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRQBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIAFMAeAMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP1ToAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgD//Z",
+            "timing": 1200
+          },
+          {
+            "timing": 1500,
+            "timestamp": 5364094161393,
+            "data": "data:image/jpeg;base64,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"
+          },
+          {
+            "timing": 1800,
+            "timestamp": 5364094461393,
+            "data": "data:image/jpeg;base64,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"
+          },
+          {
+            "timing": 2100,
+            "timestamp": 5364094761393,
+            "data": "data:image/jpeg;base64,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"
+          },
+          {
+            "timing": 2400,
+            "timestamp": 5364095061393,
+            "data": "data:image/jpeg;base64,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"
+          },
+          {
+            "timing": 2700,
+            "timestamp": 5364095361393,
+            "data": "data:image/jpeg;base64,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"
+          },
+          {
+            "timing": 3000,
+            "timestamp": 5364095661393,
+            "data": "data:image/jpeg;base64,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"
+          }
+        ],
+        "type": "filmstrip",
+        "scale": 3000
+      }
+    },
+    "label": {
+      "id": "label",
+      "title": "Form elements do not have associated labels",
+      "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more](https://web.dev/label/).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [
+          {
+            "text": "Failing Elements",
+            "key": "node",
+            "itemType": "node"
+          }
+        ],
+        "type": "table",
+        "items": [
+          {
+            "node": {
+              "nodeLabel": "input",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node",
+              "snippet": "<input id=\"firstname\" type=\"text\" name=\"firstname\" placeholder=\"First Name\" required=\"\">",
+              "selector": "#firstname",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,1,DIV,0,DIV,0,INPUT"
+            }
+          },
+          {
+            "node": {
+              "nodeLabel": "input",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node",
+              "snippet": "<input id=\"lastname\" type=\"text\" name=\"lastname\" placeholder=\"Last Name\" required=\"\">",
+              "selector": "#lastname",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,2,DIV,0,DIV,0,INPUT"
+            }
+          },
+          {
+            "node": {
+              "selector": "#address-1",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,3,DIV,0,DIV,0,INPUT",
+              "snippet": "<input id=\"address-1\" type=\"text\" name=\"address1\" placeholder=\"Address 1\" required=\"\">",
+              "nodeLabel": "input",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node"
+            }
+          },
+          {
+            "node": {
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,4,DIV,0,DIV,0,INPUT",
+              "snippet": "<input id=\"address-2\" type=\"text\" name=\"address2\" placeholder=\"Address 2\">",
+              "selector": "#address-2",
+              "nodeLabel": "input"
+            }
+          },
+          {
+            "node": {
+              "snippet": "<input id=\"city\" type=\"text\" name=\"city\" placeholder=\"City\" required=\"\">",
+              "selector": "#city",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,5,DIV,0,DIV,0,INPUT",
+              "nodeLabel": "input",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node"
+            }
+          },
+          {
+            "node": {
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node",
+              "selector": "#state",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,6,DIV,0,DIV,0,INPUT",
+              "snippet": "<input id=\"state\" type=\"text\" name=\"state\" placeholder=\"State\" required=\"\">",
+              "nodeLabel": "input"
+            }
+          },
+          {
+            "node": {
+              "nodeLabel": "input",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node",
+              "snippet": "<input id=\"postal_code\" type=\"text\" name=\"postal_code\" placeholder=\"Postal Code\" required=\"\">",
+              "selector": "#postal_code",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,7,DIV,0,DIV,0,INPUT"
+            }
+          },
+          {
+            "node": {
+              "nodeLabel": "input",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node",
+              "selector": "#phone_number",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,8,DIV,0,DIV,0,INPUT",
+              "snippet": "<input id=\"phone_number\" type=\"text\" name=\"phone_number\" placeholder=\"Phone Number\" required=\"\">"
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "#email",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,9,DIV,0,DIV,0,INPUT",
+              "snippet": "<input id=\"email\" type=\"email\" name=\"email\" placeholder=\"Email\" required=\"\">",
+              "nodeLabel": "input",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty"
+            }
+          },
+          {
+            "node": {
+              "nodeLabel": "Nurse Assistant Training Location\nCalifornia - North\nCalifornia - South\nConnect…",
+              "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty",
+              "type": "node",
+              "snippet": "<select id=\"prefer_location\" name=\"prefer_location\" style=\"height: 2rem;width: 30rem;\" required=\"\">",
+              "selector": "#prefer_location",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,10,DIV,0,DIV,0,SELECT"
+            }
+          }
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "impact": "critical",
+          "tags": [
+            "cat.forms",
+            "wcag2a",
+            "wcag332",
+            "wcag131",
+            "section508",
+            "section508.22.n"
+          ]
+        }
+      }
+    },
+    "network-rtt": {
+      "id": "network-rtt",
+      "title": "Network Round Trip Times",
+      "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more](https://hpbn.co/primer-on-latency-and-bandwidth/).",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "displayValue": "0 ms",
+      "details": {
+        "type": "table",
+        "items": [],
+        "headings": []
+      },
+      "numericValue": 0
+    },
+    "font-display": {
+      "id": "font-display",
+      "title": "Ensure text remains visible during webfont load",
+      "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://web.dev/font-display).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [
+          {
+            "text": "URL",
+            "key": "url",
+            "itemType": "url"
+          },
+          {
+            "key": "wastedMs",
+            "itemType": "ms",
+            "text": "Potential Savings"
+          }
+        ],
+        "type": "table",
+        "items": [
+          {
+            "wastedMs": 4.533999599516392,
+            "url": "https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2"
+          },
+          {
+            "wastedMs": 175.90800020843744,
+            "url": "https://prod.arcphss.org/css/font/standard-extrabold-2011.07.01-webfont.woff"
+          }
+        ]
+      },
+      "warnings": []
+    },
+    "dlitem": {
+      "id": "dlitem",
+      "title": "Definition list items are wrapped in `<dl>` elements",
+      "description": "Definition list items (`<dt>` and `<dd>`) must be wrapped in a parent `<dl>` element to ensure that screen readers can properly announce them. [Learn more](https://web.dev/dlitem/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "duplicate-id": {
+      "id": "duplicate-id",
+      "title": "`[id]` attributes on the page are not unique",
+      "description": "The value of an id attribute must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more](https://web.dev/duplicate-id/).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [
+          {
+            "key": "node",
+            "itemType": "node",
+            "text": "Failing Elements"
+          }
+        ],
+        "type": "table",
+        "items": [
+          {
+            "node": {
+              "nodeLabel": "First name is required.",
+              "explanation": "Fix any of the following:\n  Document has multiple static elements with the same id attribute",
+              "type": "node",
+              "selector": ".row:nth-child(2) > .small-6.columns > .error.error-message[data-error-message=\"\"]",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,1,DIV,0,DIV,1,SMALL",
+              "snippet": "<small id=\"error-message\" class=\"error error-message\" data-error-message=\"\">First name is required.</small>"
+            }
+          }
+        ],
+        "debugData": {
+          "tags": [
+            "cat.parsing",
+            "wcag2a",
+            "wcag411"
+          ],
+          "type": "debugdata",
+          "impact": "minor"
+        }
+      }
+    },
+    "estimated-input-latency": {
+      "id": "estimated-input-latency",
+      "title": "Estimated Input Latency",
+      "description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://web.dev/estimated-input-latency).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "10 ms",
+      "numericValue": 12.8
+    },
+    "html-has-lang": {
+      "id": "html-has-lang",
+      "title": "`<html>` element has a `[lang]` attribute",
+      "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more](https://web.dev/html-has-lang/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      }
+    },
+    "unminified-css": {
+      "id": "unminified-css",
+      "title": "Minify CSS",
+      "description": "Minifying CSS files can reduce network payload sizes. [Learn more](https://web.dev/unminified-css).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Potential savings of 7 KB",
+      "details": {
+        "headings": [
+          {
+            "label": "URL",
+            "key": "url",
+            "valueType": "url"
+          },
+          {
+            "valueType": "bytes",
+            "label": "Size",
+            "key": "totalBytes"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Potential Savings"
+          }
+        ],
+        "type": "opportunity",
+        "items": [
+          {
+            "url": "https://prod.arcphss.org/css/main.css",
+            "totalBytes": 20126,
+            "wastedBytes": 7549,
+            "wastedPercent": 37.50875602620627
+          }
+        ],
+        "overallSavingsBytes": 7549,
+        "overallSavingsMs": 0
+      },
+      "numericValue": 0
+    },
+    "focusable-controls": {
+      "id": "focusable-controls",
+      "title": "Interactive controls are keyboard focusable",
+      "description": "Custom interactive controls are keyboard focusable and display a focus indicator. [Learn more](https://web.dev/focusable-controls/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "heading-levels": {
+      "id": "heading-levels",
+      "title": "Headings don't skip levels",
+      "description": "Headings are used to create an outline for the page and heading levels are not skipped. [Learn more](https://web.dev/heading-levels/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "aria-allowed-attr": {
+      "id": "aria-allowed-attr",
+      "title": "`[aria-*]` attributes match their roles",
+      "description": "Each ARIA `role` supports a specific subset of `aria-*` attributes. Mismatching these invalidates the `aria-*` attributes. [Learn more](https://web.dev/aria-allowed-attr/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "items": [],
+        "type": "table"
+      }
+    },
+    "unused-css-rules": {
+      "id": "unused-css-rules",
+      "title": "Remove unused CSS",
+      "description": "Remove dead rules from stylesheets and defer the loading of CSS not used for above-the-fold content to reduce unnecessary bytes consumed by network activity. [Learn more](https://web.dev/unused-css-rules).",
+      "score": 0.97,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Potential savings of 37 KB",
+      "details": {
+        "overallSavingsMs": 40,
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "valueType": "bytes",
+            "label": "Size",
+            "key": "totalBytes"
+          },
+          {
+            "key": "wastedBytes",
+            "valueType": "bytes",
+            "label": "Potential Savings"
+          }
+        ],
+        "type": "opportunity",
+        "items": [
+          {
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css",
+            "totalBytes": 20019,
+            "wastedBytes": 19398,
+            "wastedPercent": 96.89558310732275
+          },
+          {
+            "wastedPercent": 92.51720301619349,
+            "url": "https://prod.arcphss.org/css/main.css",
+            "totalBytes": 20126,
+            "wastedBytes": 18620
+          }
+        ],
+        "overallSavingsBytes": 38018
+      },
+      "numericValue": 40
+    },
+    "use-landmarks": {
+      "id": "use-landmarks",
+      "title": "HTML5 landmark elements are used to improve navigation",
+      "description": "Landmark elements (<main>, <nav>, etc.) are used to improve the keyboard navigation of the page for assistive technology. [Learn more](https://web.dev/use-landmarks/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "uses-webp-images": {
+      "id": "uses-webp-images",
+      "title": "Serve images in next-gen formats",
+      "description": "Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more](https://web.dev/uses-webp-images).",
+      "score": 0.93,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Potential savings of 52 KB",
+      "details": {
+        "overallSavingsMs": 80,
+        "headings": [
+          {
+            "valueType": "thumbnail",
+            "key": "url"
+          },
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "valueType": "bytes",
+            "label": "Size",
+            "key": "totalBytes"
+          },
+          {
+            "valueType": "bytes",
+            "label": "Potential Savings",
+            "key": "wastedBytes"
+          }
+        ],
+        "type": "opportunity",
+        "items": [
+          {
+            "isCrossOrigin": false,
+            "totalBytes": 88908,
+            "wastedBytes": 52748,
+            "url": "https://prod.arcphss.org/images/sprite/icon-s041f892b40.png",
+            "fromProtocol": true
+          }
+        ],
+        "overallSavingsBytes": 52748
+      },
+      "warnings": [],
+      "numericValue": 80
+    },
+    "audio-caption": {
+      "id": "audio-caption",
+      "title": "`<audio>` elements contain a `<track>` element with `[kind=\"captions\"]`",
+      "description": "Captions make audio elements usable for deaf or hearing-impaired users, providing critical information such as who is talking, what they're saying, and other non-speech information. [Learn more](https://web.dev/audio-caption/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "managed-focus": {
+      "id": "managed-focus",
+      "title": "The user's focus is directed to new content added to the page",
+      "description": "If new content, such as a dialog, is added to the page, the user's focus is directed to it. [Learn more](https://web.dev/managed-focus/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "diagnostics": {
+      "id": "diagnostics",
+      "title": "Diagnostics",
+      "description": "Collection of useful page vitals.",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "items": [
+          {
+            "numTasks": 643,
+            "numTasksOver10ms": 10,
+            "rtt": 0.00045904456046032613,
+            "numFonts": 2,
+            "maxRtt": 0.00045904456046032613,
+            "numTasksOver500ms": 0,
+            "numScripts": 14,
+            "maxServerLatency": null,
+            "numStylesheets": 9,
+            "throughput": 30304820696.893425,
+            "numTasksOver100ms": 1,
+            "numTasksOver25ms": 3,
+            "numTasksOver50ms": 1,
+            "numRequests": 71,
+            "totalTaskTime": 435.7419999999992,
+            "mainDocumentTransferSize": 6325,
+            "totalByteWeight": 624846
+          }
+        ],
+        "type": "debugdata"
+      }
+    },
+    "focus-traps": {
+      "id": "focus-traps",
+      "title": "User focus is not accidentally trapped in a region",
+      "description": "A user can tab into and out of any control or region without accidentally trapping their focus. [Learn more](https://web.dev/focus-traps/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "visual-order-follows-dom": {
+      "id": "visual-order-follows-dom",
+      "title": "Visual order on the page follows DOM order",
+      "description": "DOM order matches the visual order, improving navigation for assistive technology. [Learn more](https://web.dev/visual-order-follows-dom/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "aria-required-parent": {
+      "id": "aria-required-parent",
+      "title": "`[role]`s are contained by their required parent element",
+      "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more](https://web.dev/aria-required-parent/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      }
+    },
+    "image-alt": {
+      "id": "image-alt",
+      "title": "Image elements have `[alt]` attributes",
+      "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more](https://web.dev/image-alt/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      }
+    },
+    "logical-tab-order": {
+      "id": "logical-tab-order",
+      "title": "The page has a logical tab order",
+      "description": "Tabbing through the page follows the visual layout. Users cannot focus elements that are offscreen. [Learn more](https://web.dev/logical-tab-order/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "layout-table": {
+      "id": "layout-table",
+      "title": "Presentational `<table>` elements avoid using `<th>`, `<caption>` or the `[summary]` attribute.",
+      "description": "A table being used for layout purposes should not include data elements, such as the th or caption elements or the summary attribute, because this can create a confusing experience for screen reader users. [Learn more](https://web.dev/layout-table/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "aria-required-children": {
+      "id": "aria-required-children",
+      "title": "Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.",
+      "description": "Some ARIA parent roles must contain specific child roles to perform their intended accessibility functions. [Learn more](https://web.dev/aria-required-children/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "items": [],
+        "type": "table"
+      }
+    },
+    "redirects": {
+      "id": "redirects",
+      "title": "Avoid multiple page redirects",
+      "description": "Redirects introduce additional delays before the page can be loaded. [Learn more](https://web.dev/redirects).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "details": {
+        "overallSavingsMs": 0,
+        "headings": [],
+        "items": [],
+        "type": "opportunity"
+      },
+      "numericValue": 0
+    },
+    "html-lang-valid": {
+      "id": "html-lang-valid",
+      "title": "`<html>` element has a valid value for its `[lang]` attribute",
+      "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more](https://web.dev/html-lang-valid/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      }
+    },
+    "user-timings": {
+      "id": "user-timings",
+      "title": "User Timing marks and measures",
+      "description": "Consider instrumenting your app with the User Timing API to measure your app's real-world performance during key user experiences. [Learn more](https://web.dev/user-timings).",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "displayValue": "8 user timings",
+      "details": {
+        "headings": [
+          {
+            "key": "name",
+            "itemType": "text",
+            "text": "Name"
+          },
+          {
+            "key": "timingType",
+            "itemType": "text",
+            "text": "Type"
+          },
+          {
+            "itemType": "ms",
+            "key": "startTime",
+            "text": "Start Time",
+            "granularity": 0.01
+          },
+          {
+            "text": "Duration",
+            "granularity": 0.01,
+            "key": "duration",
+            "itemType": "ms"
+          }
+        ],
+        "items": [
+          {
+            "name": "measure_adobe_target_visitor_id:request:1:mbox:target-global-mbox",
+            "startTime": 970.21,
+            "duration": 286.79,
+            "timingType": "Measure"
+          },
+          {
+            "duration": 130.68,
+            "timingType": "Measure",
+            "name": "measure_adobe_target_request:request:1:mbox:target-global-mbox",
+            "startTime": 1260.86
+          },
+          {
+            "timingType": "Mark",
+            "startTime": 966.818,
+            "name": "mark_adobe_target_hide_body"
+          },
+          {
+            "timingType": "Mark",
+            "name": "mark_adobe_target_visitor_id_start_1",
+            "startTime": 970.228
+          },
+          {
+            "name": "mark_adobe_target_visitor_id_end_1",
+            "startTime": 1257.016,
+            "timingType": "Mark"
+          },
+          {
+            "timingType": "Mark",
+            "startTime": 1260.879,
+            "name": "mark_adobe_target_request_start_1"
+          },
+          {
+            "timingType": "Mark",
+            "name": "mark_adobe_target_request_end_1",
+            "startTime": 1391.555
+          },
+          {
+            "name": "mark_adobe_target_show_body",
+            "startTime": 1397.474,
+            "timingType": "Mark"
+          }
+        ],
+        "type": "table"
+      }
+    },
+    "custom-controls-labels": {
+      "id": "custom-controls-labels",
+      "title": "Custom controls have associated labels",
+      "description": "Custom interactive controls have associated labels, provided by aria-label or aria-labelledby. [Learn more](https://web.dev/custom-controls-labels/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "time-to-first-byte": {
+      "id": "time-to-first-byte",
+      "title": "Server response times are low (TTFB)",
+      "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://web.dev/time-to-first-byte).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "displayValue": "Root document took 410 ms",
+      "details": {
+        "overallSavingsMs": -185.86700000000002,
+        "headings": [],
+        "type": "opportunity",
+        "items": []
+      },
+      "numericValue": 414.133
+    },
+    "frame-title": {
+      "id": "frame-title",
+      "title": "`<frame>` or `<iframe>` elements have a title",
+      "description": "Screen reader users rely on frame titles to describe the contents of frames. [Learn more](https://web.dev/frame-title/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "aria-required-attr": {
+      "id": "aria-required-attr",
+      "title": "`[role]`s have all required `[aria-*]` attributes",
+      "description": "Some ARIA roles have required attributes that describe the state of the element to screen readers. [Learn more](https://web.dev/aria-required-attr/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "items": [],
+        "type": "table"
+      }
+    },
+    "render-blocking-resources": {
+      "id": "render-blocking-resources",
+      "title": "Eliminate render-blocking resources",
+      "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn more](https://web.dev/render-blocking-resources).",
+      "score": 0.66,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Potential savings of 470 ms",
+      "details": {
+        "overallSavingsMs": 465,
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Size"
+          },
+          {
+            "key": "wastedMs",
+            "valueType": "timespanMs",
+            "label": "Potential Savings"
+          }
+        ],
+        "items": [
+          {
+            "url": "https://fonts.googleapis.com/css?family=Lato|Tangerine|Raleway|Dancing%20Script|Inconsolata|Droid+Sans",
+            "totalBytes": 1396,
+            "wastedMs": 230
+          },
+          {
+            "totalBytes": 8531,
+            "wastedMs": 270,
+            "url": "https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
+          },
+          {
+            "wastedMs": 230,
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css",
+            "totalBytes": 1478
+          },
+          {
+            "totalBytes": 20019,
+            "wastedMs": 350,
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css"
+          },
+          {
+            "wastedMs": 230,
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css",
+            "totalBytes": 4026
+          },
+          {
+            "wastedMs": 230,
+            "url": "https://prod.arcphss.org/css/main.css",
+            "totalBytes": 20126
+          },
+          {
+            "wastedMs": 70,
+            "url": "https://prod.arcphss.org/css/api.css",
+            "totalBytes": 740
+          },
+          {
+            "wastedMs": 430,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/satelliteLib-3ef4ac4d84e8e5eb36754c0d2b50e0093140a63e.js",
+            "totalBytes": 39082
+          },
+          {
+            "totalBytes": 87745,
+            "wastedMs": 630,
+            "url": "https://code.jquery.com/jquery-1.12.3.js"
+          },
+          {
+            "wastedMs": 710,
+            "url": "https://code.jquery.com/ui/1.11.4/jquery-ui.js",
+            "totalBytes": 114598
+          },
+          {
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js",
+            "totalBytes": 5006,
+            "wastedMs": 270
+          },
+          {
+            "wastedMs": 190,
+            "url": "https://prod.arcphss.org/js/foundation.min.js",
+            "totalBytes": 28218
+          },
+          {
+            "url": "https://prod.arcphss.org/js/login.js",
+            "totalBytes": 891,
+            "wastedMs": 70
+          },
+          {
+            "url": "https://prod.arcphss.org/css/sweetalert.css",
+            "totalBytes": 4042,
+            "wastedMs": 70
+          }
+        ],
+        "type": "opportunity"
+      },
+      "numericValue": 465
+    },
+    "uses-optimized-images": {
+      "id": "uses-optimized-images",
+      "title": "Efficiently encode images",
+      "description": "Optimized images load faster and consume less cellular data. [Learn more](https://web.dev/uses-optimized-images).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "details": {
+        "overallSavingsMs": 0,
+        "headings": [],
+        "type": "opportunity",
+        "items": [],
+        "overallSavingsBytes": 0
+      },
+      "warnings": [],
+      "numericValue": 0
+    },
+    "uses-text-compression": {
+      "id": "uses-text-compression",
+      "title": "Enable text compression",
+      "description": "Text-based resources should be served with compression (gzip, deflate or brotli) to minimize total network bytes. [Learn more](https://web.dev/uses-text-compression).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "details": {
+        "items": [],
+        "type": "opportunity",
+        "overallSavingsBytes": 0,
+        "overallSavingsMs": 0,
+        "headings": []
+      },
+      "numericValue": 0
+    },
+    "video-description": {
+      "id": "video-description",
+      "title": "`<video>` elements contain a `<track>` element with `[kind=\"description\"]`",
+      "description": "Audio descriptions provide relevant information for videos that dialogue cannot, such as facial expressions and scenes. [Learn more](https://web.dev/video-description/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "offscreen-content-hidden": {
+      "id": "offscreen-content-hidden",
+      "title": "Offscreen content is hidden from assistive technology",
+      "description": "Offscreen content is hidden with display: none or aria-hidden=true. [Learn more](https://web.dev/offscreen-content-hidden/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "video-caption": {
+      "id": "video-caption",
+      "title": "`<video>` elements contain a `<track>` element with `[kind=\"captions\"]`",
+      "description": "When a video provides a caption it is easier for deaf and hearing impaired users to access its information. [Learn more](https://web.dev/video-caption/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "aria-valid-attr-value": {
+      "id": "aria-valid-attr-value",
+      "title": "`[aria-*]` attributes have valid values",
+      "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid values. [Learn more](https://web.dev/aria-valid-attr-value/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      }
+    },
+    "third-party-summary": {
+      "id": "third-party-summary",
+      "title": "Minimize third-party usage",
+      "description": "Third-party code can significantly impact load performance. Limit the number of redundant third-party providers and try to load third-party code after your page has primarily finished loading. [Learn more](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "displayValue": "Third-party code blocked the main thread for 0 ms",
+      "details": {
+        "summary": {
+          "wastedBytes": 395044,
+          "wastedMs": 0
+        },
+        "headings": [
+          {
+            "key": "entity",
+            "itemType": "link",
+            "text": "Third-Party"
+          },
+          {
+            "key": "transferSize",
+            "itemType": "bytes",
+            "text": "Size",
+            "granularity": 1
+          },
+          {
+            "key": "blockingTime",
+            "itemType": "ms",
+            "text": "Main-Thread Blocking Time",
+            "granularity": 1
+          }
+        ],
+        "type": "table",
+        "items": [
+          {
+            "mainThreadTime": 83.88800000000002,
+            "transferSize": 210874,
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "jQuery CDN",
+              "url": "https://code.jquery.com/"
+            }
+          },
+          {
+            "transferSize": 108876,
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "Adobe Tag Manager",
+              "url": "https://www.adobe.com/experience-platform/"
+            },
+            "mainThreadTime": 125.55500000000005
+          },
+          {
+            "blockingTime": 0,
+            "entity": {
+              "text": "Cloudflare CDN",
+              "type": "link",
+              "url": "https://cdnjs.com/"
+            },
+            "mainThreadTime": 30.783000000000015,
+            "transferSize": 30529
+          },
+          {
+            "transferSize": 19119,
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "Google Analytics",
+              "url": "https://www.google.com/analytics/analytics/"
+            },
+            "mainThreadTime": 18.932000000000006
+          },
+          {
+            "transferSize": 13112,
+            "blockingTime": 0,
+            "entity": {
+              "url": "https://www.signal.co",
+              "text": "BrightTag / Signal",
+              "type": "link"
+            },
+            "mainThreadTime": 12.275999999999996
+          },
+          {
+            "mainThreadTime": 0,
+            "transferSize": 4813,
+            "blockingTime": 0,
+            "entity": {
+              "url": "https://www.doubleclickbygoogle.com/",
+              "type": "link",
+              "text": "Google/Doubleclick Ads"
+            }
+          },
+          {
+            "mainThreadTime": 0,
+            "transferSize": 1630,
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "Index Exchange"
+            }
+          },
+          {
+            "mainThreadTime": 0,
+            "transferSize": 1168,
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "SpotXchange"
+            }
+          },
+          {
+            "transferSize": 888,
+            "blockingTime": 0,
+            "entity": {
+              "url": "https://pubmatic.com/",
+              "type": "link",
+              "text": "Pubmatic"
+            },
+            "mainThreadTime": 0
+          },
+          {
+            "transferSize": 755,
+            "blockingTime": 0,
+            "entity": {
+              "text": "Facebook",
+              "type": "link",
+              "url": "https://www.facebook.com"
+            },
+            "mainThreadTime": 0
+          },
+          {
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "Rubicon Project",
+              "url": "https://rubiconproject.com/"
+            },
+            "mainThreadTime": 0,
+            "transferSize": 753
+          },
+          {
+            "entity": {
+              "type": "link",
+              "text": "OpenX",
+              "url": "https://www.openx.com/"
+            },
+            "mainThreadTime": 0,
+            "transferSize": 749,
+            "blockingTime": 0
+          },
+          {
+            "transferSize": 641,
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "Other Google APIs/SDKs",
+              "url": "https://developers.google.com/apis-explorer/#p/"
+            },
+            "mainThreadTime": 0
+          },
+          {
+            "entity": {
+              "type": "link",
+              "text": "AppNexus",
+              "url": "https://www.appnexus.com/"
+            },
+            "mainThreadTime": 0,
+            "transferSize": 618,
+            "blockingTime": 0
+          },
+          {
+            "transferSize": 519,
+            "blockingTime": 0,
+            "entity": {
+              "type": "link",
+              "text": "Adobe Test & Target"
+            },
+            "mainThreadTime": 0
+          }
+        ]
+      }
+    },
+    "aria-roles": {
+      "id": "aria-roles",
+      "title": "`[role]` values are valid",
+      "description": "ARIA roles must have valid values in order to perform their intended accessibility functions. [Learn more](https://web.dev/aria-roles/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      }
+    },
+    "main-thread-tasks": {
+      "id": "main-thread-tasks",
+      "title": "Tasks",
+      "description": "Lists the toplevel main thread tasks that executed during page load.",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "headings": [
+          {
+            "itemType": "ms",
+            "key": "startTime",
+            "text": "Start Time",
+            "granularity": 1
+          },
+          {
+            "text": "End Time",
+            "granularity": 1,
+            "key": "duration",
+            "itemType": "ms"
+          }
+        ],
+        "type": "table",
+        "items": [
+          {
+            "duration": 6.105,
+            "startTime": 441.632
+          },
+          {
+            "startTime": 486.89,
+            "duration": 6.039
+          },
+          {
+            "startTime": 917.481,
+            "duration": 28.841
+          },
+          {
+            "duration": 129.651,
+            "startTime": 975.141
+          },
+          {
+            "startTime": 1105.021,
+            "duration": 10.415
+          },
+          {
+            "startTime": 1115.558,
+            "duration": 14.279
+          },
+          {
+            "startTime": 1130.401,
+            "duration": 32.975
+          },
+          {
+            "startTime": 1168.03,
+            "duration": 10.369
+          },
+          {
+            "startTime": 1180.321,
+            "duration": 19.146
+          },
+          {
+            "startTime": 1202.793,
+            "duration": 10.064
+          },
+          {
+            "startTime": 1233.567,
+            "duration": 11.544
+          },
+          {
+            "duration": 22.195,
+            "startTime": 1280.515
+          },
+          {
+            "startTime": 1320.645,
+            "duration": 8.219
+          },
+          {
+            "startTime": 1416.072,
+            "duration": 9.052
+          }
+        ]
+      },
+      "numericValue": 14
+    },
+    "list": {
+      "id": "list",
+      "title": "Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
+      "description": "Screen readers have a specific way of announcing lists. Ensuring proper list structure aids screen reader output. [Learn more](https://web.dev/list/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "items": [],
+        "headings": []
+      }
+    },
+    "definition-list": {
+      "id": "definition-list",
+      "title": "`<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>` or `<template>` elements.",
+      "description": "When definition lists are not properly marked up, screen readers may produce confusing or inaccurate output. [Learn more](https://web.dev/definition-list/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "total-blocking-time": {
+      "id": "total-blocking-time",
+      "title": "Total Blocking Time",
+      "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds.",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "10 ms",
+      "numericValue": 7.5
+    },
+    "input-image-alt": {
+      "id": "input-image-alt",
+      "title": "`<input type=\"image\">` elements have `[alt]` text",
+      "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn more](https://web.dev/input-image-alt/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "uses-rel-preconnect": {
+      "id": "uses-rel-preconnect",
+      "title": "Preconnect to required origins",
+      "description": "Consider adding `preconnect` or `dns-prefetch` resource hints to establish early connections to important third-party origins. [Learn more](https://web.dev/uses-rel-preconnect).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "details": {
+        "overallSavingsMs": 0,
+        "headings": [],
+        "type": "opportunity",
+        "items": []
+      },
+      "warnings": [],
+      "numericValue": 0
+    },
+    "bootup-time": {
+      "id": "bootup-time",
+      "title": "JavaScript execution time",
+      "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/bootup-time).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "0.1 s",
+      "details": {
+        "type": "table",
+        "items": [
+          {
+            "total": 146.52600000000007,
+            "scripting": 5.884999999999995,
+            "scriptParseCompile": 1.347,
+            "url": "Other"
+          },
+          {
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/satelliteLib-3ef4ac4d84e8e5eb36754c0d2b50e0093140a63e.js",
+            "total": 65.68700000000001,
+            "scripting": 61.59300000000001,
+            "scriptParseCompile": 2.5189999999999997
+          }
+        ],
+        "summary": {
+          "wastedMs": 71.34400000000001
+        },
+        "headings": [
+          {
+            "key": "url",
+            "itemType": "url",
+            "text": "URL"
+          },
+          {
+            "key": "total",
+            "itemType": "ms",
+            "text": "Total CPU Time",
+            "granularity": 1
+          },
+          {
+            "text": "Script Evaluation",
+            "granularity": 1,
+            "key": "scripting",
+            "itemType": "ms"
+          },
+          {
+            "itemType": "ms",
+            "key": "scriptParseCompile",
+            "text": "Script Parse",
+            "granularity": 1
+          }
+        ]
+      },
+      "numericValue": 71.34400000000001
+    },
+    "meta-refresh": {
+      "id": "meta-refresh",
+      "title": "The document does not use `<meta http-equiv=\"refresh\">`",
+      "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more](https://web.dev/meta-refresh/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "listitem": {
+      "id": "listitem",
+      "title": "List items (`<li>`) are contained within `<ul>` or `<ol>` parent elements",
+      "description": "Screen readers require list items (`<li>`) to be contained within a parent `<ul>` or `<ol>` to be announced properly. [Learn more](https://web.dev/listitem/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "headings": [],
+        "items": [],
+        "type": "table"
+      }
+    },
+    "offscreen-images": {
+      "id": "offscreen-images",
+      "title": "Defer offscreen images",
+      "description": "Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive. [Learn more](https://web.dev/offscreen-images).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Potential savings of 6 KB",
+      "details": {
+        "overallSavingsMs": 0,
+        "headings": [
+          {
+            "valueType": "thumbnail",
+            "key": "url"
+          },
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "label": "Size",
+            "key": "totalBytes",
+            "valueType": "bytes"
+          },
+          {
+            "label": "Potential Savings",
+            "key": "wastedBytes",
+            "valueType": "bytes"
+          }
+        ],
+        "items": [
+          {
+            "url": "https://prod.arcphss.org/images/home/footer-promo.png",
+            "requestStartTime": 5364093.443763,
+            "totalBytes": 6049,
+            "wastedBytes": 6049,
+            "wastedPercent": 100
+          }
+        ],
+        "type": "opportunity",
+        "overallSavingsBytes": 6049
+      },
+      "warnings": [],
+      "numericValue": 0
+    },
+    "network-server-latency": {
+      "id": "network-server-latency",
+      "title": "Server Backend Latencies",
+      "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "displayValue": "0 ms",
+      "details": {
+        "headings": [],
+        "type": "table",
+        "items": []
+      },
+      "numericValue": 0
+    },
+    "object-alt": {
+      "id": "object-alt",
+      "title": "`<object>` elements have `[alt]` text",
+      "description": "Screen readers cannot translate non-text content. Adding alt text to `<object>` elements helps screen readers convey meaning to users. [Learn more](https://web.dev/object-alt/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "uses-responsive-images": {
+      "id": "uses-responsive-images",
+      "title": "Properly size images",
+      "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://web.dev/uses-responsive-images).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "details": {
+        "overallSavingsMs": 0,
+        "headings": [],
+        "items": [],
+        "type": "opportunity",
+        "overallSavingsBytes": 0
+      },
+      "warnings": [],
+      "numericValue": 0
+    },
+    "speed-index": {
+      "id": "speed-index",
+      "title": "Speed Index",
+      "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://web.dev/speed-index).",
+      "score": 0.86,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "1.4 s",
+      "numericValue": 1430.5187634465956
+    },
+    "first-cpu-idle": {
+      "id": "first-cpu-idle",
+      "title": "First CPU Idle",
+      "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input.  [Learn more](https://web.dev/first-cpu-idle).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "1.3 s",
+      "numericValue": 1325
+    },
+    "document-title": {
+      "id": "document-title",
+      "title": "Document has a `<title>` element",
+      "description": "The title gives screen reader users an overview of the page, and search engine users rely on it heavily to determine if a page is relevant to their search. [Learn more](https://web.dev/document-title/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "items": [],
+        "headings": []
+      }
+    },
+    "accesskeys": {
+      "id": "accesskeys",
+      "title": "`[accesskey]` values are unique",
+      "description": "Access keys let users quickly focus a part of the page. For proper navigation, each access key must be unique. [Learn more](https://web.dev/accesskeys/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "button-name": {
+      "id": "button-name",
+      "title": "Buttons have an accessible name",
+      "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn more](https://web.dev/button-name/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "items": [],
+        "headings": []
+      }
+    },
+    "total-byte-weight": {
+      "id": "total-byte-weight",
+      "title": "Avoids enormous network payloads",
+      "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn more](https://web.dev/total-byte-weight).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "Total size was 610 KB",
+      "details": {
+        "type": "table",
+        "items": [
+          {
+            "url": "https://code.jquery.com/ui/1.11.4/jquery-ui.js",
+            "totalBytes": 114598
+          },
+          {
+            "url": "https://prod.arcphss.org/images/sprite/icon-s041f892b40.png",
+            "totalBytes": 89196
+          },
+          {
+            "url": "https://code.jquery.com/jquery-1.12.3.js",
+            "totalBytes": 87745
+          },
+          {
+            "totalBytes": 39082,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/satelliteLib-3ef4ac4d84e8e5eb36754c0d2b50e0093140a63e.js"
+          },
+          {
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/mbox-contents-5fffb365a0fed68a66c49ad75c066df76e8cd5b6.js",
+            "totalBytes": 34792
+          },
+          {
+            "totalBytes": 29804,
+            "url": "https://prod.arcphss.org/css/font/standard-extrabold-2011.07.01-webfont.woff"
+          },
+          {
+            "totalBytes": 28218,
+            "url": "https://prod.arcphss.org/js/foundation.min.js"
+          },
+          {
+            "totalBytes": 21811,
+            "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/s-code-contents-7237aa4c43588e0204eb668d5e6a907c9b4e11bb.js"
+          },
+          {
+            "url": "https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2",
+            "totalBytes": 21294
+          },
+          {
+            "url": "https://prod.arcphss.org/css/main.css",
+            "totalBytes": 20126
+          }
+        ],
+        "headings": [
+          {
+            "text": "URL",
+            "key": "url",
+            "itemType": "url"
+          },
+          {
+            "key": "totalBytes",
+            "itemType": "bytes",
+            "text": "Size"
+          }
+        ]
+      },
+      "numericValue": 624846
+    },
+    "mainthread-work-breakdown": {
+      "id": "mainthread-work-breakdown",
+      "title": "Minimizes main-thread work",
+      "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/mainthread-work-breakdown)",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "0.4 s",
+      "details": {
+        "headings": [
+          {
+            "itemType": "text",
+            "key": "groupLabel",
+            "text": "Category"
+          },
+          {
+            "itemType": "ms",
+            "key": "duration",
+            "text": "Time Spent",
+            "granularity": 1
+          }
+        ],
+        "type": "table",
+        "items": [
+          {
+            "groupLabel": "Script Evaluation",
+            "group": "scriptEvaluation",
+            "duration": 232.59999999999988
+          },
+          {
+            "groupLabel": "Other",
+            "group": "other",
+            "duration": 75.03100000000008
+          },
+          {
+            "group": "styleLayout",
+            "duration": 60.101,
+            "groupLabel": "Style & Layout"
+          },
+          {
+            "group": "scriptParseCompile",
+            "duration": 30.893000000000015,
+            "groupLabel": "Script Parsing & Compilation"
+          },
+          {
+            "groupLabel": "Parse HTML & CSS",
+            "group": "parseHTML",
+            "duration": 24.241000000000007
+          },
+          {
+            "groupLabel": "Rendering",
+            "group": "paintCompositeRender",
+            "duration": 12.438000000000002
+          },
+          {
+            "group": "garbageCollection",
+            "duration": 0.438,
+            "groupLabel": "Garbage Collection"
+          }
+        ]
+      },
+      "numericValue": 435.74199999999996
+    },
+    "first-contentful-paint": {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://web.dev/first-contentful-paint).",
+      "score": 0.83,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "1.1 s",
+      "numericValue": 1077.5
+    },
+    "color-contrast": {
+      "id": "color-contrast",
+      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+      "description": "Low-contrast text is difficult or impossible for many users to read. [Learn more](https://web.dev/color-contrast/).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "items": [
+          {
+            "node": {
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 15.0pt, font weight: normal). Expected contrast ratio of 4.5:1",
+              "type": "node",
+              "selector": ".message",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,1,SMALL",
+              "snippet": "<small class=\"message\">For more Information please complete the form below and you will be contacted within 1 business day.</small>",
+              "nodeLabel": "For more Information please complete the form below and you will be contacted w…"
+            }
+          },
+          {
+            "node": {
+              "nodeLabel": "* The trainings above are the only locations where the American Red Cross does …",
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.8pt, font weight: normal). Expected contrast ratio of 4.5:1",
+              "type": "node",
+              "selector": ".row:nth-child(12) > .small-6.columns",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,0,DIV,11,DIV,0,DIV",
+              "snippet": "<div class=\"small-6 columns\" style=\"margin:1rem;\">\n\t\t\t\t\t\t\t<font style=\"font-size:1.1rem;font-weight:bold;\">*</font> The trainings above are the only locations where the American Red Cross does CNA Training for certification.\n\t\t\t\t\t\t</div>"
+            }
+          },
+          {
+            "node": {
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #ffffff, background color: #008cba, font size: 9.8pt, font weight: normal). Expected contrast ratio of 4.5:1",
+              "type": "node",
+              "selector": "#tsc-nat-leads-submit",
+              "path": "1,HTML,2,BODY,14,DIV,0,DIV,2,FORM,1,DIV,0,DIV,0,BUTTON",
+              "snippet": "<button id=\"tsc-nat-leads-submit\" type=\"submit\" class=\"button small effect1\">Submit</button>",
+              "nodeLabel": "Submit"
+            }
+          }
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143"
+          ]
+        },
+        "headings": [
+          {
+            "key": "node",
+            "itemType": "node",
+            "text": "Failing Elements"
+          }
+        ]
+      }
+    },
+    "critical-request-chains": {
+      "id": "critical-request-chains",
+      "title": "Avoid chaining critical requests",
+      "description": "The Critical Request Chains below show you what resources are loaded with a high priority. Consider reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load. [Learn more](https://web.dev/critical-request-chains).",
+      "score": null,
+      "scoreDisplayMode": "informative",
+      "displayValue": "17 chains found",
+      "details": {
+        "chains": {
+          "FF211CF48B322C7CB62EF62262750DC0": {
+            "children": {
+              "22.16": {
+                "request": {
+                  "url": "https://prod.arcphss.org/css/sweetalert.css",
+                  "responseReceivedTime": 5364093.442877,
+                  "endTime": 5364093.442879,
+                  "startTime": 5364093.08813,
+                  "transferSize": 4042
+                }
+              },
+              "22.10": {
+                "children": {
+                  "22.49": {
+                    "request": {
+                      "url": "https://prod.arcphss.org/css/font/standard-extrabold-2011.07.01-webfont.woff",
+                      "responseReceivedTime": 5364093.954397,
+                      "endTime": 5364093.954401,
+                      "startTime": 5364093.778493,
+                      "transferSize": 29804
+                    }
+                  }
+                },
+                "request": {
+                  "transferSize": 87745,
+                  "url": "https://code.jquery.com/jquery-1.12.3.js",
+                  "responseReceivedTime": 5364093.140376001,
+                  "endTime": 5364093.14038,
+                  "startTime": 5364093.087419
+                }
+              },
+              "22.6": {
+                "request": {
+                  "transferSize": 4026,
+                  "url": "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css",
+                  "responseReceivedTime": 5364093.105717001,
+                  "endTime": 5364093.105718,
+                  "startTime": 5364093.086675
+                }
+              },
+              "22.13": {
+                "request": {
+                  "endTime": 5364093.269118,
+                  "startTime": 5364093.087854,
+                  "transferSize": 28218,
+                  "url": "https://prod.arcphss.org/js/foundation.min.js",
+                  "responseReceivedTime": 5364093.269115
+                }
+              },
+              "22.8": {
+                "request": {
+                  "endTime": 5364093.390363,
+                  "startTime": 5364093.087143,
+                  "transferSize": 740,
+                  "url": "https://prod.arcphss.org/css/api.css",
+                  "responseReceivedTime": 5364093.390361
+                }
+              },
+              "22.2": {
+                "request": {
+                  "url": "https://fonts.googleapis.com/css?family=Lato|Tangerine|Raleway|Dancing%20Script|Inconsolata|Droid+Sans",
+                  "responseReceivedTime": 5364093.095172999,
+                  "endTime": 5364093.095183,
+                  "startTime": 5364093.085626,
+                  "transferSize": 1396
+                }
+              },
+              "22.45": {
+                "request": {
+                  "startTime": 5364093.756577,
+                  "transferSize": 21294,
+                  "url": "https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2",
+                  "responseReceivedTime": 5364093.761108,
+                  "endTime": 5364093.761111
+                }
+              },
+              "22.3": {
+                "request": {
+                  "transferSize": 8531,
+                  "url": "https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css",
+                  "responseReceivedTime": 5364093.1024400005,
+                  "endTime": 5364093.102442,
+                  "startTime": 5364093.086221
+                }
+              },
+              "22.14": {
+                "request": {
+                  "transferSize": 891,
+                  "url": "https://prod.arcphss.org/js/login.js",
+                  "responseReceivedTime": 5364093.398422,
+                  "endTime": 5364093.398424,
+                  "startTime": 5364093.08796
+                }
+              },
+              "22.5": {
+                "request": {
+                  "startTime": 5364093.086551,
+                  "transferSize": 20019,
+                  "url": "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css",
+                  "responseReceivedTime": 5364093.1216400005,
+                  "endTime": 5364093.121643
+                }
+              },
+              "22.12": {
+                "request": {
+                  "transferSize": 5006,
+                  "url": "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js",
+                  "responseReceivedTime": 5364093.117747,
+                  "endTime": 5364093.117751,
+                  "startTime": 5364093.087752
+                }
+              },
+              "22.7": {
+                "request": {
+                  "transferSize": 20126,
+                  "url": "https://prod.arcphss.org/css/main.css",
+                  "responseReceivedTime": 5364093.470129,
+                  "endTime": 5364093.470132,
+                  "startTime": 5364093.086817
+                }
+              },
+              "22.17": {
+                "request": {
+                  "transferSize": 5762,
+                  "url": "https://prod.arcphss.org/js/sweetalert.min.js",
+                  "responseReceivedTime": 5364093.542305999,
+                  "endTime": 5364093.542308,
+                  "startTime": 5364093.411737
+                }
+              },
+              "22.27": {
+                "request": {
+                  "endTime": 5364093.552222,
+                  "startTime": 5364093.471698,
+                  "transferSize": 961,
+                  "url": "https://prod.arcphss.org/css/reset.css",
+                  "responseReceivedTime": 5364093.55222
+                }
+              },
+              "22.11": {
+                "request": {
+                  "startTime": 5364093.087567,
+                  "transferSize": 114598,
+                  "url": "https://code.jquery.com/ui/1.11.4/jquery-ui.js",
+                  "responseReceivedTime": 5364093.115484,
+                  "endTime": 5364093.11549
+                }
+              },
+              "22.9": {
+                "children": {
+                  "22.29": {
+                    "request": {
+                      "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/mbox-contents-5fffb365a0fed68a66c49ad75c066df76e8cd5b6.js",
+                      "responseReceivedTime": 5364093.603725,
+                      "endTime": 5364093.603729,
+                      "startTime": 5364093.579179,
+                      "transferSize": 34792
+                    }
+                  }
+                },
+                "request": {
+                  "transferSize": 39082,
+                  "url": "https://assets.adobedtm.com/f803a962467fbf3943542ba11161bda1a485095b/satelliteLib-3ef4ac4d84e8e5eb36754c0d2b50e0093140a63e.js",
+                  "responseReceivedTime": 5364093.133659,
+                  "endTime": 5364093.133663,
+                  "startTime": 5364093.08725
+                }
+              },
+              "22.4": {
+                "request": {
+                  "transferSize": 1478,
+                  "url": "https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css",
+                  "responseReceivedTime": 5364093.103227,
+                  "endTime": 5364093.103228,
+                  "startTime": 5364093.086387
+                }
+              }
+            },
+            "request": {
+              "url": "https://prod.arcphss.org/tsc-nat-leads",
+              "responseReceivedTime": 5364093.075292,
+              "endTime": 5364093.075294,
+              "startTime": 5364092.662159,
+              "transferSize": 6325
+            }
+          }
+        },
+        "longestChain": {
+          "transferSize": 29804,
+          "duration": 1292.242000810802,
+          "length": 3
+        },
+        "type": "criticalrequestchain"
+      }
+    },
+    "interactive-element-affordance": {
+      "id": "interactive-element-affordance",
+      "title": "Interactive elements indicate their purpose and state",
+      "description": "Interactive elements, such as links and buttons, should indicate their state and be distinguishable from non-interactive elements. [Learn more](https://web.dev/interactive-element-affordance/).",
+      "score": null,
+      "scoreDisplayMode": "manual"
+    },
+    "bypass": {
+      "id": "bypass",
+      "title": "The page contains a heading, skip link, or landmark region",
+      "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more](https://web.dev/bypass/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "items": [],
+        "type": "table",
+        "headings": []
+      }
+    },
+    "th-has-data-cells": {
+      "id": "th-has-data-cells",
+      "title": "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` have data cells they describe.",
+      "description": "Screen readers have features to make navigating tables easier. Ensuring table headers always refer to some set of cells may improve the experience for screen reader users. [Learn more](https://web.dev/th-has-data-cells/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "dom-size": {
+      "id": "dom-size",
+      "title": "Avoids an excessive DOM size",
+      "description": "A large DOM will increase memory usage, cause longer [style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations), and produce costly [layout reflows](https://developers.google.com/speed/articles/reflow). [Learn more](https://web.dev/dom-size).",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "displayValue": "191 elements",
+      "details": {
+        "headings": [
+          {
+            "key": "statistic",
+            "itemType": "text",
+            "text": "Statistic"
+          },
+          {
+            "key": "element",
+            "itemType": "code",
+            "text": "Element"
+          },
+          {
+            "itemType": "numeric",
+            "key": "value",
+            "text": "Value"
+          }
+        ],
+        "items": [
+          {
+            "value": "191",
+            "statistic": "Total DOM Elements"
+          },
+          {
+            "statistic": "Maximum DOM Depth",
+            "element": {
+              "type": "code",
+              "value": "<span id=\"tsc-nat-leads-message\">"
+            },
+            "value": "9"
+          },
+          {
+            "value": "14",
+            "statistic": "Maximum Child Elements",
+            "element": {
+              "type": "code",
+              "value": "<body>"
+            }
+          }
+        ],
+        "type": "table"
+      },
+      "numericValue": 191
+    }
+  },
+  "categories": {
+    "performance": {
+      "id": "performance",
+      "title": "Performance",
+      "score": 0.92,
+      "auditRefs": [
+        {
+          "id": "first-contentful-paint",
+          "weight": 3,
+          "group": "metrics"
+        },
+        {
+          "id": "first-meaningful-paint",
+          "weight": 1,
+          "group": "metrics"
+        },
+        {
+          "id": "speed-index",
+          "weight": 4,
+          "group": "metrics"
+        },
+        {
+          "id": "interactive",
+          "weight": 5,
+          "group": "metrics"
+        },
+        {
+          "id": "first-cpu-idle",
+          "weight": 2,
+          "group": "metrics"
+        },
+        {
+          "id": "max-potential-fid",
+          "weight": 0,
+          "group": "metrics"
+        },
+        {
+          "id": "estimated-input-latency",
+          "weight": 0
+        },
+        {
+          "id": "total-blocking-time",
+          "weight": 0
+        },
+        {
+          "id": "render-blocking-resources",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "uses-responsive-images",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "offscreen-images",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "unminified-css",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "unminified-javascript",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "unused-css-rules",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "uses-optimized-images",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "uses-webp-images",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "uses-text-compression",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "uses-rel-preconnect",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "time-to-first-byte",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "redirects",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "uses-rel-preload",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "efficient-animated-content",
+          "weight": 0,
+          "group": "load-opportunities"
+        },
+        {
+          "id": "total-byte-weight",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "uses-long-cache-ttl",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "dom-size",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "critical-request-chains",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "user-timings",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "bootup-time",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "font-display",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "performance-budget",
+          "weight": 0,
+          "group": "budgets"
+        },
+        {
+          "id": "resource-summary",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "third-party-summary",
+          "weight": 0,
+          "group": "diagnostics"
+        },
+        {
+          "id": "network-requests",
+          "weight": 0
+        },
+        {
+          "id": "network-rtt",
+          "weight": 0
+        },
+        {
+          "id": "network-server-latency",
+          "weight": 0
+        },
+        {
+          "id": "main-thread-tasks",
+          "weight": 0
+        },
+        {
+          "id": "diagnostics",
+          "weight": 0
+        },
+        {
+          "id": "metrics",
+          "weight": 0
+        },
+        {
+          "id": "screenshot-thumbnails",
+          "weight": 0
+        },
+        {
+          "id": "final-screenshot",
+          "weight": 0
+        }
+      ]
+    },
+    "accessibility": {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developers.google.com/web/fundamentals/accessibility). Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.",
+      "score": 0.89,
+      "manualDescription": "These items address areas which an automated testing tool cannot cover. Learn more in our guide on [conducting an accessibility review](https://developers.google.com/web/fundamentals/accessibility/how-to-review).",
+      "auditRefs": [
+        {
+          "id": "accesskeys",
+          "weight": 0,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "aria-allowed-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-required-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-required-children",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-required-parent",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-roles",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-valid-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "audio-caption",
+          "weight": 0,
+          "group": "a11y-audio-video"
+        },
+        {
+          "id": "button-name",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "bypass",
+          "weight": 3,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "color-contrast",
+          "weight": 3,
+          "group": "a11y-color-contrast"
+        },
+        {
+          "id": "definition-list",
+          "weight": 0,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "dlitem",
+          "weight": 0,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "document-title",
+          "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "duplicate-id",
+          "weight": 1,
+          "group": "a11y-best-practices"
+        },
+        {
+          "id": "frame-title",
+          "weight": 0,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "html-has-lang",
+          "weight": 3,
+          "group": "a11y-language"
+        },
+        {
+          "id": "html-lang-valid",
+          "weight": 3,
+          "group": "a11y-language"
+        },
+        {
+          "id": "image-alt",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "input-image-alt",
+          "weight": 0,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "label",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "layout-table",
+          "weight": 0,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "link-name",
+          "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "list",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "listitem",
+          "weight": 3,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "meta-refresh",
+          "weight": 0,
+          "group": "a11y-best-practices"
+        },
+        {
+          "id": "meta-viewport",
+          "weight": 0,
+          "group": "a11y-best-practices"
+        },
+        {
+          "id": "object-alt",
+          "weight": 0,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "tabindex",
+          "weight": 0,
+          "group": "a11y-navigation"
+        },
+        {
+          "id": "td-headers-attr",
+          "weight": 0,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "th-has-data-cells",
+          "weight": 0,
+          "group": "a11y-tables-lists"
+        },
+        {
+          "id": "valid-lang",
+          "weight": 0,
+          "group": "a11y-language"
+        },
+        {
+          "id": "video-caption",
+          "weight": 0,
+          "group": "a11y-audio-video"
+        },
+        {
+          "id": "video-description",
+          "weight": 0,
+          "group": "a11y-audio-video"
+        },
+        {
+          "id": "logical-tab-order",
+          "weight": 0
+        },
+        {
+          "id": "focusable-controls",
+          "weight": 0
+        },
+        {
+          "id": "interactive-element-affordance",
+          "weight": 0
+        },
+        {
+          "id": "managed-focus",
+          "weight": 0
+        },
+        {
+          "id": "focus-traps",
+          "weight": 0
+        },
+        {
+          "id": "custom-controls-labels",
+          "weight": 0
+        },
+        {
+          "id": "custom-controls-roles",
+          "weight": 0
+        },
+        {
+          "id": "visual-order-follows-dom",
+          "weight": 0
+        },
+        {
+          "id": "offscreen-content-hidden",
+          "weight": 0
+        },
+        {
+          "id": "heading-levels",
+          "weight": 0
+        },
+        {
+          "id": "use-landmarks",
+          "weight": 0
+        }
+      ]
+    }
+  },
+  "categoryGroups": {
+    "a11y-names-labels": {
+      "title": "Names and labels",
+      "description": "These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader."
+    },
+    "budgets": {
+      "title": "Budgets",
+      "description": "Performance budgets set standards for the performance of your site."
+    },
+    "load-opportunities": {
+      "title": "Opportunities",
+      "description": "These suggestions can help your page load faster. They don't [directly affect](https://github.com/GoogleChrome/lighthouse/blob/d2ec9ffbb21de9ad1a0f86ed24575eda32c796f0/docs/scoring.md#how-are-the-scores-weighted) the Performance score."
+    },
+    "metrics": {
+      "title": "Metrics"
+    },
+    "pwa-installable": {
+      "title": "Installable"
+    },
+    "seo-mobile": {
+      "title": "Mobile Friendly",
+      "description": "Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/)."
+    },
+    "diagnostics": {
+      "title": "Diagnostics",
+      "description": "More information about the performance of your application. These numbers don't [directly affect](https://github.com/GoogleChrome/lighthouse/blob/d2ec9ffbb21de9ad1a0f86ed24575eda32c796f0/docs/scoring.md#how-are-the-scores-weighted) the Performance score."
+    },
+    "a11y-best-practices": {
+      "title": "Best practices",
+      "description": "These items highlight common accessibility best practices."
+    },
+    "seo-crawl": {
+      "title": "Crawling and Indexing",
+      "description": "To appear in search results, crawlers need access to your app."
+    },
+    "a11y-color-contrast": {
+      "title": "Contrast",
+      "description": "These are opportunities to improve the legibility of your content."
+    },
+    "pwa-optimized": {
+      "title": "PWA Optimized"
+    },
+    "seo-content": {
+      "title": "Content Best Practices",
+      "description": "Format your HTML in a way that enables crawlers to better understand your app’s content."
+    },
+    "a11y-navigation": {
+      "title": "Navigation",
+      "description": "These are opportunities to improve keyboard navigation in your application."
+    },
+    "pwa-fast-reliable": {
+      "title": "Fast and reliable"
+    },
+    "a11y-aria": {
+      "title": "ARIA",
+      "description": "These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader."
+    },
+    "a11y-audio-video": {
+      "title": "Audio and video",
+      "description": "These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments."
+    },
+    "a11y-language": {
+      "title": "Internationalization and localization",
+      "description": "These are opportunities to improve the interpretation of your content by users in different locales."
+    },
+    "a11y-tables-lists": {
+      "title": "Tables and lists",
+      "description": "These are opportunities to to improve the experience of reading tabular or list data using assistive technology, like a screen reader."
+    }
+  },
+  "timing": {
+    "total": 6347.87
+  },
+  "i18n": {
+    "rendererFormattedStrings": {
+      "varianceDisclaimer": "Values are estimated and may vary. The performance score is [based only on these metrics](https://github.com/GoogleChrome/lighthouse/blob/d2ec9ffbb21de9ad1a0f86ed24575eda32c796f0/docs/scoring.md#how-are-the-scores-weighted).",
+      "opportunityResourceColumnLabel": "Opportunity",
+      "opportunitySavingsColumnLabel": "Estimated Savings",
+      "errorMissingAuditInfo": "Report error: no audit information",
+      "errorLabel": "Error!",
+      "warningHeader": "Warnings: ",
+      "auditGroupExpandTooltip": "Show audits",
+      "passedAuditsGroupTitle": "Passed audits",
+      "notApplicableAuditsGroupTitle": "Not applicable",
+      "manualAuditsGroupTitle": "Additional items to manually check",
+      "toplevelWarningsMessage": "There were issues affecting this run of Lighthouse:",
+      "crcLongestDurationLabel": "Maximum critical path latency:",
+      "crcInitialNavigation": "Initial Navigation",
+      "lsPerformanceCategoryDescription": "[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analysis of the current page on an emulated mobile network. Values are estimated and may vary.",
+      "labDataTitle": "Lab Data"
+    }
+  }
+}
