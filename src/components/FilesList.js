@@ -55,7 +55,7 @@ class FilesList extends React.Component {
             let resp = await fetch(fetchUrl)
             .then(response => response.json())
             .then(json => {
-                json.url = listOfFiles[i].download_url;
+                json.url = fetchUrl;
                 return json;
             }).catch(function() {
                 console.log("Error in file: " + fetchUrl);
