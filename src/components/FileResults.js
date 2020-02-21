@@ -2,7 +2,11 @@ import React from 'react';
 import '../scss/results.scss';
 
 class FileResults extends React.Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
+    componentDidMount() {
         let id = 1;
         let listItems = this.props.data.map((file) => {
             if (file.categories) {
@@ -29,8 +33,14 @@ class FileResults extends React.Component {
             }
             return null;
         });
+        this.setState({
+            rendered: listItems
+        })
+        this.props.setNoOfResults(id-1);
+    }
+    render() {
         return (
-            <tbody>{this.props.data ? listItems : <tr><td colSpan="3">No results returned.</td></tr>}</tbody>
+            <tbody>{this.props.data ? this.state.rendered : <tr><td colSpan="3">No results returned.</td></tr>}</tbody>
         );
     }
 }

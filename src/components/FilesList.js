@@ -24,10 +24,12 @@ class FilesList extends React.Component {
                 sortAsc: false
             },
             fetchComplete: false,
+            noOfResults: 0,
             url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/public/scan-results/data-chrome-dev"
             //url: "https://api.github.com/repos/rbitting/testing/contents/audits"
         }
         this.sortNestedItems = this.sortNestedItems.bind(this);
+        this.setNoOfResults = this.setNoOfResults.bind(this);
     };
 
     componentDidMount() {
@@ -42,20 +44,21 @@ class FilesList extends React.Component {
                 });
                 this.setAverages(data);
             });
-		})
+        });
     }
 
     async getAllFileData(listOfFiles) {
         let data = [];
         for (let i=1; i<listOfFiles.length; i++) {
-            console.log(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""));
-            let resp = await fetch(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""))
+            //console.log(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""));
+            let fetchUrl = (window.location.href.includes("localhost") ? "" : "/code4good-accessibility") + listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master/public","");
+            let resp = await fetch(fetchUrl)
             .then(response => response.json())
             .then(json => {
-                json.url = listOfFiles[i].download_url;
+                json.url = fetchUrl;
                 return json;
             }).catch(function() {
-                console.log("error");
+                console.log("Error in file: " + fetchUrl);
                 return null;
             });
             if (resp !== null)
@@ -91,6 +94,11 @@ class FilesList extends React.Component {
                 pwa: Math.ceil(averages.pwa / data.length)
             }
         });
+    }
+    setNoOfResults(val) {
+        this.setState({
+            noOfResults: val
+        })
     }
     sortNestedItems(value) {
         let isAsc = true;
@@ -160,6 +168,7 @@ class FilesList extends React.Component {
                     <div className="section-heading">
                         <FontAwesomeIcon icon={faList} size="lg" /><h2>All Data</h2>
                     </div>
+                    <div className="mb-20" >Total Pages: {this.state.noOfResults}</div>
                     <div className="table-container">
                         <table className="results" cellPadding="0" cellSpacing="0">
                             <thead>
@@ -172,7 +181,7 @@ class FilesList extends React.Component {
                                     <SortableHeaderCell title="Progressive Web App" category="categories.pwa.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
                                 </tr>
                             </thead>
-                            <FileResults data={this.state.data} />
+                            <FileResults data={this.state.data} setNoOfResults={this.setNoOfResults}/>
                         </table>
                     </div>
                     <div className="back-to-top center mt-20">
