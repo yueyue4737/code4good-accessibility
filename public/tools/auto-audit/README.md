@@ -4,6 +4,20 @@
 
 Auto-Audit is a python script I wrote to automate the repetitive part of the Code4Good - WCAG 2.0 Accessibility Project where we pull a JIRA ticket and scan each of the 50 URLs in the spreadsheet attached to each ticket, and save the scan results to a .json file on GitHub.
 
+## Using:
+
+The basic invokation of the tool is with the last parameter set to the file path of the xlsx file. Eg:
+
+```
+python auto-audit.py ~/Projects/Code4Good/RCB\ Home\ B2.xlsx
+```
+
+If you hit a snag and need to restart part way through you can add a `--start-at` parameter with the row number to start at. This number should be between 2 (skipping the headers) and the maximum row number.
+
+```
+python auto-audit.py --start-at=24 ~/Projects/Code4Good/RCB\ Home\ B2.xlsx
+```
+
 ## Scope:
 
 this is a simple python script that has 2 purposes:

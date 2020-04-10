@@ -2,6 +2,8 @@
 import os
 import subprocess
 import sys
+import argparse
+from string import ascii_uppercase
 
 import openpyxl
 import selenium
@@ -12,23 +14,36 @@ print("Python --version ==", sys.version)
 print("openpyxl.__version__ ==", openpyxl.__version__)
 print("selenium version ==", selenium.__version__)
 
-os.chdir('/Users/melocal/MyDox/RedCross/Code4Good/WCAG2.0')
-driver = webdriver.Safari(executable_path='/usr/bin/safaridriver')
+parser = argparse.ArgumentParser(description='Automatically Process the URLs from a given XLSX file.')
+parser.add_argument('--start-at', type=int)
+parser.add_argument('file_path')
+args = parser.parse_args()
 
-# wb = openpyxl.load_workbook('C4G-166 RCB Top Sites B-3.xlsx')
-# wb = openpyxl.load_workbook('C4G-164 RCB Top Sites B-2.xlsx')
-# wb = openpyxl.load_workbook('C4G-160 RCO Top 200 B-4.xlsx')
-# wb = openpyxl.load_workbook('C4G-90 RCO About Us B-3.xlsx')
-wb = openpyxl.load_workbook('C4G-88 RCO About Us B-2.xlsx')
+wb = openpyxl.load_workbook(args.file_path)
 sheets = wb.sheetnames
 sheet0 = wb[sheets[0]]
 print(sheet0.max_row)
 
-for i in range(2, sheet0.max_row):
-    url = sheet0['I' + str(i)].value
-    print(i, url)
-    driver.get(url)
-    print(i, driver.title)
+max_col = None
+for col in ascii_uppercase:
+    if sheet0[str(col) + '2'].value is not None:
+        max_col = col
+print(max_col)
 
-    # pause the script to click around with mouse
-    input()
+start_row = max(args.start_at, 2)
+if start_row < sheet0.max_row:
+    for i in range(start_row, sheet0.max_row):
+        url = sheet0[max_col + str(i)].value
+        if not isinstance(url, str):
+            continue
+        print(i, url)
+
+        # Reopen Safari because the audit history crashes after it
+        # hits more than a few runs. This prevents that.
+        driver = webdriver.Safari(executable_path='/usr/bin/safaridriver')
+        driver.get(url)
+        print(i, driver.title)
+
+        # pause the script to click around with mouse
+        input()
+        driver.close()
