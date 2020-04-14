@@ -15,7 +15,7 @@ print("openpyxl.__version__ ==", openpyxl.__version__)
 print("selenium version ==", selenium.__version__)
 
 parser = argparse.ArgumentParser(description='Automatically Process the URLs from a given XLSX file.')
-parser.add_argument('--start-at', type=int)
+parser.add_argument('--start-at', type=int, default=2)
 parser.add_argument('file_path')
 args = parser.parse_args()
 
