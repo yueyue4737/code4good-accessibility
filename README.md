@@ -33,35 +33,27 @@ How to Meet WCAG (Quick Reference): https://www.w3.org/WAI/WCAG21/quickref/?vers
 
 ### Workflow:
 1. View open and available tickets in JIRA that are tagged with WCAG.  These tickets will refer to a set of 50 urls that need to be scanned.  To see the urls in the ticket, open the Red Cross sitemap spreadsheet and find the corresponding ticket in the JIRA column.
-2. Scan the urls with Chrome Dev Tools and save the JSON results.
-3. Scan the urls with Microsoft Accessibility Insights and save the JSON results.
-4. Scan the urls with axe and save the JSON results.
-5. Once all 50 urls in your ticket are scanned with all 3 tools in all three browsers. Note: if you are running Windows or Linux, you may need to download Safari 5.1.10 for Snow Leopard.  You may also ask another Code4Gooder running a MacOS to assist in scanning your urls in Safari.
-6. Save all of your JSON results using the template provided.
-7. When you are finished scanning and recording the JSON results, commit your work and put in a pull request.
-8. Post the link to the pull request in the comments of your JIRA ticket and change the ticket status to In Progress.
+2. Scan the urls with the assigned scanning tool and save the JSON results.
+3. Once all 50 urls in your ticket are scanned with all 3 tools in all three browsers. Note: if you are running Windows or Linux, you may need to download Safari 5.1.10 for Snow Leopard.  You may also ask another Code4Gooder running a MacOS to assist in scanning your urls in Safari.
+4. Save all of your JSON results using the template provided.
+5. When you are finished scanning and recording the JSON results, commit your work and put in a pull request.
+6. Post the link to the pull request in the comments of your JIRA ticket and change the ticket status to In Progress.
 
 ### How to use the documentation template:
-1. In your local fork in the scan-results folder, make a copy of the folder results_JiraTicketNumber_example.  Remove the _example from the name and replacing ticket number with your JIRA ticket number. (e.g. results.CG4-16)
+1. In your local fork in the data folder located inside the scan-results folder, create a file using this naming convention: C4G-JiraTicketNumber_AuditToolUsed_URLNumber.json. For example: CG4-16_CD_7.json.
 
-2. Inside your newly created folder, make a copy of the file results_JiraTicketNumber_toolAbbreviation_sequence_example.js. 
-    - Remove the _example from the name.
-    - Replace TicketNumber with your JIRA ticket number and toolAbbreviation with the audit tool you are using.
-    - Audit Tool abbreviations:
-      - AT = allyTools
-      - AX = Axe
-      - CD = ChromeDev
-      - FF = Firefox
-      - IN = MS Insights
-    - Replace sequence with the row number in your ticket's list of urls that you are scanning. (e.g. C4G-16_AT_1.json = allyTools audit, site 1
-C4G-16_AT_2.json = allyTools audit, site 2...50).
+Audit Tool abbreviations:
+  - AT = allyTools
+  - AX = Axe
+  - CD = ChromeDev
+  - FF = Firefox
+  - IN = MS Insights
 
-3. Inside your newly created file, complete the template with the actual url, scanning tools used, and the JSON results from your scans.
+2. Inside your newly created file, copy in the JSON results from your scan.
 
-4. Commit your work often, at least after adding new JSON data for each url.
+3. Commit your work often, at least after adding new JSON data for each url.
 
-5. Put in a pull request when you are finished scanning and saving results for all of the urls in your ticket.
-
+4. Put in a pull request when you are finished scanning and saving results for all of the urls in your ticket.
 
 ## Questions, concerns, and suggestions?  Post questions in Slack in the #code-for-good channel.
 
