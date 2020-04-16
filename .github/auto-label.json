@@ -1,0 +1,6 @@
+{
+    "rules": {
+      "Read-To-Review": ["*"],
+      "Readme-Updated": ["*.md"]
+    }
+}
