@@ -35,3 +35,5 @@ jobs:
 
             if(len(files)>0):
                 raise SystemExit("Change these file names to merge the PR")
+            else:
+                print("OK!")
