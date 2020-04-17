@@ -1,0 +1,37 @@
+# This GitHub Action checks the folder for name mismatch 
+name: check file names
+on: [push]
+jobs:
+  check_file_names:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+      - name: check file names
+        shell: python
+        run: |
+            import os
+
+            files = []
+            unexpected = []
+
+            location = [
+                "./public/scan-results/data/"
+            ]
+
+            for loc in location:
+                for filename in os.listdir(loc):
+                    if(filename.endswith(".json")):
+                        if any(letter.islower() for letter in filename[:-4]):
+                            files.append(filename)
+                    else:
+                        unexpected.append(filename)
+
+            for file in files:
+                print(f'Change name from {file} \t ->> {file[:-4].upper()}json')
+
+            for file in unexpected:
+                print(f'Unexpected file present {file}?')
+
+            if(len(files)>0):
+                raise SystemExit("Change these file names to merge the PR")
