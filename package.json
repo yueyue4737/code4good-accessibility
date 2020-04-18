@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lighthouse": "node public/tools/auto-lighthouse/index.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,5 +38,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://annahinnyc.github.io/code4good-accessibility"
+  "homepage": "https://annahinnyc.github.io/code4good-accessibility",
+  "devDependencies": {
+    "exceljs": "^3.8.2",
+    "lighthouse": "^5.6.0"
+  }
 }
