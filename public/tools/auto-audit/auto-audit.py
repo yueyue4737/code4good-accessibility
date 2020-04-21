@@ -32,7 +32,7 @@ print(max_col)
 
 start_row = max(args.start_at, 2)
 if start_row < sheet0.max_row:
-    for i in range(start_row, sheet0.max_row):
+    for i in range(start_row, sheet0.max_row + 1):
         url = sheet0[max_col + str(i)].value
         if not isinstance(url, str):
             continue
