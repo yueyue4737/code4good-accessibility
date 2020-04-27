@@ -29,7 +29,7 @@ const readWorkbook = async (filepath, resultsPrefix) => {
   const worksheet = workbook.getWorksheet(1);
   const urlCol = worksheet.getColumn("G");
 
-  for (let rowNumber = 40; rowNumber < urlCol.values.length; rowNumber++) {
+  for (let rowNumber = 2; rowNumber < urlCol.values.length; rowNumber++) {
     const url = urlCol.values[rowNumber];
     if (!url) continue;
 
