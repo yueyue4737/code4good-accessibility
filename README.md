@@ -18,13 +18,16 @@ Mobile Accessibility: https://www.w3.org/TR/mobile-accessibility-mapping/
 How to Meet WCAG (Quick Reference): https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0
 
 ### Guidelines for scanning urls:
+
 #### We will be using the following tools to scan each url:
+
 1. Chrome Dev Tools in-browser audit tool: https://developers.google.com/web/tools/chrome-devtools/accessibility/reference
-  a. Check both boxes for Accessibility & Performance.
+   a. Check both boxes for Accessibility & Performance.
 2. Microsoft Accessibility Insights: https://accessibilityinsights.io/
 3. axe: https://www.deque.com/axe/
 
 #### We will be scanning the urls in these three browsers:
+
 1. Chrome
 2. Firefox
 3. Safari
@@ -32,22 +35,26 @@ How to Meet WCAG (Quick Reference): https://www.w3.org/WAI/WCAG21/quickref/?vers
 #### We will be recording the scan results in JSON format on Github.
 
 ### Workflow:
-1. View open and available tickets in JIRA that are tagged with WCAG.  These tickets will refer to a set of 50 urls that need to be scanned.  To see the urls in the ticket, open the Red Cross sitemap spreadsheet and find the corresponding ticket in the JIRA column.
+
+1. View open and available tickets in JIRA that are tagged with WCAG. These tickets will refer to a set of 50 urls that need to be scanned. To see the urls in the ticket, open the Red Cross sitemap spreadsheet and find the corresponding ticket in the JIRA column.
 2. Scan the urls with the assigned scanning tool and save the JSON results.
-3. Once all 50 urls in your ticket are scanned with all 3 tools in all three browsers. Note: if you are running Windows or Linux, you may need to download Safari 5.1.10 for Snow Leopard.  You may also ask another Code4Gooder running a MacOS to assist in scanning your urls in Safari.
+3. Once all 50 urls in your ticket are scanned with all 3 tools in all three browsers. Note: if you are running Windows or Linux, you may need to download Safari 5.1.10 for Snow Leopard. You may also ask another Code4Gooder running a MacOS to assist in scanning your urls in Safari.
 4. Create a new file in the data folder located in the scan results folder using the naming convention in the documentation template below.Save all of your JSON results into your newly created file.
 5. When you are finished scanning and recording the JSON results, commit your work and put in a pull request.
 6. Post the link to the pull request in the comments of your JIRA ticket and change the ticket status to In Progress.
 
 ### How to use the documentation template:
+
 1. In your local fork in the data folder located inside the scan-results folder, create a file using this naming convention: C4G-JiraTicketNumber_AuditToolUsed_URLNumber.json. For example: CG4-16_CD_7.json.
 
 Audit Tool abbreviations:
-  - AT = allyTools
-  - AX = Axe
-  - CD = ChromeDev
-  - FF = Firefox
-  - IN = MS Insights
+
+- AT = allyTools
+- AX = Axe
+- CD = ChromeDev
+- FF = Firefox
+- IN = MS Insights
+- WK = Safari
 
 2. Inside your newly created file, copy in the JSON results from your scan.
 
@@ -55,8 +62,7 @@ Audit Tool abbreviations:
 
 4. Put in a pull request when you are finished scanning and saving results for all of the urls in your ticket.
 
-## Questions, concerns, and suggestions?  Post questions in Slack in the #code-for-good channel.
-
+## Questions, concerns, and suggestions? Post questions in Slack in the #code-for-good channel.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 View here: https://rbitting.github.io/arc-accessibility-dashboard/
