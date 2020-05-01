@@ -1,6 +1,6 @@
 # This GitHub Action checks the folder for name mismatch 
 name: check file names
-on: [push]
+on: [pull_request]
 jobs:
   check_file_names:
     runs-on: ubuntu-latest
