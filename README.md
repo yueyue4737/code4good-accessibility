@@ -1,5 +1,10 @@
 # Code4Good-accessibility
 
+![Website](https://img.shields.io/website?color=Red&label=RedCross&logo=addthis&logoColor=Red&up_color=Red&up_message=Code4Good&url=http%3A%2F%2Fcode4good.io%2F)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/annahinnyc/code4good-accessibility?color=gree&label=Pull%20Requests)
+![GitHub contributors](https://img.shields.io/github/contributors/annahinnyc/code4good-accessibility?color=Blue)
+![GitHub repo size](https://img.shields.io/github/repo-size/annahinnyc/code4good-accessibility?color=Gray&label=Repo%20Size)
+
 ## Code4Good - WCAG 2.0 Accessibility Project
 
 The Problem Statement
