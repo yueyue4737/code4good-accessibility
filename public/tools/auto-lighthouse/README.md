@@ -6,8 +6,10 @@ Use this node script to run the lighthouse audit on each URL in a xlsx file.
 
 you will need to install the following packages:
 
+```
 npm install lighthouse
 npm install exceljs
+```
 
 ## Run the script
 
