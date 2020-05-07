@@ -10,7 +10,8 @@ const flags = require("flags");
 
 flags.defineString('inputFile', null, 'File containing urls to scan.');
 flags.defineString('inputFormat', 'xls', 'Format of inputFile. Either xls or text.');
-flags.defineString('outputPrefix', 'test', 'Prefix of the files to write.');
+flags.defineString('outputPrefix', '', 'Filename prefix to use when writing reports.');
+flags.defineString('ticket', 0, 'If specified, write reports to C4G-$ticket_CD_$i.json.');
 flags.defineBoolean('linux', false, 'Run on linux. Disable Chrome sandbox.');
 flags.defineBoolean('headless', false, 'Use headless chrome.');
 flags.defineBoolean('clobber', false, 'If True, overwrite existing json reports.');
@@ -99,7 +100,12 @@ const readWorkbook = async (filepath, resultsPrefix) => {
   await browser.kill();
 };
 
-// Configure the first argument to be the location of the xlsx file (relative to package.json).
-// Configure the second argument to be the prefix of the result json files.
 flags.parse();
-readWorkbook(flags.get('inputFile'), flags.get('outputPrefix'));
+const reportPrefix = (
+  flags.get('outputPrefix') +
+  (flags.get('ticket') > 0 ? `C4G-${flags.get('ticket')}_CD_` : ''));
+
+if (reportPrefix.length == 0) {
+  throw 'Specify either --ticket $N or --outputPrefix when running this.'
+}
+readWorkbook(flags.get('inputFile'), reportPrefix);
