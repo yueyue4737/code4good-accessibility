@@ -6,71 +6,106 @@ const fs = require("fs");
 const Excel = require("exceljs");
 const lighthouse = require("lighthouse");
 const chromeLauncher = require("chrome-launcher");
+const flags = require("flags");
+
+flags.defineString('inputFile', null, 'File containing urls to scan.');
+flags.defineString('inputFormat', 'xls', 'Format of inputFile. Either xls or text.');
+flags.defineString('outputPrefix', '', 'Filename prefix to use when writing reports.');
+flags.defineString('ticket', 0, 'If specified, write reports to C4G-$ticket_CD_$i.json.');
+flags.defineBoolean('linux', false, 'Run on linux. Disable Chrome sandbox.');
+flags.defineBoolean('headless', false, 'Use headless chrome.');
+flags.defineBoolean('clobber', false, 'If True, overwrite existing json reports.');
 
 const RESULTS_FOLDER = "./public/scan-results/data";
-
-function launchChromeAndRunLighthouse(url, opts, config = null) {
-  return chromeLauncher
-    .launch({ chromeFlags: opts.chromeFlags })
-    .then((chrome) => {
-      opts.port = chrome.port;
-      return lighthouse(url, opts, config).then((results) => {
-        return chrome.kill().then(() => results.report);
-      });
-    });
-}
 
 const readWorkbook = async (filepath, resultsPrefix) => {
   const startTime = Date.now();
 
-  console.log("Reading xlsx file...");
-  const workbook = new Excel.Workbook();
-  await workbook.xlsx.readFile(filepath);
-  const worksheet = workbook.getWorksheet(1);
-  // Find the url column
-  var columnHeader = "";
-  var columnNumber = 0;
-  while (columnHeader != "url" && columnNumber<worksheet.columnCount) {
-    columnNumber++;
-    columnHeader = worksheet.getRow(1).getCell(columnNumber).value;
-  }
-  if (columnHeader == null) {
-    console.error('Couldn\'t find the url column');
+  var urlsToAudit = [];
+  var badUrls = [];
+  // TODO(rousik): do something with this badUrls list.
+
+  if (flags.get('inputFormat') == 'xls') {
+    console.log("Reading xlsx file...");
+    const workbook = new Excel.Workbook();
+    await workbook.xlsx.readFile(filepath);
+    const worksheet = workbook.getWorksheet(1);
+    // Find the url column
+    var columnHeader = "";
+    var columnNumber = 0;
+    while (columnHeader != "url" && columnNumber<worksheet.columnCount) {
+      columnNumber++;
+      columnHeader = worksheet.getRow(1).getCell(columnNumber).value;
+    }
+    if (columnHeader == null) {
+      console.error('Couldn\'t find the url column');
+    } else if (flags.get('inputFormat') == 'text') {
+      console.log('URL column found at column '+columnNumber);
+    } else {
+      throw `Uknown input format ${flags.get("inputFormat")}`;
+    }
+    const urlCol = worksheet.getColumn(columnNumber);
+    for (let rowNumber = 2; rowNumber < urlCol.values.length; rowNumber++) {
+      const url = urlCol.values[rowNumber];
+      if (!url) continue;
+      if (!url.toString().startsWith('http')) {
+        badUrls.push(url);
+        continue;
+      }
+    }
   } else {
-    console.log('URL column found at column '+columnNumber);
+    urlsToAudit = fs.readFileSync(filepath).toString().split("\n");
+    // TODO: throw out things that don't start with http here too?
   }
-  const urlCol = worksheet.getColumn(columnNumber);
 
-  for (let rowNumber = 2; rowNumber < urlCol.values.length; rowNumber++) {
-    const url = urlCol.values[rowNumber];
-    if (!url) continue;
+  // Launch headless chrome
+  var cflags = [];
+  if (flags.get('linux')) {
+    cflags.push('--no-sandbox');
+  }
+  if (flags.get('headless')) {
+    cflags.push('--headless');
+  }
+  const browser = await chromeLauncher.launch({
+    chromeFlags: cflags
+  });
 
-    console.log(`Auditing index ${rowNumber - 1}: ${url}`);
-    const results = await launchChromeAndRunLighthouse(url, {
-      // See lighthouse docs for configuration values. Adjust as needed.
-      // https://github.com/GoogleChrome/lighthouse/blob/master/docs/configuration.md
-      chromeFlags: [],
-      onlyCategories: ["performance", "accessibility"],
-      emulatedFormFactor: "desktop",
-    });
+  for (let i=0; i < urlsToAudit.length; i++) {
+    const url = urlsToAudit[i];
+    const resultsFileName = `${RESULTS_FOLDER}/${resultsPrefix}${i}.json`;
 
-    const resultsFileName = `${RESULTS_FOLDER}/${resultsPrefix}${rowNumber - 1}.json`;
-    fs.writeFile(resultsFileName, results, (err) => {
-      console.log(
-        `Wrote result file for index ${rowNumber - 1}: ${resultsFileName}`
-      );
-      err && console.error(err);
-    });
+    console.log(`Auditing index ${i}: ${url}`);
+    try { 
+      const results = await lighthouse(url, {
+        port: browser.port,
+        onlyCategories: ["performance", "accessibility"],
+        emulatedFormFactor: "desktop",
+      });
+      fs.writeFile(resultsFileName, results.report, (err) => {
+        if (err) {
+          console.error(`Failed  to write report for index ${i}: ${err}`);
+        } else {
+          console.log(`Wrote report for index: ${i}: ${resultsFileName}`);
+        }
+      });
+    } catch(err) {
+      console.error(`Failed to audit ${url}`);
+      badUrls.push(url);
+    }
   }
 
   const endTime = Date.now();
   const elapsedTime = Math.floor((endTime - startTime) / 1000);
   console.log(`Finished in ${elapsedTime}s`);
+  await browser.kill();
 };
 
-// Configure the first argument to be the location of the xlsx file (relative to package.json).
-// Configure the second argument to be the prefix of the result json files.
-var myArgs = process.argv.slice(2);
-let ssFile = myArgs[0];
-let resultFile = myArgs[1];
-readWorkbook(ssFile, resultFile);
+flags.parse();
+const reportPrefix = (
+  flags.get('outputPrefix') +
+  (flags.get('ticket') > 0 ? `C4G-${flags.get('ticket')}_CD_` : ''));
+
+if (reportPrefix.length == 0) {
+  throw 'Specify either --ticket $N or --outputPrefix when running this.'
+}
+readWorkbook(flags.get('inputFile'), reportPrefix);
