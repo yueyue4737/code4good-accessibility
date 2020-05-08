@@ -6,24 +6,25 @@ Auto-Audit is a python script I wrote to automate the repetitive part of the Cod
 
 ## Using:
 
-The basic invokation of the tool is with the last parameter set to the file path of the xlsx file. Eg:
+The basic invocation of the tool is with two positional parameters.  The first is the Jira ticket number and the second is the file path of the xlsx file. Eg:
 
 ```
-python auto-audit.py ~/Projects/Code4Good/RCB\ Home\ B2.xlsx
+python auto-audit.py C4G-99 ~/Projects/Code4Good/RCB\ Home\ B2.xlsx
 ```
 
 If you hit a snag and need to restart part way through you can add a `--start-at` parameter with the row number to start at. This number should be between 2 (skipping the headers) and the maximum row number.
 
 ```
-python auto-audit.py --start-at=24 ~/Projects/Code4Good/RCB\ Home\ B2.xlsx
+python auto-audit.py --start-at=24 C4G-99 ~/Projects/Code4Good/RCB\ Home\ B2.xlsx
 ```
 
 ## Scope:
 
-this is a simple python script that has 2 purposes:
+this is a simple python script that has 3 purposes:
 
 1. read each line of the input spreadsheet with openpyxl
 2. copy that url into the address bar of the browser and get that url with selenium
+3. move and rename the result file "~/Downloads/Accessibility Result.json" to your current directory using the file naming convention for this project (e.g. C4G-99_WK_2.json)
 
 ## Tools and Technologies:
 
