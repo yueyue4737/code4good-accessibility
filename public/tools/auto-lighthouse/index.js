@@ -74,6 +74,10 @@ const readWorkbook = async (filepath, resultsPrefix) => {
     const url = urlsToAudit[i];
     const resultsFileName = `${RESULTS_FOLDER}/${resultsPrefix}${i}.json`;
 
+    if (fs.existsSync(resultsFileName) && !flags.get('clobber')) {
+      continue;
+    }
+
     console.log(`Auditing index ${i}: ${url}`);
     try { 
       const results = await lighthouse(url, {
