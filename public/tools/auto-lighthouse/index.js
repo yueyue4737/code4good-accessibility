@@ -15,10 +15,12 @@ flags.defineString('ticket', 0, 'If specified, write reports to C4G-$ticket_CD_$
 flags.defineBoolean('linux', false, 'Run on linux. Disable Chrome sandbox.');
 flags.defineBoolean('headless', false, 'Use headless chrome.');
 flags.defineBoolean('clobber', false, 'If True, overwrite existing json reports.');
+flags.defineInteger('headerStart', 1, 'Row number on which the header including the url label is located');
+flags.defineInteger('worksheet', 1, 'which worksheet to read from, if multiple sheets present');
 
 const RESULTS_FOLDER = "./public/scan-results/data";
 
-const readWorkbook = async (filepath, resultsPrefix) => {
+const readWorkbook = async (filepath, resultsPrefix, headerRowNumber, worksheetNumber) => {
   const startTime = Date.now();
 
   var urlsToAudit = [];
@@ -29,20 +31,18 @@ const readWorkbook = async (filepath, resultsPrefix) => {
     console.log("Reading xlsx file...");
     const workbook = new Excel.Workbook();
     await workbook.xlsx.readFile(filepath);
-    const worksheet = workbook.getWorksheet(1);
+    const worksheet = workbook.getWorksheet(worksheetNumber);
     // Find the url column
     var columnHeader = "";
     var columnNumber = 0;
-    while (columnHeader != "url" && columnNumber<worksheet.columnCount) {
+    while (columnHeader != "url" && columnNumber < worksheet.columnCount) {
       columnNumber++;
-      columnHeader = worksheet.getRow(1).getCell(columnNumber).value;
+      columnHeader = worksheet.getRow(headerRowNumber).getCell(columnNumber).value;
     }
     if (columnHeader == null) {
       console.error('Couldn\'t find the url column');
-    } else if (flags.get('inputFormat') == 'text') {
-      console.log('URL column found at column '+columnNumber);
     } else {
-      throw `Uknown input format ${flags.get("inputFormat")}`;
+      console.log('URL column found at column ' + columnNumber);
     }
     const urlCol = worksheet.getColumn(columnNumber);
     for (let rowNumber = 2; rowNumber < urlCol.values.length; rowNumber++) {
@@ -52,10 +52,13 @@ const readWorkbook = async (filepath, resultsPrefix) => {
         badUrls.push(url);
         continue;
       }
+      urlsToAudit.push(url);
     }
-  } else {
+  } else if (flags.get('inputFormat') == 'text') {
     urlsToAudit = fs.readFileSync(filepath).toString().split("\n");
     // TODO: throw out things that don't start with http here too?
+  } else {
+    throw `Unknown input format ${flags.get("inputFormat")}`;
   }
 
   // Launch headless chrome
@@ -70,12 +73,12 @@ const readWorkbook = async (filepath, resultsPrefix) => {
     chromeFlags: cflags
   });
 
-  for (let i=0; i < urlsToAudit.length; i++) {
+  for (let i = 0; i < urlsToAudit.length; i++) {
     const url = urlsToAudit[i];
     const resultsFileName = `${RESULTS_FOLDER}/${resultsPrefix}${i}.json`;
 
     console.log(`Auditing index ${i}: ${url}`);
-    try { 
+    try {
       const results = await lighthouse(url, {
         port: browser.port,
         onlyCategories: ["performance", "accessibility"],
@@ -88,7 +91,7 @@ const readWorkbook = async (filepath, resultsPrefix) => {
           console.log(`Wrote report for index: ${i}: ${resultsFileName}`);
         }
       });
-    } catch(err) {
+    } catch (err) {
       console.error(`Failed to audit ${url}`);
       badUrls.push(url);
     }
@@ -98,7 +101,11 @@ const readWorkbook = async (filepath, resultsPrefix) => {
   const elapsedTime = Math.floor((endTime - startTime) / 1000);
   console.log(`Finished in ${elapsedTime}s`);
   await browser.kill();
+  if (badUrls.length > 0) {
+    throw `Bad URLs were found during execution: ${badUrls}`;
+  }
 };
+
 
 flags.parse();
 const reportPrefix = (
@@ -108,4 +115,4 @@ const reportPrefix = (
 if (reportPrefix.length == 0) {
   throw 'Specify either --ticket $N or --outputPrefix when running this.'
 }
-readWorkbook(flags.get('inputFile'), reportPrefix);
+readWorkbook(flags.get('inputFile'), reportPrefix, flags.get('headerStart'), flags.get('worksheet'));
