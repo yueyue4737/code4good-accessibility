@@ -47,8 +47,10 @@ const readWorkbook = async (filepath, resultsPrefix) => {
       if (!url.toString().startsWith('http')) {
         console.error(`Invalid url found at row ${rowNumber}: ${url}`);
         badUrls.push(url);
+        urlsToAudit.push(null);
         continue;
       }
+      urlsToAudit.push(url);
     }
   } else if (flags.get('inputFormat') == 'text') {
     urlsToAudit = fs.readFileSync(filepath).toString().split("\n");
@@ -71,6 +73,9 @@ const readWorkbook = async (filepath, resultsPrefix) => {
 
   for (let i=0; i < urlsToAudit.length; i++) {
     const url = urlsToAudit[i];
+    if (url == null) {
+      continue;
+    }
     const resultsFileName = `${RESULTS_FOLDER}/${resultsPrefix}${i}.json`;
 
     if (fs.existsSync(resultsFileName) && !flags.get('clobber')) {
