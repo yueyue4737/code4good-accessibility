@@ -9,8 +9,8 @@ import SortableHeaderCell from './SortableHeaderCell';
 
 class FilesList extends React.Component {
     constructor(props) {
-		super(props);
-		this.state = {
+        super(props);
+        this.state = {
             data: [],
             averages: {
                 performance: null,
@@ -25,8 +25,7 @@ class FilesList extends React.Component {
             },
             fetchComplete: false,
             noOfResults: 0,
-            url: "https://api.github.com/repos/annahinnyc/code4good-accessibility/contents/public/scan-results/data"
-            //url: "https://api.github.com/repos/rbitting/testing/contents/audits"
+            url: "/scan-results/files.json"
         }
         this.sortNestedItems = this.sortNestedItems.bind(this);
         this.setNoOfResults = this.setNoOfResults.bind(this);
@@ -34,33 +33,33 @@ class FilesList extends React.Component {
 
     componentDidMount() {
         fetch(this.state.url)
-		.then( (response) => {
-			return response.json() })
-		.then( (json) => { 
-            this.getAllFileData(json).then(data => {
-                this.setState({
-                    data: data,
-                    fetchComplete: true
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                this.getAllFileData(json).then(data => {
+                    this.setState({
+                        data: data,
+                        fetchComplete: true
+                    });
+                    this.setAverages(data);
                 });
-                this.setAverages(data);
             });
-        });
     }
 
     async getAllFileData(listOfFiles) {
         let data = [];
-        for (let i=1; i<listOfFiles.length; i++) {
-            //console.log(listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master",""));
-            let fetchUrl = (window.location.href.includes("localhost") ? "" : "/code4good-accessibility") + listOfFiles[i].download_url.replace("https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master/public","");
+        for (let i = 1; i < listOfFiles.length; i++) {
+            let fetchUrl = (window.location.href.includes("localhost") ? "/scan-results/data/" : "/code4good-accessibility/scan-results/data/") + listOfFiles[i].filename;
             let resp = await fetch(fetchUrl)
-            .then(response => response.json())
-            .then(json => {
-                json.url = fetchUrl;
-                return json;
-            }).catch(function() {
-                console.log("Error in file: " + fetchUrl);
-                return null;
-            });
+                .then(response => response.json())
+                .then(json => {
+                    json.url = fetchUrl;
+                    return json;
+                }).catch(function () {
+                    console.log("Error in file: " + fetchUrl);
+                    return null;
+                });
             if (resp !== null)
                 data.push(resp);
         }
@@ -80,7 +79,7 @@ class FilesList extends React.Component {
             seo: 0,
             pwa: 0
         }
-        for (let i=0;i<data.length;i++) {
+        for (let i = 0; i < data.length; i++) {
             for (let key in data[i].categories) {
                 averages[key] += (data[i].categories[key].score * 100);
             }
@@ -102,13 +101,13 @@ class FilesList extends React.Component {
     }
     sortNestedItems(value) {
         let isAsc = true;
-        if (value === this.state.sorting.sortOn) 
+        if (value === this.state.sorting.sortOn)
             isAsc = !this.state.sorting.sortAsc;
         const nested = value.split(".");
-        function compare(a,b) {
+        function compare(a, b) {
             let x = a;
             let y = b;
-            for (let i=0;i<nested.length;i++) {
+            for (let i = 0; i < nested.length; i++) {
                 x = x[nested[i]];
                 y = y[nested[i]];
             }
@@ -164,7 +163,7 @@ class FilesList extends React.Component {
                 </div>}
                 {this.state.fetchComplete && <div>
                     <FileAverages averages={this.state.averages} />
-                    <TopIssues data={this.state.data}/>
+                    <TopIssues data={this.state.data} />
                     <div className="section-heading">
                         <FontAwesomeIcon icon={faList} size="lg" /><h2>All Data</h2>
                     </div>
@@ -173,19 +172,19 @@ class FilesList extends React.Component {
                         <table className="results" cellPadding="0" cellSpacing="0">
                             <thead>
                                 <tr className="result-item heading">
-                                    <SortableHeaderCell title="URL" category="requestedUrl" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                    <SortableHeaderCell title="Performance" category="categories.performance.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                    <SortableHeaderCell title="Accessibility" category="categories.accessibility.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                    <SortableHeaderCell title="Best Practices" category="categories.best-practices.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                    <SortableHeaderCell title="SEO" category="categories.seo.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
-                                    <SortableHeaderCell title="Progressive Web App" category="categories.pwa.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems}/>
+                                    <SortableHeaderCell title="URL" category="requestedUrl" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Performance" category="categories.performance.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Accessibility" category="categories.accessibility.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Best Practices" category="categories.best-practices.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="SEO" category="categories.seo.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Progressive Web App" category="categories.pwa.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
                                 </tr>
                             </thead>
-                            <FileResults data={this.state.data} setNoOfResults={this.setNoOfResults}/>
+                            <FileResults data={this.state.data} setNoOfResults={this.setNoOfResults} />
                         </table>
                     </div>
                     <div className="back-to-top center mt-20">
-                        <button onClick={this.scrollToTop}><FontAwesomeIcon icon={faArrowUp} /><br/>Back to Top</button>
+                        <button onClick={this.scrollToTop}><FontAwesomeIcon icon={faArrowUp} /><br />Back to Top</button>
                     </div>
                     <div className="disclaimer mt-20">
                         Accessibility data pulled from GitHub: <a href={this.state.url} target="_blank" rel="noopener noreferrer">{this.state.url}</a>. Use Chrome for best experience.

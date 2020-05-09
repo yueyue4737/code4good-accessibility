@@ -16,6 +16,7 @@ print("selenium version ==", selenium.__version__)
 
 parser = argparse.ArgumentParser(description='Automatically Process the URLs from a given XLSX file.')
 parser.add_argument('--start-at', type=int, default=2)
+parser.add_argument('jira_ticket')
 parser.add_argument('file_path')
 args = parser.parse_args()
 
@@ -30,6 +31,7 @@ for col in ascii_uppercase:
         max_col = col
 print(max_col)
 
+result_file = os.path.expanduser('~') + '/Downloads/Accessibility Result.json'
 start_row = max(args.start_at, 2)
 if start_row < sheet0.max_row:
     for i in range(start_row, sheet0.max_row + 1):
@@ -46,4 +48,11 @@ if start_row < sheet0.max_row:
 
         # pause the script to click around with mouse
         input()
+
+        #Rename the default file ~/Downloads/Accessibility Result.json
+        try:
+            os.rename(result_file,'{0}_WK_{1}.json'.format(args.jira_ticket, i))
+        except FileNotFoundError:
+            print("Error: Result file {0} not found.".format(result_file))
+
         driver.close()
