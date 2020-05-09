@@ -39,23 +39,22 @@ const readWorkbook = async (filepath, resultsPrefix) => {
     }
     if (columnHeader == null) {
       console.error('Couldn\'t find the url column');
-    } else if (flags.get('inputFormat') == 'text') {
-      console.log('URL column found at column '+columnNumber);
-    } else {
-      throw `Uknown input format ${flags.get("inputFormat")}`;
     }
     const urlCol = worksheet.getColumn(columnNumber);
     for (let rowNumber = 2; rowNumber < urlCol.values.length; rowNumber++) {
       const url = urlCol.values[rowNumber];
       if (!url) continue;
       if (!url.toString().startsWith('http')) {
+        console.error(`Invalid url found at row ${rowNumber}: ${url}`);
         badUrls.push(url);
         continue;
       }
     }
-  } else {
+  } else if (flags.get('inputFormat') == 'text') {
     urlsToAudit = fs.readFileSync(filepath).toString().split("\n");
-    // TODO: throw out things that don't start with http here too?
+    // TODO(rousik): throw out things that don't start with http here too?
+  } else {
+    throw `Uknown input format ${flags.get("inputFormat")}`;
   }
 
   // Launch headless chrome
