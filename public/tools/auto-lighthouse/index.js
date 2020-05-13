@@ -49,14 +49,16 @@ const readWorkbook = async (filepath, resultsPrefix, headerRowNumber, worksheetN
       const url = urlCol.values[rowNumber];
       if (!url) continue;
       if (!url.toString().startsWith('http')) {
+        console.error(`Invalid url found at row ${rowNumber}: ${url}`);
         badUrls.push(url);
+        urlsToAudit.push(null);
         continue;
       }
       urlsToAudit.push(url);
     }
   } else if (flags.get('inputFormat') == 'text') {
     urlsToAudit = fs.readFileSync(filepath).toString().split("\n");
-    // TODO: throw out things that don't start with http here too?
+    // TODO(rousik): throw out things that don't start with http here too?
   } else {
     throw `Unknown input format ${flags.get("inputFormat")}`;
   }
@@ -75,7 +77,14 @@ const readWorkbook = async (filepath, resultsPrefix, headerRowNumber, worksheetN
 
   for (let i = 0; i < urlsToAudit.length; i++) {
     const url = urlsToAudit[i];
+    if (url == null) {
+      continue;
+    }
     const resultsFileName = `${RESULTS_FOLDER}/${resultsPrefix}${i}.json`;
+
+    if (fs.existsSync(resultsFileName) && !flags.get('clobber')) {
+      continue;
+    }
 
     console.log(`Auditing index ${i}: ${url}`);
     try {
