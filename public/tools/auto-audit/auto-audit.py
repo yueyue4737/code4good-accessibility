@@ -1,8 +1,9 @@
-#!/Users/melocal/anaconda3/envs/c4g-wcag/bin python
+#!/usr/bin/env python3
 import os
 import subprocess
 import sys
 import argparse
+
 from string import ascii_uppercase
 
 import openpyxl
@@ -16,9 +17,13 @@ print("selenium version ==", selenium.__version__)
 
 parser = argparse.ArgumentParser(description='Automatically Process the URLs from a given XLSX file.')
 parser.add_argument('--start-at', type=int, default=2)
+parser.add_argument('--axe', type=bool, default=false)
 parser.add_argument('jira_ticket')
 parser.add_argument('file_path')
 args = parser.parse_args()
+
+if args.axe:
+    from axe_selenium_webdriver import Axe
 
 wb = openpyxl.load_workbook(args.file_path)
 sheets = wb.sheetnames
@@ -44,15 +49,22 @@ if start_row < sheet0.max_row:
         # hits more than a few runs. This prevents that.
         driver = webdriver.Safari(executable_path='/usr/bin/safaridriver')
         driver.get(url)
-        print(i, driver.title)
+        if args.axe:
+            axe = Axe(driver)
+            axe.inject()
+            results = axe.run()
+            results['requestedUrl'] = url
+            axe.write_results(results, f'{args.jira_ticket}_AXE_{i}.json')
+        else:
+            print(i, driver.title)
+            # pause the script to click around with mouse
+            input()
 
-        # pause the script to click around with mouse
-        input()
+            #Rename the default file ~/Downloads/Accessibility Result.json
+            try:
+                os.rename(result_file,'{0}_WK_{1}.json'.format(args.jira_ticket, i))
+            except FileNotFoundError:
+                print("Error: Result file {0} not found.".format(result_file))
 
-        #Rename the default file ~/Downloads/Accessibility Result.json
-        try:
-            os.rename(result_file,'{0}_WK_{1}.json'.format(args.jira_ticket, i))
-        except FileNotFoundError:
-            print("Error: Result file {0} not found.".format(result_file))
-
-        driver.close()
+        driver.quit()
+driver.quit()
