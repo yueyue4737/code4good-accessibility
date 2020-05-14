@@ -17,13 +17,13 @@ print("selenium version ==", selenium.__version__)
 
 parser = argparse.ArgumentParser(description='Automatically Process the URLs from a given XLSX file.')
 parser.add_argument('--start-at', type=int, default=2)
-parser.add_argument('--axe', type=bool, default=false)
-parser.add_argument('jira_ticket')
+parser.add_argument('--axe', default=False, action='store_true')
+parser.add_argument('--ticket', type=str, default='')
 parser.add_argument('file_path')
 args = parser.parse_args()
 
 if args.axe:
-    from axe_selenium_webdriver import Axe
+    from axe_selenium_python import Axe
 
 wb = openpyxl.load_workbook(args.file_path)
 sheets = wb.sheetnames
@@ -54,7 +54,7 @@ if start_row < sheet0.max_row:
             axe.inject()
             results = axe.run()
             results['requestedUrl'] = url
-            axe.write_results(results, f'{args.jira_ticket}_AXE_{i}.json')
+            axe.write_results(results, f'{args.ticket}_AXE_{i}.json')
         else:
             print(i, driver.title)
             # pause the script to click around with mouse
@@ -62,9 +62,9 @@ if start_row < sheet0.max_row:
 
             #Rename the default file ~/Downloads/Accessibility Result.json
             try:
-                os.rename(result_file,'{0}_WK_{1}.json'.format(args.jira_ticket, i))
+                os.rename(result_file, f'{args.jira_ticket}_WK_{i}.json')
             except FileNotFoundError:
-                print("Error: Result file {0} not found.".format(result_file))
+                print(f'Error: Result file {result_file} not found.')
 
         driver.quit()
 driver.quit()
