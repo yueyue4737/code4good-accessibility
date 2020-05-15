@@ -71,4 +71,3 @@ if start_row < sheet0.max_row:
            raise RuntimeException(f'Unsupported --mode={args.mode}')
 
         driver.quit()
-driver.quit()
