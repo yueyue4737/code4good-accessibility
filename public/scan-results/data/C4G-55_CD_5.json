@@ -18,7 +18,7 @@
       "score": 0.17,
       "scoreDisplayMode": "numeric",
       "numericValue": 5966.268999999999,
-      "displayValue": "6.0 s"
+      "displayValue": "6.0Â s"
     },
     "first-meaningful-paint": {
       "id": "first-meaningful-paint",
@@ -27,7 +27,7 @@
       "score": 0.07,
       "scoreDisplayMode": "numeric",
       "numericValue": 7541.269,
-      "displayValue": "7.5 s"
+      "displayValue": "7.5Â s"
     },
     "speed-index": {
       "id": "speed-index",
@@ -36,7 +36,7 @@
       "score": 0.31,
       "scoreDisplayMode": "numeric",
       "numericValue": 7108.917201434522,
-      "displayValue": "7.1 s"
+      "displayValue": "7.1Â s"
     },
     "screenshot-thumbnails": {
       "id": "screenshot-thumbnails",
@@ -121,7 +121,7 @@
       "score": 0.01,
       "scoreDisplayMode": "numeric",
       "numericValue": 252.4,
-      "displayValue": "250 ms"
+      "displayValue": "250Â ms"
     },
     "total-blocking-time": {
       "id": "total-blocking-time",
@@ -130,7 +130,7 @@
       "score": 0,
       "scoreDisplayMode": "numeric",
       "numericValue": 3590.5000000000027,
-      "displayValue": "3,590 ms"
+      "displayValue": "3,590Â ms"
     },
     "max-potential-fid": {
       "id": "max-potential-fid",
@@ -139,7 +139,7 @@
       "score": 0.07,
       "scoreDisplayMode": "numeric",
       "numericValue": 539,
-      "displayValue": "540 ms"
+      "displayValue": "540Â ms"
     },
     "time-to-first-byte": {
       "id": "time-to-first-byte",
@@ -148,7 +148,7 @@
       "score": 1,
       "scoreDisplayMode": "binary",
       "numericValue": 48.504,
-      "displayValue": "Root document took 50 ms",
+      "displayValue": "Root document took 50Â ms",
       "details": {
         "type": "opportunity",
         "overallSavingsMs": -551.496,
@@ -163,7 +163,7 @@
       "score": 0.04,
       "scoreDisplayMode": "numeric",
       "numericValue": 14590.412,
-      "displayValue": "14.6 s"
+      "displayValue": "14.6Â s"
     },
     "interactive": {
       "id": "interactive",
@@ -172,7 +172,7 @@
       "score": 0.08,
       "scoreDisplayMode": "numeric",
       "numericValue": 14966.909500000002,
-      "displayValue": "15.0 s"
+      "displayValue": "15.0Â s"
     },
     "user-timings": {
       "id": "user-timings",
@@ -437,7 +437,7 @@
       "score": 0.05,
       "scoreDisplayMode": "numeric",
       "numericValue": 9877.243999999964,
-      "displayValue": "9.9 s",
+      "displayValue": "9.9Â s",
       "details": {
         "type": "table",
         "headings": [
@@ -499,7 +499,7 @@
       "score": 0.25,
       "scoreDisplayMode": "numeric",
       "numericValue": 5997.408,
-      "displayValue": "6.0 s",
+      "displayValue": "6.0Â s",
       "details": {
         "type": "table",
         "headings": [
@@ -670,7 +670,7 @@
       "score": 0.65,
       "scoreDisplayMode": "numeric",
       "numericValue": 471.438,
-      "displayValue": "Potential savings of 470 ms",
+      "displayValue": "Potential savings of 470Â ms",
       "warnings": [
         "A preconnect <link> was found for \"https://d10lpsik1i8c69.cloudfront.net\" but was not used by the browser. Check that you are using the `crossorigin` attribute properly.",
         "A preconnect <link> was found for \"https://cdn.pbbl.co\" but was not used by the browser. Check that you are using the `crossorigin` attribute properly.",
@@ -1766,7 +1766,7 @@
       "score": null,
       "scoreDisplayMode": "informative",
       "numericValue": 92.95399999999998,
-      "displayValue": "90 ms",
+      "displayValue": "90Â ms",
       "details": {
         "type": "table",
         "headings": [
@@ -1905,7 +1905,7 @@
       "score": null,
       "scoreDisplayMode": "informative",
       "numericValue": 1732.182,
-      "displayValue": "1,730 ms",
+      "displayValue": "1,730Â ms",
       "details": {
         "type": "table",
         "headings": [
@@ -2316,7 +2316,7 @@
       "description": "To set budgets for the quantity and size of page resources, add a budget.json file. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/budgets).",
       "score": null,
       "scoreDisplayMode": "informative",
-      "displayValue": "85 requests • 1,810 KB",
+      "displayValue": "85 requests â€¢ 1,810 KB",
       "details": {
         "type": "table",
         "headings": [
@@ -2400,7 +2400,7 @@
       "description": "Third-party code can significantly impact load performance. Limit the number of redundant third-party providers and try to load third-party code after your page has primarily finished loading. [Learn more](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).",
       "score": 0,
       "scoreDisplayMode": "binary",
-      "displayValue": "Third-party code blocked the main thread for 2,880 ms",
+      "displayValue": "Third-party code blocked the main thread for 2,880Â ms",
       "details": {
         "type": "table",
         "headings": [
@@ -2831,9 +2831,9 @@
               "type": "node",
               "selector": "a[href$=\"donar-sangre\\.html\"]",
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,0,DIV,0,DIV,0,DIV,0,NAV,1,UL,4,DIV,0,DIV,0,A",
-              "snippet": "<a data-aa-header-utility=\"header utility item not set\" style=\"color:rgba(109,110,112,1);\" href=\"/espanol/donar-sangre.html\">\n            Español\n        </a>",
+              "snippet": "<a data-aa-header-utility=\"header utility item not set\" style=\"color:rgba(109,110,112,1);\" href=\"/espanol/donar-sangre.html\">\n            EspaÃ±ol\n        </a>",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #6d6e70, background color: #e8e8e8, font size: 9.0pt, font weight: normal). Expected contrast ratio of 4.5:1",
-              "nodeLabel": "Español "
+              "nodeLabel": "EspaÃ±ol "
             }
           },
           {
@@ -3172,7 +3172,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,0,DIV,0,DIV,0,DIV,0,NAV,1,UL",
               "snippet": "<ul class=\"rcb-utility-nav-links\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": " \nSign In \n \nEspañol \n \nNews & Promotions \n \nVisit RedCross.org \n  "
+              "nodeLabel": " \nSign In \n \nEspaÃ±ol \n \nNews & Promotions \n \nVisit RedCross.org \n  "
             }
           },
           {
@@ -3182,7 +3182,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,0,DIV,0,DIV,1,DIV,1,DIV,0,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Manage My Donations\nSchedule an Appointment\nManage Existing Appointment\nStart R…"
+              "nodeLabel": "Manage My Donations\nSchedule an Appointment\nManage Existing Appointment\nStart Râ€¦"
             }
           },
           {
@@ -3192,7 +3192,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,0,DIV,0,DIV,1,DIV,1,DIV,1,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "How to Donate\nFind a Blood Drive\nEligibility Requirements\nTypes of Blood Donati…"
+              "nodeLabel": "How to Donate\nFind a Blood Drive\nEligibility Requirements\nTypes of Blood Donatiâ€¦"
             }
           },
           {
@@ -3202,7 +3202,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,0,DIV,0,DIV,1,DIV,1,DIV,2,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Blood Donation Process\nDonation Process Overview\nWhat to do Before, During and …"
+              "nodeLabel": "Blood Donation Process\nDonation Process Overview\nWhat to do Before, During and â€¦"
             }
           },
           {
@@ -3212,7 +3212,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,0,DIV,0,DIV,1,DIV,1,DIV,3,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Coronavirus (COVID-19) Information\nCOVID-19 and Blood Donation\nCOVID-19 Convale…"
+              "nodeLabel": "Coronavirus (COVID-19) Information\nCOVID-19 and Blood Donation\nCOVID-19 Convaleâ€¦"
             }
           },
           {
@@ -3222,7 +3222,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,1,DIV,0,DIV,1,DIV,1,DIV,0,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Manage My Blood Drive\nBlood Program Leader Login\nBlood Program Leader Toolkit\nP…"
+              "nodeLabel": "Manage My Blood Drive\nBlood Program Leader Login\nBlood Program Leader Toolkit\nPâ€¦"
             }
           },
           {
@@ -3232,7 +3232,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,1,DIV,0,DIV,1,DIV,1,DIV,1,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Learn About Hosting\nWhy Host a Blood Drive?\nHow Hosting a Blood Drive Works\nHos…"
+              "nodeLabel": "Learn About Hosting\nWhy Host a Blood Drive?\nHow Hosting a Blood Drive Works\nHosâ€¦"
             }
           },
           {
@@ -3252,7 +3252,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,2,DIV,0,DIV,1,DIV,1,DIV,0,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Hospital Partners\nBlood Products\nBlood Banking Resources\nConnect Online Orderin…"
+              "nodeLabel": "Hospital Partners\nBlood Products\nBlood Banking Resources\nConnect Online Orderinâ€¦"
             }
           },
           {
@@ -3262,7 +3262,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,2,DIV,0,DIV,1,DIV,1,DIV,1,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Patient Services\nTherapeutic Apheresis Services\nContract Manufacturing\nGranuloc…"
+              "nodeLabel": "Patient Services\nTherapeutic Apheresis Services\nContract Manufacturing\nGranulocâ€¦"
             }
           },
           {
@@ -3272,7 +3272,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,2,DIV,0,DIV,1,DIV,1,DIV,2,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Blood & Diagnostic Testing\nBlood Group Serology\nHLA Testing\nImmunohematology Te…"
+              "nodeLabel": "Blood & Diagnostic Testing\nBlood Group Serology\nHLA Testing\nImmunohematology Teâ€¦"
             }
           },
           {
@@ -3282,7 +3282,7 @@
               "path": "1,HTML,1,BODY,1,HEADER,1,DIV,2,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,NAV,2,DIV,0,DIV,1,DIV,1,DIV,3,NAV,0,UL",
               "snippet": "<ul class=\"rcb-secondary-links-container\">",
               "explanation": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements",
-              "nodeLabel": "Education & Research\nScientific Research\nEducational Resources\nSUCCESS Continui…"
+              "nodeLabel": "Education & Research\nScientific Research\nEducational Resources\nSUCCESS Continuiâ€¦"
             }
           }
         ],
@@ -3765,7 +3765,7 @@
       "score": 0.99,
       "scoreDisplayMode": "numeric",
       "numericValue": 1852524,
-      "displayValue": "Total size was 1,809 KB",
+      "displayValue": "Total size was 1,809Â KB",
       "details": {
         "type": "table",
         "headings": [
@@ -3831,7 +3831,7 @@
       "score": 1,
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
-      "displayValue": "Potential savings of 64 KB",
+      "displayValue": "Potential savings of 64Â KB",
       "warnings": [],
       "details": {
         "type": "opportunity",
@@ -3877,7 +3877,7 @@
       "score": 0.2,
       "scoreDisplayMode": "numeric",
       "numericValue": 3300,
-      "displayValue": "Potential savings of 3,300 ms",
+      "displayValue": "Potential savings of 3,300Â ms",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -3944,7 +3944,7 @@
       "score": 1,
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
-      "displayValue": "Potential savings of 6 KB",
+      "displayValue": "Potential savings of 6Â KB",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -3983,7 +3983,7 @@
       "score": 0.48,
       "scoreDisplayMode": "numeric",
       "numericValue": 900,
-      "displayValue": "Potential savings of 142 KB",
+      "displayValue": "Potential savings of 142Â KB",
       "warnings": [],
       "details": {
         "type": "opportunity",
@@ -4041,7 +4041,7 @@
       "score": 0.88,
       "scoreDisplayMode": "numeric",
       "numericValue": 150,
-      "displayValue": "Potential savings of 51 KB",
+      "displayValue": "Potential savings of 51Â KB",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4080,7 +4080,7 @@
       "score": 0.78,
       "scoreDisplayMode": "numeric",
       "numericValue": 270,
-      "displayValue": "Potential savings of 52 KB",
+      "displayValue": "Potential savings of 52Â KB",
       "warnings": [],
       "details": {
         "type": "opportunity",
@@ -4126,7 +4126,7 @@
       "score": 0.78,
       "scoreDisplayMode": "numeric",
       "numericValue": 270,
-      "displayValue": "Potential savings of 35 KB",
+      "displayValue": "Potential savings of 35Â KB",
       "warnings": [],
       "details": {
         "type": "opportunity",
@@ -4172,7 +4172,7 @@
       "score": 1,
       "scoreDisplayMode": "numeric",
       "numericValue": 0,
-      "displayValue": "Potential savings of 10 KB",
+      "displayValue": "Potential savings of 10Â KB",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -4817,11 +4817,11 @@
     },
     "seo-mobile": {
       "title": "Mobile Friendly",
-      "description": "Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/)."
+      "description": "Make sure your pages are mobile friendly so users donâ€™t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/)."
     },
     "seo-content": {
       "title": "Content Best Practices",
-      "description": "Format your HTML in a way that enables crawlers to better understand your app’s content."
+      "description": "Format your HTML in a way that enables crawlers to better understand your appâ€™s content."
     },
     "seo-crawl": {
       "title": "Crawling and Indexing",
