@@ -15,7 +15,7 @@ flags.defineBoolean('headless', false, 'Use headless chrome.');
 flags.defineBoolean('reuse-chrome', true, 'Whether to reuse chrome instance for multiple audits.');
 flags.defineBoolean('clobber', false, 'If True, overwrite existing json reports.');
 
-flags.defineString('scan_id', 'data', 'Specifies top level directory to store audit results in.')
+flags.defineString('scan_id', 'base', 'Specifies top level directory to store audit results in.')
 flags.defineString('site', null, 'If specified, audit given site (rco, rcb) using sitemap.xls')
 flags.defineString('top-urls', null, 'Text file containing top urls.')
 // TODO: allow for passing custom url list
