@@ -17,14 +17,14 @@ print("selenium version ==", selenium.__version__)
 
 parser = argparse.ArgumentParser(description='Automatically Process the URLs from a given XLSX file.')
 parser.add_argument('--start-at', type=int, default=2)
-parser.add_argument('--axe', dest='axe', action='store_true')
-parser.add_argument('--no-axe', dest='axe', action='store_false')
-parser.set_defaults(axe=False)
+parser.add_argument(
+    '--mode', type=str, choices=['axe', 'manual'], default='manual',
+    help='Controls which mode of auditing should be used.')
 parser.add_argument('--ticket', type=str, default='')
 parser.add_argument('file_path')
 args = parser.parse_args()
 
-if args.axe:
+if args.mode == 'axe':
     from axe_selenium_python import Axe
 
 wb = openpyxl.load_workbook(args.file_path)
@@ -51,22 +51,24 @@ if start_row < sheet0.max_row:
         # hits more than a few runs. This prevents that.
         driver = webdriver.Safari(executable_path='/usr/bin/safaridriver')
         driver.get(url)
-        if args.axe:
+        if args.mode == 'axe':
             axe = Axe(driver)
             axe.inject()
             results = axe.run()
             results['requestedUrl'] = url
             axe.write_results(results, f'{args.ticket}_AXE_{i}.json')
-        else:
+        elif args.mode == 'manual':
             print(i, driver.title)
             # pause the script to click around with mouse
             input()
 
             #Rename the default file ~/Downloads/Accessibility Result.json
             try:
-                os.rename(result_file, f'{args.jira_ticket}_WK_{i}.json')
+                os.rename(result_file, f'{args.ticket}_WK_{i}.json')
             except FileNotFoundError:
                 print(f'Error: Result file {result_file} not found.')
+        else:
+           raise RuntimeException(f'Unsupported --mode={args.mode}')
 
         driver.quit()
 driver.quit()
