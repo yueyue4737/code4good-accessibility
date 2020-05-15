@@ -69,4 +69,3 @@ if start_row < sheet0.max_row:
                 print(f'Error: Result file {result_file} not found.')
 
         driver.quit()
-driver.quit()
