@@ -25,7 +25,7 @@ class FilesList extends React.Component {
             },
             fetchComplete: false,
             noOfResults: 0,
-            url: "/scan-results/files.json"
+            url: (window.location.href.includes("localhost") ? "/scan-results/files.json" : "/code4good-accessibility/scan-results/files.json")
         }
         this.sortNestedItems = this.sortNestedItems.bind(this);
         this.setNoOfResults = this.setNoOfResults.bind(this);
