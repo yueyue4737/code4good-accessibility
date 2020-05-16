@@ -12,6 +12,7 @@ class FilesList extends React.Component {
         super(props);
         this.state = {
             data: [],
+            issues: [],
             averages: {
                 performance: null,
                 accessibility: null,
@@ -25,73 +26,44 @@ class FilesList extends React.Component {
             },
             fetchComplete: false,
             noOfResults: 0,
-            url: (window.location.href.includes("localhost") ? "/scan-results/files.json" : "/code4good-accessibility/scan-results/files.json")
+            url: (window.location.href.includes("localhost") ? "/scan-results/" : "/code4good-accessibility/scan-results/")
         }
         this.sortNestedItems = this.sortNestedItems.bind(this);
         this.setNoOfResults = this.setNoOfResults.bind(this);
     };
 
     componentDidMount() {
-        fetch(this.state.url)
+        fetch(this.state.url + "issues.json")
             .then((response) => {
                 return response.json()
             })
             .then((json) => {
-                this.getAllFileData(json).then(data => {
-                    this.setState({
-                        data: data,
-                        fetchComplete: true
-                    });
-                    this.setAverages(data);
+                this.setState({ issues: json });
+            });
+        fetch(this.state.url + "averages.json")
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                this.setState({ averages: json });
+            });
+        fetch(this.state.url + "sites.json")
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                this.setState({
+                    data: json,
+                    noOfResults: json.length,
+                    fetchComplete: true
                 });
             });
-    }
+    };
 
-    async getAllFileData(listOfFiles) {
-        let data = [];
-        for (let i = 1; i < listOfFiles.length; i++) {
-            let fetchUrl = (window.location.href.includes("localhost") ? "/scan-results/data/" : "/code4good-accessibility/scan-results/data/") + listOfFiles[i].filename;
-            let resp = await fetch(fetchUrl)
-                .then(response => response.json())
-                .then(json => {
-                    json.url = fetchUrl;
-                    return json;
-                }).catch(function () {
-                    console.log("Error in file: " + fetchUrl);
-                    return null;
-                });
-            if (resp !== null)
-                data.push(resp);
-        }
-        return Promise.all(data);
-    }
     scrollToTop() {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
-        });
-    }
-    setAverages(data) {
-        let averages = {
-            performance: 0,
-            accessibility: 0,
-            "best-practices": 0,
-            seo: 0,
-            pwa: 0
-        }
-        for (let i = 0; i < data.length; i++) {
-            for (let key in data[i].categories) {
-                averages[key] += (data[i].categories[key].score * 100);
-            }
-        }
-        this.setState({
-            averages: {
-                performance: Math.ceil(averages.performance / data.length),
-                accessibility: Math.ceil(averages.accessibility / data.length),
-                "best-practices": Math.ceil(averages["best-practices"] / data.length),
-                seo: Math.ceil(averages.seo / data.length),
-                pwa: Math.ceil(averages.pwa / data.length)
-            }
         });
     }
     setNoOfResults(val) {
@@ -108,8 +80,8 @@ class FilesList extends React.Component {
             let x = a;
             let y = b;
             for (let i = 0; i < nested.length; i++) {
-                x = x[nested[i]];
-                y = y[nested[i]];
+                x = a[nested[i]];
+                y = b[nested[i]];
             }
             if (typeof x === "string") {
                 x = x.toLowerCase();
@@ -163,7 +135,7 @@ class FilesList extends React.Component {
                 </div>}
                 {this.state.fetchComplete && <div>
                     <FileAverages averages={this.state.averages} />
-                    <TopIssues data={this.state.data} />
+                    <TopIssues data={this.state.issues} />
                     <div className="section-heading">
                         <FontAwesomeIcon icon={faList} size="lg" /><h2>All Data</h2>
                     </div>
