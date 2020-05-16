@@ -15,14 +15,12 @@ flags.defineBoolean('headless', false, 'Use headless chrome.');
 flags.defineBoolean('reuse-chrome', true, 'Whether to reuse chrome instance for multiple audits.');
 flags.defineBoolean('clobber', false, 'If True, overwrite existing json reports.');
 
-flags.defineString('scan_id', 'data', 'Specifies top level directory to store audit results in.')
+flags.defineString('scan_id', 'base', 'Specifies top level directory to store audit results in.')
 flags.defineString('site', null, 'If specified, audit given site (rco, rcb) using sitemap.xls')
 flags.defineString('top-urls', null, 'Text file containing top urls.')
+flags.parse();
+
 // TODO: allow for passing custom url list
-
-// site can be rco, rcb and can automatically grab from sitemap
-
-// Output files into public/scan-results/${scan_id}/${site}.${kind}/${tool}/${md5sum}.json
 const RESULTS_FOLDER = "./public/scan-results";
 const SITEMAPS = {
   rco: 'https://www.redcross.org/sitemap.xml',
@@ -31,7 +29,7 @@ const SITEMAPS = {
 
 const topUrls = (() => {
   if (flags.get('top-urls')) {
-    return new Set(fs.readFileSync(filepath).toString().split("\n"));
+    return new Set(fs.readFileSync(flags.get('top-urls')).toString().split("\n"));
   } else {
     return new Set();
   }
@@ -62,7 +60,7 @@ async function getSitemap(site) {
   return fetch(url)
     .then(res => res.text())
     .then(txt => xml2js.parseStringPromise(txt))
-    .then(xml => xml.urlset.url.map(u => u.loc));
+    .then(xml => xml.urlset.url.map(u => u.loc.toString()));
 }
 
 function auditFilename(site, url) {
@@ -70,14 +68,22 @@ function auditFilename(site, url) {
 
   // "all" if no topUrls are given, "top"/"misc" otherwise.
   let kind = topUrls.has(url) ? "top" : (topUrls.size ? "misc" : "all");
-  let md = crypto.createHash("md5").update(url.toString()).digest("hex");
+  let md = crypto.createHash("md5").update(url).digest("hex");
   return `${RESULTS_FOLDER}/${flags.get("scan_id")}/${site}.${kind}/lighthouse/${md}.json`
 }
 
 async function auditWebsite(site) {
   /// Runs audit for a given website
-  const urlsToAudit = await getSitemap(site);
+  let urlsToAudit = await getSitemap(site);
   console.log(`Sitemap returned ${urlsToAudit.length} urls`);
+
+  if (topUrls.size) {
+    // This is ugly but it seems that Javascript primitive types are truly primitive.
+    let priorityUrls = urlsToAudit.filter(x => topUrls.has(x));
+    let miscUrls = urlsToAudit.filter(x => !topUrls.has(x));
+    console.log(`Got ${priorityUrls.length} priority and ${miscUrls.length} misc urls.`);
+    urlsToAudit = priorityUrls.concat(miscUrls);
+  }
 
   let browser = null;
   let badUrls = [];
@@ -158,5 +164,4 @@ async function auditWebsite(site) {
   // Write bad urls somewhere
 } 
 
-flags.parse();
 auditWebsite(flags.get("site"));
