@@ -7,6 +7,7 @@ const path = require('path');
 const DATA_FOLDER = "./public/scan-results/data";
 const CHROME_REGEX = /C4G-[0-9]+_CD_[0-9]+.json/g;
 
+// TODO(winerip) do the filtering and aggregating in the loop to prevent storing the full data in memory.
 unfilteredJsonData = [];
 fs.readdirSync(DATA_FOLDER).forEach(file => {
     if (file.match(CHROME_REGEX)) {
@@ -69,7 +70,8 @@ let arr = Object.keys(tracking).map(function (key) {
     return tracking[key];
 });
 arr.sort(sortByCount);
-console.log(arr);
+
+const normalize = ((x) => x ? Math.ceil(x.score * 100) : null)
 
 let filteredJsonData = []
 unfilteredJsonData.forEach(entry => {
@@ -77,11 +79,11 @@ unfilteredJsonData.forEach(entry => {
         url: entry.url,
         requestedUrl: entry.requestedUrl,
         categories: {
-            performance: entry.categories.performance ? Math.ceil(entry.categories.performance.score * 100) : null,
-            accessibility: entry.categories.accessibility ? Math.ceil(entry.categories.accessibility.score * 100) : null,
-            'best-practices': entry.categories['best-practices'] ? Math.ceil(entry.categories['best-practices'].score * 100) : null,
-            seo: entry.categories.seo ? Math.ceil(entry.categories.seo.score * 100) : null,
-            pwa: entry.categories.pwa ? Math.ceil(entry.categories.pwa.score * 100) : null,
+            performance: normalize(entry.categories.performance),
+            accessibility: normalize(entry.categories.accessibility),
+            'best-practices': normalize(entry.categories['best-practices']),
+            seo: normalize(entry.categories.seo),
+            pwa: normalize(entry.categories.pwa),
         }
     }
     filteredJsonData.push(filteredJsonEntry);
@@ -90,19 +92,19 @@ unfilteredJsonData.forEach(entry => {
 // averages holds averages
 fs.writeFile(
     "./public/scan-results/sites.json",
-    JSON.stringify(filteredJsonData),
+    JSON.stringify(filteredJsonData, undefined, 4),
     'utf8',
     function (err) { if (err) throw err });
 
 fs.writeFile(
     "./public/scan-results/averages.json",
-    JSON.stringify(averages),
+    JSON.stringify(averages, undefined, 4),
     'utf8',
     function (err) { if (err) throw err });
 
 fs.writeFile(
     "./public/scan-results/issues.json",
-    JSON.stringify(arr),
+    JSON.stringify(arr, undefined, 4),
     'utf8',
     function (err) { if (err) throw err });
 
