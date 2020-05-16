@@ -6,8 +6,8 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 class TopIssues extends React.Component {
     constructor(props) {
-		super(props);
-		this.state = {
+        super(props);
+        this.state = {
             data: [],
             filteredData: [],
             showMore: false,
@@ -18,29 +18,7 @@ class TopIssues extends React.Component {
         this.handleCheckChange = this.handleCheckChange.bind(this);
     };
     componentDidMount() {
-        let origData = this.props.data;
-        let tracking = {};
-        for (var i=0;i<origData.length;i++) {
-            for (var key in origData[i].audits) {
-                if (origData[i].audits.hasOwnProperty(key)) {
-                    if (tracking[key] != null && origData[i].audits[key].score !== 1) {
-                        tracking[key].count = tracking[key].count + 1;
-                    }
-                    else if (origData[i].audits[key].score !== 1) {
-                        tracking[key] = {
-                            "count": 1,
-                            "title": origData[i].audits[key].title,
-                            "manual": origData[i].audits[key].score == null,
-                            "description": origData[i].audits[key].description
-                        }
-                    }
-                }
-            }
-        }
-        let arr = Object.keys(tracking).map(function(key) {
-            return tracking[key];
-        });
-        arr.sort(this.sortByCount);
+        let arr = this.props.data;
         this.setState({
             data: arr,
             filteredData: arr
@@ -80,7 +58,7 @@ class TopIssues extends React.Component {
         let rendered = this.state.filteredData.map(item => {
             return <tr key={"issue-item-" + id++}>
                 <td className="pointer">
-                    <DescriptionPopover title={item.title} description={item.description} />                
+                    <DescriptionPopover title={item.title} description={item.description} />
                 </td>
                 <td>{item.count}</td>
                 <td>{item.manual ? "Yes" : ""}</td>
@@ -90,8 +68,8 @@ class TopIssues extends React.Component {
             <div>
                 <div className="section-heading"><FontAwesomeIcon icon={faExclamationTriangle} size="lg" /><h2>Top Issues</h2></div>
                 <div className="mb-20">
-                    <input className="pointer" id="showmanual-checkbox" type="checkbox" onChange={(e) => {this.handleCheckChange(e)}}/>
-                    <span className="pointer" onClick={(e) => {this.handleCheckClick(e)}}>Hide Manual Checks</span>
+                    <input className="pointer" id="showmanual-checkbox" type="checkbox" onChange={(e) => { this.handleCheckChange(e) }} />
+                    <span className="pointer" onClick={(e) => { this.handleCheckClick(e) }}>Hide Manual Checks</span>
                 </div>
                 <div className={this.state.showMore ? "section" : "section shortened"} onClick={this.handleClick}>
                     <div className="table-container">

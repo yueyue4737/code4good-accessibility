@@ -25,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lighthouse": "node public/tools/auto-lighthouse/index.js",
+    "preprocess": "node public/tools/app-preprocessing/preprocess.js",
     "autolh": "node public/tools/auto-lighthouse/automated.js",
     "eject": "react-scripts eject"
   },
