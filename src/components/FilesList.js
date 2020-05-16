@@ -71,6 +71,7 @@ class FilesList extends React.Component {
             noOfResults: val
         })
     }
+    // TODO this doesn't seem to work. It used to break the page, I've changed it a little but it still doesn't sort.
     sortNestedItems(value) {
         let isAsc = true;
         if (value === this.state.sorting.sortOn)
