@@ -12,7 +12,7 @@ class FileResults extends React.Component {
             if (file.categories) {
                 return (<tr className="result-item" key={"result-item-" + id++}>
                     <td className="result">
-                        <a href={file.url} target="_blank" rel="noopener noreferrer">{file.requestedUrl}</a>
+                        <a href={(window.location.href.includes("localhost") ? file.url : "/code4good-accessibility" + file.url)} target="_blank" rel="noopener noreferrer">{file.requestedUrl}</a>
                     </td>
                     {this.renderResult(file.categories.performance)}
                     {this.renderResult(file.categories.accessibility)}
