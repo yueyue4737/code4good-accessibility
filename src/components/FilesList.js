@@ -71,19 +71,12 @@ class FilesList extends React.Component {
             noOfResults: val
         })
     }
-    // TODO this doesn't seem to work. It used to break the page, I've changed it a little but it still doesn't sort.
     sortNestedItems(value) {
         let isAsc = true;
         if (value === this.state.sorting.sortOn)
             isAsc = !this.state.sorting.sortAsc;
         const nested = value.split(".");
         function compare(a, b) {
-            //console.log("comparing " + a + " and " + b);
-            let res = compareReal(a, b);
-            //console.log(res);
-            return res;
-        }
-        function compareReal(a, b) {
             let x = a;
             let y = b;
             for (let i = 0; i < nested.length; i++) {
