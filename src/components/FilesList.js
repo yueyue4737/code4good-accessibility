@@ -78,11 +78,17 @@ class FilesList extends React.Component {
             isAsc = !this.state.sorting.sortAsc;
         const nested = value.split(".");
         function compare(a, b) {
+            //console.log("comparing " + a + " and " + b);
+            let res = compareReal(a, b);
+            //console.log(res);
+            return res;
+        }
+        function compareReal(a, b) {
             let x = a;
             let y = b;
             for (let i = 0; i < nested.length; i++) {
-                x = a[nested[i]];
-                y = b[nested[i]];
+                x = x[nested[i]];
+                y = y[nested[i]];
             }
             if (typeof x === "string") {
                 x = x.toLowerCase();
@@ -146,11 +152,11 @@ class FilesList extends React.Component {
                             <thead>
                                 <tr className="result-item heading">
                                     <SortableHeaderCell title="URL" category="requestedUrl" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Performance" category="categories.performance.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Accessibility" category="categories.accessibility.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Best Practices" category="categories.best-practices.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="SEO" category="categories.seo.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Progressive Web App" category="categories.pwa.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Performance" category="categories.performance" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Accessibility" category="categories.accessibility" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Best Practices" category="categories.best-practices" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="SEO" category="categories.seo" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Progressive Web App" category="categories.pwa" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
                                 </tr>
                             </thead>
                             <FileResults data={this.state.data} setNoOfResults={this.setNoOfResults} />

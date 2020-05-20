@@ -7,6 +7,20 @@ class FileResults extends React.Component {
         this.state = {}
     }
     componentDidMount() {
+        this.props.setNoOfResults(this.props.data.length);
+    }
+    render() {
+        return (
+            <tbody>{this.props.data ? this.renderData() : <tr><td colSpan="3">No results returned.</td></tr>}</tbody>
+        );
+    }
+    renderResult(value) {
+        return (<td className="result">
+            {value ? Math.ceil(value) : 'n/a'}
+        </td>
+        )
+    }
+    renderData() {
         let id = 1;
         let listItems = this.props.data.map((file) => {
             if (file.categories) {
@@ -23,21 +37,7 @@ class FileResults extends React.Component {
             }
             return null;
         });
-        this.setState({
-            rendered: listItems
-        })
-        this.props.setNoOfResults(id - 1);
-    }
-    render() {
-        return (
-            <tbody>{this.props.data ? this.state.rendered : <tr><td colSpan="3">No results returned.</td></tr>}</tbody>
-        );
-    }
-    renderResult(value) {
-        return (<td className="result">
-            {value ? Math.ceil(value) : 'n/a'}
-        </td>
-        )
+        return listItems;
     }
 }
 
