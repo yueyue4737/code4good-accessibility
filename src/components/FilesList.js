@@ -35,7 +35,10 @@ class FilesList extends React.Component {
     componentDidMount() {
         fetch(this.state.url + "issues.json")
             .then((response) => {
-                return response.json()
+                return (response.json())
+            }) // TODO make this toggle on a UI element so categories can be selected.
+            .then((json) => {
+                return json.filter(issue => issue.category === "accessibility")
             })
             .then((json) => {
                 this.setState({ issues: json });
