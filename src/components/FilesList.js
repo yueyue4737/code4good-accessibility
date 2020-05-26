@@ -71,7 +71,7 @@ class FilesList extends React.Component {
             noOfResults: val
         })
     }
-    // TODO this doesn't seem to work. It used to break the page, I've changed it a little but it still doesn't sort.
+    // value is of the form path.to.json.category
     sortNestedItems(value) {
         let isAsc = true;
         if (value === this.state.sorting.sortOn)
@@ -80,9 +80,10 @@ class FilesList extends React.Component {
         function compare(a, b) {
             let x = a;
             let y = b;
+            // find the correct leaf in the json to compare
             for (let i = 0; i < nested.length; i++) {
-                x = a[nested[i]];
-                y = b[nested[i]];
+                x = x[nested[i]];
+                y = y[nested[i]];
             }
             if (typeof x === "string") {
                 x = x.toLowerCase();
@@ -90,34 +91,8 @@ class FilesList extends React.Component {
             if (typeof y === "string") {
                 y = y.toLowerCase();
             }
-            if (isAsc) {
-                if (x === null) {
-                    return 1;
-                }
-                else if (y === null) {
-                    return -1;
-                }
-                else if (x === y) {
-                    return 0;
-                }
-                else {
-                    return x < y ? -1 : 1;
-                }
-            }
-            else {
-                if (x === null) {
-                    return -1;
-                }
-                else if (y === null) {
-                    return 1;
-                }
-                else if (x === y) {
-                    return 0;
-                }
-                else {
-                    return x > y ? -1 : 1;
-                }
-            }
+            console.log("testing")
+            return (x < y ? -1 : x > y ? 1 : 0) * (isAsc ? 1 : -1)
         }
         this.setState({
             items: this.state.data.sort(compare),
@@ -146,11 +121,11 @@ class FilesList extends React.Component {
                             <thead>
                                 <tr className="result-item heading">
                                     <SortableHeaderCell title="URL" category="requestedUrl" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Performance" category="categories.performance.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Accessibility" category="categories.accessibility.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Best Practices" category="categories.best-practices.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="SEO" category="categories.seo.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
-                                    <SortableHeaderCell title="Progressive Web App" category="categories.pwa.score" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Performance" category="categories.performance" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Accessibility" category="categories.accessibility" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Best Practices" category="categories.best-practices" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="SEO" category="categories.seo" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
+                                    <SortableHeaderCell title="Progressive Web App" category="categories.pwa" sorting={this.state.sorting} sortNestedItems={this.sortNestedItems} />
                                 </tr>
                             </thead>
                             <FileResults data={this.state.data} setNoOfResults={this.setNoOfResults} />
