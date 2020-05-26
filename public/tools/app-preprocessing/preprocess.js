@@ -42,12 +42,19 @@ fs.readdirSync(DATA_FOLDER).forEach(file => {
                         tracking[key].count = tracking[key].count + 1;
                     }
                     else if (json.audits[key].score == 0) {
+                        let category = "unknown";
+                        for (let cat in json.categories) {
+                            for (let audit in json.categories[cat].auditRefs) {
+                                if (json.categories[cat].auditRefs[audit].id == key) { category = cat; }
+                            }
+                        }
                         // TODO(winerip) record which audit type this test is from.
                         tracking[key] = {
                             "count": 1,
                             "title": json.audits[key].title,
                             "manual": json.audits[key].score == null,
-                            "description": json.audits[key].description
+                            "description": json.audits[key].description,
+                            "category": category
                         }
                     }
                 }
