@@ -71,6 +71,7 @@ class FilesList extends React.Component {
             noOfResults: val
         })
     }
+    // value is of the form path.to.json.category
     sortNestedItems(value) {
         let isAsc = true;
         if (value === this.state.sorting.sortOn)
@@ -79,6 +80,7 @@ class FilesList extends React.Component {
         function compare(a, b) {
             let x = a;
             let y = b;
+            // find the correct leaf in the json to compare
             for (let i = 0; i < nested.length; i++) {
                 x = x[nested[i]];
                 y = y[nested[i]];
@@ -89,34 +91,8 @@ class FilesList extends React.Component {
             if (typeof y === "string") {
                 y = y.toLowerCase();
             }
-            if (isAsc) {
-                if (x === null) {
-                    return 1;
-                }
-                else if (y === null) {
-                    return -1;
-                }
-                else if (x === y) {
-                    return 0;
-                }
-                else {
-                    return x < y ? -1 : 1;
-                }
-            }
-            else {
-                if (x === null) {
-                    return -1;
-                }
-                else if (y === null) {
-                    return 1;
-                }
-                else if (x === y) {
-                    return 0;
-                }
-                else {
-                    return x > y ? -1 : 1;
-                }
-            }
+            console.log("testing")
+            return (x < y ? -1 : x > y ? 1 : 0) * (isAsc ? 1 : -1)
         }
         this.setState({
             items: this.state.data.sort(compare),
