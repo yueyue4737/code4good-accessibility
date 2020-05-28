@@ -11,11 +11,13 @@ class TopIssues extends React.Component {
             data: [],
             filteredData: [],
             showMore: false,
-            showManual: true
+            showManual: true,
+            selectedIssue: "all-issues"
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleCheckClick = this.handleCheckClick.bind(this);
         this.handleCheckChange = this.handleCheckChange.bind(this);
+        this.handleIssueSelect = this.handleIssueSelect.bind(this);
     };
     componentDidMount() {
         let arr = this.props.data;
@@ -24,6 +26,23 @@ class TopIssues extends React.Component {
             filteredData: arr
         });
     }
+
+    handleIssueSelect(e){        
+        let issue= e.target.value;      
+        if(issue=="all-issues"){
+            this.setState({            
+                filteredData: (!this.state.showManual ? this.state.data.filter(item => item.manual === false) : this.state.data) ,
+                selectedIssue: issue          
+            });                   
+        }
+        else{
+            this.setState({            
+                filteredData: (this.state.showManual ? this.state.data.filter(item => item.category === issue) : this.state.data.filter(item => item.category === issue && item.manual === false)),
+                selectedIssue: issue          
+            });           
+        }
+    }
+
     handleCheckClick(e) {
         this.handleCheckChange(e);
         let cb = document.getElementById("showmanual-checkbox");
@@ -36,11 +55,20 @@ class TopIssues extends React.Component {
     }
     handleCheckChange(e) {
         e.stopPropagation();
-        this.setState({
-            filteredData: (this.state.showManual ? this.state.data.filter(item => item.manual === false) : this.state.data),
-            showManual: !this.state.showManual
-        });
+        if(this.state.selectedIssue=="all-issues"){
+            this.setState({            
+                filteredData: (this.state.showManual ? this.state.data.filter(item => item.manual === false) : this.state.data) ,
+                showManual: !this.state.showManual   
+            });                   
+        }
+        else{
+            this.setState({            
+                filteredData: (this.state.showManual ? this.state.data.filter(item => item.category === this.state.selectedIssue && item.manual === false) : this.state.data.filter(item => item.category === this.state.selectedIssue)),
+                showManual: !this.state.showManual  
+            });            
+        }      
     }
+    
     handleClick() {
         if (!this.state.showMore) {
             this.setState({
@@ -67,9 +95,22 @@ class TopIssues extends React.Component {
         return (
             <div>
                 <div className="section-heading"><FontAwesomeIcon icon={faExclamationTriangle} size="lg" /><h2>Top Issues</h2></div>
-                <div className="mb-20">
-                    <input className="pointer" id="showmanual-checkbox" type="checkbox" onChange={(e) => { this.handleCheckChange(e) }} />
-                    <span className="pointer" onClick={(e) => { this.handleCheckClick(e) }}>Hide Manual Checks</span>
+                <div className=" mb-20 issue-select-bar">
+                    <div>
+                        <span>Select Issue Type:</span>
+                        <select className="ml-10 issue-dropdown" name="select-issue-type" id="select-issue-type" onChange={(e) =>{this.handleIssueSelect(e)}} >                        
+                            <option value="all-issues">All Issues</option>
+                            <option value="performance">Performance</option>  
+                            <option value="accessibility">Accessibility</option>                                              
+                            <option value="best-practices">Best Practices</option>
+                            <option value="seo">SEO</option>
+                            <option value="pwa">Progressive Web App</option>
+                        </select>                    
+                    </div>
+                    <div>
+                        <input className="pointer" id="showmanual-checkbox" type="checkbox" onChange={(e) => { this.handleCheckChange(e) }} />
+                        <span className="pointer" onClick={(e) => { this.handleCheckClick(e) }}>Hide Manual Checks</span>
+                    </div>
                 </div>
                 <div className={this.state.showMore ? "section" : "section shortened"} onClick={this.handleClick}>
                     <div className="table-container">
