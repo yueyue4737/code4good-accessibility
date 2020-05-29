@@ -16,7 +16,7 @@ class FileResults extends React.Component {
     }
     renderResult(value) {
         return (<td className="result">
-            {value ? Math.ceil(value) : 'n/a'}
+            {value != null ? Math.ceil(value) : 'n/a'}
         </td>
         )
     }
