@@ -1,394 +1,522 @@
 [
     {
-        "count": 2749,
-        "title": "Ensure text remains visible during webfont load",
-        "manual": false,
-        "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://web.dev/font-display).",
-        "category": "performance"
-    },
-    {
-        "count": 2738,
-        "title": "Image elements do not have `[alt]` attributes",
-        "manual": false,
-        "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more](https://web.dev/image-alt/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "Custom controls have associated labels",
+        "manual": true,
+        "description": "Custom interactive controls have associated labels, provided by aria-label or aria-labelledby. [Learn more](https://web.dev/custom-controls-labels/).",
         "category": "accessibility"
     },
     {
-        "count": 2671,
-        "title": "Background and foreground colors do not have a sufficient contrast ratio.",
-        "manual": false,
-        "description": "Low-contrast text is difficult or impossible for many users to read. [Learn more](https://web.dev/color-contrast/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "Custom controls have ARIA roles",
+        "manual": true,
+        "description": "Custom interactive controls have appropriate ARIA roles. [Learn more](https://web.dev/custom-control-roles/).",
         "category": "accessibility"
     },
     {
-        "count": 2634,
-        "title": "Form elements do not have associated labels",
-        "manual": false,
-        "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more](https://web.dev/label/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "User focus is not accidentally trapped in a region",
+        "manual": true,
+        "description": "A user can tab into and out of any control or region without accidentally trapping their focus. [Learn more](https://web.dev/focus-traps/).",
         "category": "accessibility"
     },
     {
-        "count": 2598,
-        "title": "Buttons do not have an accessible name",
-        "manual": false,
-        "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn more](https://web.dev/button-name/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "Interactive controls are keyboard focusable",
+        "manual": true,
+        "description": "Custom interactive controls are keyboard focusable and display a focus indicator. [Learn more](https://web.dev/focusable-controls/).",
         "category": "accessibility"
     },
     {
-        "count": 2593,
-        "title": "Reduce the impact of third-party code",
-        "manual": false,
-        "description": "Third-party code can significantly impact load performance. Limit the number of redundant third-party providers and try to load third-party code after your page has primarily finished loading. [Learn more](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).",
-        "category": "performance"
-    },
-    {
-        "count": 2534,
-        "title": "Links do not have a discernible name",
-        "manual": false,
-        "description": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn more](https://web.dev/link-name/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "Headings don't skip levels",
+        "manual": true,
+        "description": "Headings are used to create an outline for the page and heading levels are not skipped. [Learn more](https://web.dev/heading-levels/).",
         "category": "accessibility"
     },
     {
-        "count": 2331,
-        "title": "Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
-        "manual": false,
-        "description": "Screen readers have a specific way of announcing lists. Ensuring proper list structure aids screen reader output. [Learn more](https://web.dev/list/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "Interactive elements indicate their purpose and state",
+        "manual": true,
+        "description": "Interactive elements, such as links and buttons, should indicate their state and be distinguishable from non-interactive elements. [Learn more](https://web.dev/interactive-element-affordance/).",
         "category": "accessibility"
     },
     {
-        "count": 1664,
-        "title": "`[id]` attributes on the page are not unique",
-        "manual": false,
-        "description": "The value of an id attribute must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more](https://web.dev/duplicate-id/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "The page has a logical tab order",
+        "manual": true,
+        "description": "Tabbing through the page follows the visual layout. Users cannot focus elements that are offscreen. [Learn more](https://web.dev/logical-tab-order/).",
         "category": "accessibility"
     },
     {
-        "count": 943,
-        "title": "Estimated Input Latency",
-        "manual": false,
-        "description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://web.dev/estimated-input-latency).",
-        "category": "performance"
-    },
-    {
-        "count": 813,
-        "title": "Total Blocking Time",
-        "manual": false,
-        "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds.",
-        "category": "performance"
-    },
-    {
-        "count": 590,
-        "title": "Max Potential First Input Delay",
-        "manual": false,
-        "description": "The maximum potential First Input Delay that your users could experience is the duration, in milliseconds, of the longest task. [Learn more](https://developers.google.com/web/updates/2018/05/first-input-delay).",
-        "category": "performance"
-    },
-    {
-        "count": 206,
-        "title": "Minimize main-thread work",
-        "manual": false,
-        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/mainthread-work-breakdown)",
-        "category": "performance"
-    },
-    {
-        "count": 200,
-        "title": "Web app manifest does not meet the installability requirements",
-        "manual": false,
-        "description": "Browsers can proactively prompt users to add your app to their homescreen, which can lead to higher engagement. [Learn more](https://web.dev/installable-manifest).",
-        "category": "pwa"
-    },
-    {
-        "count": 200,
-        "title": "Is not configured for a custom splash screen",
-        "manual": false,
-        "description": "A themed splash screen ensures a high-quality experience when users launch your app from their homescreens. [Learn more](https://web.dev/splash-screen).",
-        "category": "pwa"
-    },
-    {
-        "count": 199,
-        "title": "Links to cross-origin destinations are unsafe",
-        "manual": false,
-        "description": "Add `rel=\"noopener\"` or `rel=\"noreferrer\"` to any external links to improve performance and prevent security vulnerabilities. [Learn more](https://web.dev/external-anchors-use-rel-noopener).",
-        "category": "best-practices"
-    },
-    {
-        "count": 198,
-        "title": "Does not register a service worker that controls page and `start_url`",
-        "manual": false,
-        "description": "The service worker is the technology that enables your app to use many Progressive Web App features, such as offline, add to homescreen, and push notifications. [Learn more](https://web.dev/service-worker).",
-        "category": "pwa"
-    },
-    {
-        "count": 198,
-        "title": "Current page does not respond with a 200 when offline",
-        "manual": false,
-        "description": "If you're building a Progressive Web App, consider using a service worker so that your app can work offline. [Learn more](https://web.dev/works-offline).",
-        "category": "pwa"
-    },
-    {
-        "count": 198,
-        "title": "Does not provide a valid `apple-touch-icon`",
-        "manual": false,
-        "description": "For ideal appearance on iOS when users add a progressive web app to the home screen, define an `apple-touch-icon`. It must point to a non-transparent 192px (or 180px) square PNG. [Learn More](https://web.dev/apple-touch-icon/).",
-        "category": "pwa"
-    },
-    {
-        "count": 198,
-        "title": "Does not set a theme color for the address bar.",
-        "manual": false,
-        "description": "The browser address bar can be themed to match your site. [Learn more](https://web.dev/themed-omnibox).",
-        "category": "pwa"
-    },
-    {
-        "count": 198,
-        "title": "`start_url` does not respond with a 200 when offline",
-        "manual": false,
-        "description": "A service worker enables your web app to be reliable in unpredictable network conditions. [Learn more](https://web.dev/offline-start-url).",
-        "category": "pwa"
-    },
-    {
-        "count": 198,
-        "title": "Includes front-end JavaScript libraries with known security vulnerabilities",
-        "manual": false,
-        "description": "Some third-party scripts may contain known security vulnerabilities that are easily identified and exploited by attackers. [Learn more](https://web.dev/no-vulnerable-libraries).",
-        "category": "best-practices"
-    },
-    {
-        "count": 197,
-        "title": "Uses `document.write()`",
-        "manual": false,
-        "description": "For users on slow connections, external scripts dynamically injected via `document.write()` can delay page load by tens of seconds. [Learn more](https://web.dev/no-document-write).",
-        "category": "best-practices"
-    },
-    {
-        "count": 196,
-        "title": "Page load is not fast enough on mobile networks",
-        "manual": false,
-        "description": "A fast page load over a cellular network ensures a good mobile user experience. [Learn more](https://web.dev/load-fast-enough-for-pwa).",
-        "category": "pwa"
-    },
-    {
-        "count": 185,
-        "title": "List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements.",
-        "manual": false,
-        "description": "Screen readers require list items (`<li>`) to be contained within a parent `<ul>` or `<ol>` to be announced properly. [Learn more](https://web.dev/listitem/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "The user's focus is directed to new content added to the page",
+        "manual": true,
+        "description": "If new content, such as a dialog, is added to the page, the user's focus is directed to it. [Learn more](https://web.dev/managed-focus/).",
         "category": "accessibility"
     },
     {
-        "count": 166,
-        "title": "`[aria-*]` attributes do not have valid values",
-        "manual": false,
-        "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid values. [Learn more](https://web.dev/aria-valid-attr-value/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "Offscreen content is hidden from assistive technology",
+        "manual": true,
+        "description": "Offscreen content is hidden with display: none or aria-hidden=true. [Learn more](https://web.dev/offscreen-content-hidden/).",
         "category": "accessibility"
     },
     {
-        "count": 149,
-        "title": "Document does not have a meta description",
-        "manual": false,
-        "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more](https://web.dev/meta-description).",
-        "category": "seo"
-    },
-    {
-        "count": 77,
-        "title": "Preload key requests",
-        "manual": false,
-        "description": "Consider using `<link rel=preload>` to prioritize fetching resources that are currently requested later in page load. [Learn more](https://web.dev/uses-rel-preload).",
-        "category": "performance"
-    },
-    {
-        "count": 77,
-        "title": "`<frame>` or `<iframe>` elements do not have a title",
-        "manual": false,
-        "description": "Screen reader users rely on frame titles to describe the contents of frames. [Learn more](https://web.dev/frame-title/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "HTML5 landmark elements are used to improve navigation",
+        "manual": true,
+        "description": "Landmark elements (<main>, <nav>, etc.) are used to improve the keyboard navigation of the page for assistive technology. [Learn more](https://web.dev/use-landmarks/).",
         "category": "accessibility"
     },
     {
-        "count": 76,
-        "title": "Properly size images",
-        "manual": false,
-        "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://web.dev/uses-responsive-images).",
-        "category": "performance"
-    },
-    {
-        "count": 70,
-        "title": "Serve images in next-gen formats",
-        "manual": false,
-        "description": "Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more](https://web.dev/uses-webp-images).",
-        "category": "performance"
-    },
-    {
-        "count": 54,
-        "title": "Defer offscreen images",
-        "manual": false,
-        "description": "Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive. [Learn more](https://web.dev/offscreen-images).",
-        "category": "performance"
-    },
-    {
-        "count": 50,
-        "title": "Requests the geolocation permission on page load",
-        "manual": false,
-        "description": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more](https://web.dev/geolocation-on-start).",
-        "category": "best-practices"
-    },
-    {
-        "count": 47,
-        "title": "Reduce server response times (TTFB)",
-        "manual": false,
-        "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://web.dev/time-to-first-byte).",
-        "category": "performance"
-    },
-    {
-        "count": 38,
-        "title": "Page is blocked from indexing",
-        "manual": false,
-        "description": "Search engines are unable to include your pages in search results if they don't have permission to crawl them. [Learn more](https://web.dev/is-crawable).",
-        "category": "seo"
-    },
-    {
-        "count": 35,
-        "title": "Efficiently encode images",
-        "manual": false,
-        "description": "Optimized images load faster and consume less cellular data. [Learn more](https://web.dev/uses-optimized-images).",
-        "category": "performance"
-    },
-    {
-        "count": 33,
-        "title": "Avoid enormous network payloads",
-        "manual": false,
-        "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn more](https://web.dev/total-byte-weight).",
-        "category": "performance"
-    },
-    {
-        "count": 25,
-        "title": "Eliminate render-blocking resources",
-        "manual": false,
-        "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn more](https://web.dev/render-blocking-resources).",
-        "category": "performance"
-    },
-    {
-        "count": 23,
-        "title": "Time to Interactive",
-        "manual": false,
-        "description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive).",
-        "category": "performance"
-    },
-    {
-        "count": 22,
-        "title": "Browser errors were logged to the console",
-        "manual": false,
-        "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more](https://web.dev/errors-in-console)",
-        "category": "best-practices"
-    },
-    {
-        "count": 17,
-        "title": "Speed Index",
-        "manual": false,
-        "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://web.dev/speed-index).",
-        "category": "performance"
-    },
-    {
-        "count": 16,
-        "title": "Serve static assets with an efficient cache policy",
-        "manual": false,
-        "description": "A long cache lifetime can speed up repeat visits to your page. [Learn more](https://web.dev/uses-long-cache-ttl).",
-        "category": "performance"
-    },
-    {
-        "count": 12,
-        "title": "Document doesn't use legible font sizes",
-        "manual": false,
-        "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more](https://web.dev/font-size).",
-        "category": "seo"
-    },
-    {
-        "count": 10,
-        "title": "Uses deprecated APIs",
-        "manual": false,
-        "description": "Deprecated APIs will eventually be removed from the browser. [Learn more](https://web.dev/deprecations).",
-        "category": "best-practices"
-    },
-    {
-        "count": 10,
-        "title": "Does not use passive listeners to improve scrolling performance",
-        "manual": false,
-        "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more](https://web.dev/uses-passive-event-listeners).",
-        "category": "best-practices"
-    },
-    {
-        "count": 9,
-        "title": "First CPU Idle",
-        "manual": false,
-        "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input.  [Learn more](https://web.dev/first-cpu-idle).",
-        "category": "performance"
-    },
-    {
-        "count": 5,
-        "title": "`<object>` elements do not have `[alt]` text",
-        "manual": false,
-        "description": "Screen readers cannot translate non-text content. Adding alt text to `<object>` elements helps screen readers convey meaning to users. [Learn more](https://web.dev/object-alt/).",
+        "count": {
+            "rcb": 1763,
+            "rco": 7160
+        },
+        "title": "Visual order on the page follows DOM order",
+        "manual": true,
+        "description": "DOM order matches the visual order, improving navigation for assistive technology. [Learn more](https://web.dev/visual-order-follows-dom/).",
         "category": "accessibility"
     },
     {
-        "count": 5,
-        "title": "Links do not have descriptive text",
-        "manual": false,
-        "description": "Descriptive link text helps search engines understand your content. [Learn more](https://web.dev/link-text).",
-        "category": "seo"
-    },
-    {
-        "count": 3,
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
         "title": "First Contentful Paint",
         "manual": false,
         "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://web.dev/first-contentful-paint).",
         "category": "performance"
     },
     {
-        "count": 3,
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
         "title": "First Meaningful Paint",
         "manual": false,
         "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://web.dev/first-meaningful-paint).",
         "category": "performance"
     },
     {
-        "count": 2,
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Speed Index",
+        "manual": false,
+        "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://web.dev/speed-index).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Estimated Input Latency",
+        "manual": false,
+        "description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://web.dev/estimated-input-latency).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Total Blocking Time",
+        "manual": false,
+        "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds.",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Max Potential First Input Delay",
+        "manual": false,
+        "description": "The maximum potential First Input Delay that your users could experience is the duration, in milliseconds, of the longest task. [Learn more](https://developers.google.com/web/updates/2018/05/first-input-delay).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "First CPU Idle",
+        "manual": false,
+        "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input.  [Learn more](https://web.dev/first-cpu-idle).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Time to Interactive",
+        "manual": false,
+        "description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Minimize main-thread work",
+        "manual": false,
+        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/mainthread-work-breakdown)",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
         "title": "Reduce JavaScript execution time",
         "manual": false,
         "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/bootup-time).",
         "category": "performance"
     },
     {
-        "count": 1,
-        "title": "Content is not sized correctly for the viewport",
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Ensure text remains visible during webfont load",
         "manual": false,
-        "description": "If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens. [Learn more](https://web.dev/content-width).",
-        "category": "pwa"
+        "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://web.dev/font-display).",
+        "category": "performance"
     },
     {
-        "count": 1,
-        "title": "Avoid an excessive DOM size",
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Reduce the impact of third-party code",
+        "manual": false,
+        "description": "Third-party code can significantly impact load performance. Limit the number of redundant third-party providers and try to load third-party code after your page has primarily finished loading. [Learn more](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1762,
+            "rco": 7159
+        },
+        "title": "Serve static assets with an efficient cache policy",
+        "manual": false,
+        "description": "A long cache lifetime can speed up repeat visits to your page. [Learn more](https://web.dev/uses-long-cache-ttl).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1760,
+            "rco": 7158
+        },
+        "title": "Eliminate render-blocking resources",
+        "manual": false,
+        "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn more](https://web.dev/render-blocking-resources).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1756,
+            "rco": 7153
+        },
+        "title": "Minify JavaScript",
+        "manual": false,
+        "description": "Minifying JavaScript files can reduce payload sizes and script parse time. [Learn more](https://web.dev/unminified-javascript).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1761,
+            "rco": 7134
+        },
+        "title": "Preconnect to required origins",
+        "manual": false,
+        "description": "Consider adding `preconnect` or `dns-prefetch` resource hints to establish early connections to important third-party origins. [Learn more](https://web.dev/uses-rel-preconnect).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1752,
+            "rco": 7138
+        },
+        "title": "Remove unused CSS",
+        "manual": false,
+        "description": "Remove dead rules from stylesheets and defer the loading of CSS not used for above-the-fold content to reduce unnecessary bytes consumed by network activity. [Learn more](https://web.dev/unused-css-rules).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1752,
+            "rco": 7132
+        },
+        "title": "Image elements do not have `[alt]` attributes",
+        "manual": false,
+        "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more](https://web.dev/image-alt/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 1749,
+            "rco": 7095
+        },
+        "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+        "manual": false,
+        "description": "Low-contrast text is difficult or impossible for many users to read. [Learn more](https://web.dev/color-contrast/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 1747,
+            "rco": 7049
+        },
+        "title": "Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
+        "manual": false,
+        "description": "Screen readers have a specific way of announcing lists. Ensuring proper list structure aids screen reader output. [Learn more](https://web.dev/list/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 1742,
+            "rco": 6881
+        },
+        "title": "Buttons do not have an accessible name",
+        "manual": false,
+        "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn more](https://web.dev/button-name/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 1752,
+            "rco": 6844
+        },
+        "title": "Links do not have a discernible name",
+        "manual": false,
+        "description": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn more](https://web.dev/link-name/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 1744,
+            "rco": 5498
+        },
+        "title": "Properly size images",
+        "manual": false,
+        "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://web.dev/uses-responsive-images).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1744,
+            "rco": 5170
+        },
+        "title": "Serve images in next-gen formats",
+        "manual": false,
+        "description": "Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more](https://web.dev/uses-webp-images).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 424,
+            "rco": 4582
+        },
+        "title": "Defer offscreen images",
+        "manual": false,
+        "description": "Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive. [Learn more](https://web.dev/offscreen-images).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1657,
+            "rco": 2606
+        },
+        "title": "Efficiently encode images",
+        "manual": false,
+        "description": "Optimized images load faster and consume less cellular data. [Learn more](https://web.dev/uses-optimized-images).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 670,
+            "rco": 3412
+        },
+        "title": "Avoids an excessive DOM size",
         "manual": false,
         "description": "A large DOM will increase memory usage, cause longer [style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations), and produce costly [layout reflows](https://developers.google.com/speed/articles/reflow). [Learn more](https://web.dev/dom-size).",
         "category": "performance"
     },
     {
-        "count": 1,
+        "count": {
+            "rcb": 108,
+            "rco": 3721
+        },
+        "title": "Avoids enormous network payloads",
+        "manual": false,
+        "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn more](https://web.dev/total-byte-weight).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 337,
+            "rco": 3215
+        },
+        "title": "Minify CSS",
+        "manual": false,
+        "description": "Minifying CSS files can reduce network payload sizes. [Learn more](https://web.dev/unminified-css).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1747,
+            "rco": 1621
+        },
+        "title": "Form elements do not have associated labels",
+        "manual": false,
+        "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more](https://web.dev/label/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 1747,
+            "rco": 147
+        },
+        "title": "`[id]` attributes on the page are not unique",
+        "manual": false,
+        "description": "The value of an id attribute must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more](https://web.dev/duplicate-id/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 246,
+            "rco": 1359
+        },
+        "title": "Enable text compression",
+        "manual": false,
+        "description": "Text-based resources should be served with compression (gzip, deflate or brotli) to minimize total network bytes. [Learn more](https://web.dev/uses-text-compression).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 8,
+            "rco": 385
+        },
+        "title": "`[aria-*]` attributes do not have valid values",
+        "manual": false,
+        "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid values. [Learn more](https://web.dev/aria-valid-attr-value/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 1,
+            "rco": 269
+        },
+        "title": "List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements.",
+        "manual": false,
+        "description": "Screen readers require list items (`<li>`) to be contained within a parent `<ul>` or `<ol>` to be announced properly. [Learn more](https://web.dev/listitem/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 12,
+            "rco": 183
+        },
+        "title": "Reduce server response times (TTFB)",
+        "manual": false,
+        "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://web.dev/time-to-first-byte).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 7,
+            "rco": 151
+        },
+        "title": "`<frame>` or `<iframe>` elements do not have a title",
+        "manual": false,
+        "description": "Screen reader users rely on frame titles to describe the contents of frames. [Learn more](https://web.dev/frame-title/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": 20,
+            "rco": 94
+        },
+        "title": "Preload key requests",
+        "manual": false,
+        "description": "Consider using `<link rel=preload>` to prioritize fetching resources that are currently requested later in page load. [Learn more](https://web.dev/uses-rel-preload).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 0,
+            "rco": 2
+        },
+        "title": "Avoid multiple page redirects",
+        "manual": false,
+        "description": "Redirects introduce additional delays before the page can be loaded. [Learn more](https://web.dev/redirects).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": 1,
+            "rco": 0
+        },
         "title": "Use video formats for animated content",
         "manual": false,
         "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more](https://web.dev/efficient-animated-content)",
         "category": "performance"
     },
     {
-        "count": 1,
-        "title": "Does not use HTTPS",
+        "count": {
+            "rcb": 0,
+            "rco": 1
+        },
+        "title": "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than 5.",
         "manual": false,
-        "description": "All sites should be protected with HTTPS, even ones that don't handle sensitive data. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. [Learn more](https://web.dev/is-on-https).",
-        "category": "pwa"
+        "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more](https://web.dev/meta-viewport/).",
+        "category": "accessibility"
     },
     {
-        "count": 1,
-        "title": "Does not use HTTP/2 for all of its resources",
+        "count": {
+            "rcb": 0,
+            "rco": 1
+        },
+        "title": "`<html>` element does not have a `[lang]` attribute",
         "manual": false,
-        "description": "HTTP/2 offers many benefits over HTTP/1.1, including binary headers, multiplexing, and server push. [Learn more](https://web.dev/uses-http2).",
-        "category": "best-practices"
+        "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more](https://web.dev/html-has-lang/).",
+        "category": "accessibility"
     }
 ]

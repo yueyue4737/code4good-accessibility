@@ -21,7 +21,11 @@ class TopIssues extends React.Component {
         let arr = this.props.data;
         this.setState({
             data: arr,
-            filteredData: arr
+            filteredData: arr.map(item => {
+                item.count.value = item.count.rco + item.count.rcb;
+                return item;
+            }
+            )
         });
     }
     handleCheckClick(e) {
@@ -60,7 +64,7 @@ class TopIssues extends React.Component {
                 <td className="pointer">
                     <DescriptionPopover title={item.title} description={item.description} />
                 </td>
-                <td>{item.count}</td>
+                <td>{item.count.value}</td>
                 <td>{item.manual ? "Yes" : ""}</td>
             </tr>
         })
