@@ -79,8 +79,8 @@ class FilesList extends React.Component {
         };
         // TODO toggle on RCO/RCB filter, and possibly enhance for top 200.
         for (var key in averages) {
-            let score = this.state.averageData.scores[key].rco + this.state.averageData.scores[key].rcb;
-            let total = this.state.averageData.totals[key].rco + this.state.averageData.totals[key].rcb;
+            let score = this.state.averageData.rco[key].scores + this.state.averageData.rcb[key].scores;
+            let total = this.state.averageData.rco[key].totals + this.state.averageData.rcb[key].totals;
             averages[key] = total === 0 ? -1 : Math.ceil(score / total);
         }
         this.setState({ averages: averages });

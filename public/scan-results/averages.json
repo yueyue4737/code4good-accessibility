@@ -1,46 +1,46 @@
 {
-    "scores": {
+    "rcb": {
         "performance": {
-            "rcb": 50952,
-            "rco": 193644
+            "scores": 50952,
+            "totals": 1763
         },
         "accessibility": {
-            "rcb": 127071,
-            "rco": 546383
+            "scores": 127071,
+            "totals": 1763
         },
         "best-practices": {
-            "rcb": 0,
-            "rco": 0
+            "scores": 0,
+            "totals": 0
         },
         "seo": {
-            "rcb": 0,
-            "rco": 0
+            "scores": 0,
+            "totals": 0
         },
         "pwa": {
-            "rcb": 0,
-            "rco": 0
+            "scores": 0,
+            "totals": 0
         }
     },
-    "totals": {
+    "rco": {
         "performance": {
-            "rcb": 1763,
-            "rco": 7160
+            "scores": 193644,
+            "totals": 7160
         },
         "accessibility": {
-            "rcb": 1763,
-            "rco": 7160
+            "scores": 546383,
+            "totals": 7160
         },
         "best-practices": {
-            "rcb": 0,
-            "rco": 0
+            "scores": 0,
+            "totals": 0
         },
         "seo": {
-            "rcb": 0,
-            "rco": 0
+            "scores": 0,
+            "totals": 0
         },
         "pwa": {
-            "rcb": 0,
-            "rco": 0
+            "scores": 0,
+            "totals": 0
         }
     }
 }

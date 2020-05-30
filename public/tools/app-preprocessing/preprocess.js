@@ -10,21 +10,7 @@ const SCRIPT_PATH_PREFIX = "./public"
 // TODO(winerip) find a good way to handle top 200 - right now, the json output
 // files are doubled up and appear in both folders.
 
-let averages = {
-    scores: {
-        performance: { rcb: 0, rco: 0 },
-        accessibility: { rcb: 0, rco: 0 },
-        "best-practices": { rcb: 0, rco: 0 },
-        seo: { rcb: 0, rco: 0 },
-        pwa: { rcb: 0, rco: 0 }
-    }, totals: {
-        performance: { rcb: 0, rco: 0 },
-        accessibility: { rcb: 0, rco: 0 },
-        "best-practices": { rcb: 0, rco: 0 },
-        seo: { rcb: 0, rco: 0 },
-        pwa: { rcb: 0, rco: 0 }
-    }
-}
+let averages = {}
 let tracking = {};
 let filteredJsonData = []
 
@@ -61,13 +47,21 @@ function sortByCount(a, b) {
 }
 
 function readForSite(site) {
+    averages[site] = {
+        performance: { scores: 0, totals: 0 },
+        accessibility: { scores: 0, totals: 0 },
+        "best-practices": { scores: 0, totals: 0 },
+        seo: { scores: 0, totals: 0 },
+        pwa: { scores: 0, totals: 0 }
+    };
+
     const DATA = `/scan-results/base/${site}.misc/lighthouse/`;
     fs.readdirSync(path.join(SCRIPT_PATH_PREFIX, DATA)).forEach(file => {
         let json = JSON.parse(fs.readFileSync(path.join(SCRIPT_PATH_PREFIX, DATA, file)));
         if (json.requestedUrl) {
             for (let key in json.categories) {
-                averages.scores[key][site] += (json.categories[key].score * 100);
-                averages.totals[key][site]++;
+                averages[site][key].scores += (json.categories[key].score * 100);
+                averages[site][key].totals++;
             }
             for (var key in json.audits) {
                 if (json.audits.hasOwnProperty(key)) {
