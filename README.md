@@ -67,6 +67,11 @@ Audit Tool abbreviations:
 
 4. Put in a pull request when you are finished scanning and saving results for all of the urls in your ticket.
 
+## Pull Request Related Information
+- [Pull Request approval guide](https://github.com/annahinnyc/code4good-accessibility/blob/master/.github/PULL_REQUEST_GUIDE.md)
+- How to [be a Pull Request approver](https://github.com/annahinnyc/code4good-accessibility/blob/master/.github/CODEOWNERS)
+- [Pull Request Template](https://github.com/annahinnyc/code4good-accessibility/blob/master/.github/pull_request_template.md)
+
 ## Questions, concerns, and suggestions? Post questions in Slack in the #code-for-good channel.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
