@@ -7,5 +7,6 @@
 - If the user has listed any link error, Add the Missing_URL label to the PR.
 - Approve PR and Merge.
 
-
+# How to be an auto-listed approver for PR
+- Add your github username to [CODEOWNER](https://github.com/annahinnyc/code4good-accessibility/blob/master/.github/CODEOWNERS) along with others
 [@author](https://github.com/bhaumikmistry)
