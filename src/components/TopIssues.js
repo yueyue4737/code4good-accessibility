@@ -3,7 +3,6 @@ import DescriptionPopover from './DescriptionPopover.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
-
 class TopIssues extends React.Component {
     constructor(props) {
         super(props);
@@ -13,62 +12,39 @@ class TopIssues extends React.Component {
             showMore: false,
             showManual: true,
             selectedIssue: "all-issues"
-        }
-        this.handleClick = this.handleClick.bind(this);
-        this.handleCheckClick = this.handleCheckClick.bind(this);
-        this.handleCheckChange = this.handleCheckChange.bind(this);
+        }        
         this.handleIssueSelect = this.handleIssueSelect.bind(this);
+        this.handleManualCheckVisibility = this.handleManualCheckVisibility.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     };
+
     componentDidMount() {
         let arr = this.props.data;
         this.setState({
             data: arr,
             filteredData: arr
         });
-    }
+    }    
 
     handleIssueSelect(e){        
-        let issue= e.target.value;      
-        if(issue=="all-issues"){
-            this.setState({            
-                filteredData: (!this.state.showManual ? this.state.data.filter(item => item.manual === false) : this.state.data) ,
-                selectedIssue: issue          
-            });                   
-        }
-        else{
-            this.setState({            
-                filteredData: (this.state.showManual ? this.state.data.filter(item => item.category === issue) : this.state.data.filter(item => item.category === issue && item.manual === false)),
-                selectedIssue: issue          
-            });           
-        }
+        let issue = e.target.value;  
+        this.setState({
+            filteredData : this.issueFilter(issue, this.state.showManual),
+            selectedIssue : issue
+        });  
     }
 
-    handleCheckClick(e) {
-        this.handleCheckChange(e);
-        let cb = document.getElementById("showmanual-checkbox");
-        if (cb.checked) {
-            cb.checked = false;
+    handleManualCheckVisibility(e){
+        if(e.type === 'click'){
+            let cb = document.getElementById("showmanual-checkbox");
+            cb.checked = !cb.checked; 
         }
-        else {
-            cb.checked = true;
-        }
+        this.setState({
+            filteredData : this.issueFilter(this.state.selectedIssue, !this.state.showManual),
+            showManual : !this.state.showManual 
+        });            
     }
-    handleCheckChange(e) {
-        e.stopPropagation();
-        if(this.state.selectedIssue=="all-issues"){
-            this.setState({            
-                filteredData: (this.state.showManual ? this.state.data.filter(item => item.manual === false) : this.state.data) ,
-                showManual: !this.state.showManual   
-            });                   
-        }
-        else{
-            this.setState({            
-                filteredData: (this.state.showManual ? this.state.data.filter(item => item.category === this.state.selectedIssue && item.manual === false) : this.state.data.filter(item => item.category === this.state.selectedIssue)),
-                showManual: !this.state.showManual  
-            });            
-        }      
-    }
-    
+
     handleClick() {
         if (!this.state.showMore) {
             this.setState({
@@ -76,11 +52,23 @@ class TopIssues extends React.Component {
             })
         }
     }
+
+    issueFilter(issue, showManual){
+        if(issue === "all-issues"){           
+            return this.state.data.filter(item => showManual || item.manual === false);
+        }else{
+            return this.state.data.filter(item =>
+                item.category === issue
+                && (showManual || item.manual === false));
+        }
+    }      
+
     sortByCount(a, b) {
         if (a.count < b.count) return 1;
         if (a.count > b.count) return -1;
         return 0;
     }
+
     render() {
         let id = 0;
         let rendered = this.state.filteredData.map(item => {
@@ -98,7 +86,10 @@ class TopIssues extends React.Component {
                 <div className=" mb-20 issue-select-bar">
                     <div>
                         <span>Select Issue Type:</span>
-                        <select className="ml-10 issue-dropdown" name="select-issue-type" id="select-issue-type" onChange={(e) =>{this.handleIssueSelect(e)}} >                        
+                        <select className="ml-10 issue-dropdown" 
+                                name="select-issue-type" 
+                                id="select-issue-type" 
+                                onChange={this.handleIssueSelect} >                        
                             <option value="all-issues">All Issues</option>
                             <option value="performance">Performance</option>  
                             <option value="accessibility">Accessibility</option>                                              
@@ -108,8 +99,8 @@ class TopIssues extends React.Component {
                         </select>                    
                     </div>
                     <div>
-                        <input className="pointer" id="showmanual-checkbox" type="checkbox" onChange={(e) => { this.handleCheckChange(e) }} />
-                        <span className="pointer" onClick={(e) => { this.handleCheckClick(e) }}>Hide Manual Checks</span>
+                        <input className="pointer" id="showmanual-checkbox" type="checkbox" onChange={this.handleManualCheckVisibility} />
+                        <span className="pointer" onClick={this.handleManualCheckVisibility}>Hide Manual Checks</span>
                     </div>
                 </div>
                 <div className={this.state.showMore ? "section" : "section shortened"} onClick={this.handleClick}>
