@@ -8,5 +8,10 @@
 - Approve PR and Merge.
 
 # How to be an auto-listed approver for PR
-- Add your github username to [CODEOWNER](https://github.com/annahinnyc/code4good-accessibility/blob/master/.github/CODEOWNERS) along with others
-[@author](https://github.com/bhaumikmistry)
+- Add your github username to [CODEOWNER](https://github.com/annahinnyc/code4good-accessibility/blob/master/.github/CODEOWNERS) along with others.
+- Commit your changes and create a PR
+- For more details on CODEOWNER file please refer [Github Guide CODEOWNER](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-file-location)
+
+
+
+#### [@author](https://github.com/bhaumikmistry)
