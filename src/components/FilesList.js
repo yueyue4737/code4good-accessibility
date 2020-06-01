@@ -13,6 +13,7 @@ class FilesList extends React.Component {
         this.state = {
             data: [],
             issues: [],
+            averageData: {},
             averages: {
                 performance: null,
                 accessibility: null,
@@ -44,8 +45,8 @@ class FilesList extends React.Component {
         fetch(this.state.url + "averages.json")
             .then(response => response.json())
             .then(json => {
-                this.setState({ averages: json });
-            });
+                this.setState({ averageData: json });
+            }).then(unused => this.setAverages());
         fetch(this.state.url + "sites.json")
             .then(response => response.json())
             .then(json => {
@@ -68,6 +69,22 @@ class FilesList extends React.Component {
             noOfResults: val
         })
     }
+    setAverages() {
+        let averages = {
+            performance: null,
+            accessibility: null,
+            "best-practices": null,
+            seo: null,
+            pwa: null
+        };
+        // TODO toggle on RCO/RCB filter, and possibly enhance for top 200.
+        for (var key in averages) {
+            let score = this.state.averageData.rco[key].scores + this.state.averageData.rcb[key].scores;
+            let total = this.state.averageData.rco[key].totals + this.state.averageData.rcb[key].totals;
+            averages[key] = total === 0 ? -1 : Math.ceil(score / total);
+        }
+        this.setState({ averages: averages });
+    }
     // value is of the form path.to.json.category
     sortNestedItems(value) {
         let isAsc = true;
@@ -88,7 +105,6 @@ class FilesList extends React.Component {
             if (typeof y === "string") {
                 y = y.toLowerCase();
             }
-            console.log("testing")
             return (x < y ? -1 : x > y ? 1 : 0) * (isAsc ? 1 : -1)
         }
         this.setState({

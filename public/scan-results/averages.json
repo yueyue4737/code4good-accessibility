@@ -1,7 +1,46 @@
 {
-    "performance": 26,
-    "accessibility": 72,
-    "best-practices": 75,
-    "seo": 80,
-    "pwa": 30
+    "rcb": {
+        "performance": {
+            "scores": 50952,
+            "totals": 1763
+        },
+        "accessibility": {
+            "scores": 127071,
+            "totals": 1763
+        },
+        "best-practices": {
+            "scores": 0,
+            "totals": 0
+        },
+        "seo": {
+            "scores": 0,
+            "totals": 0
+        },
+        "pwa": {
+            "scores": 0,
+            "totals": 0
+        }
+    },
+    "rco": {
+        "performance": {
+            "scores": 193644,
+            "totals": 7160
+        },
+        "accessibility": {
+            "scores": 546383,
+            "totals": 7160
+        },
+        "best-practices": {
+            "scores": 0,
+            "totals": 0
+        },
+        "seo": {
+            "scores": 0,
+            "totals": 0
+        },
+        "pwa": {
+            "scores": 0,
+            "totals": 0
+        }
+    }
 }
