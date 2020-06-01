@@ -22,7 +22,7 @@ class TopIssues extends React.Component {
         this.setState({
             data: arr,
             filteredData: arr.map(item => {
-                item.count.value = item.count.rco + item.count.rcb;
+                item.count.value = item.count.rcb.misc + item.count.rcb.top + item.count.rco.misc + item.count.rco.top;
                 return item;
             }
             )

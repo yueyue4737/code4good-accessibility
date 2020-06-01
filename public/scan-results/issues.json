@@ -1,8 +1,14 @@
 [
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "Custom controls have associated labels",
         "manual": true,
@@ -11,8 +17,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "Custom controls have ARIA roles",
         "manual": true,
@@ -21,8 +33,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "User focus is not accidentally trapped in a region",
         "manual": true,
@@ -31,8 +49,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "Interactive controls are keyboard focusable",
         "manual": true,
@@ -41,8 +65,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "Headings don't skip levels",
         "manual": true,
@@ -51,8 +81,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "Interactive elements indicate their purpose and state",
         "manual": true,
@@ -61,8 +97,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "The page has a logical tab order",
         "manual": true,
@@ -71,8 +113,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "The user's focus is directed to new content added to the page",
         "manual": true,
@@ -81,8 +129,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "Offscreen content is hidden from assistive technology",
         "manual": true,
@@ -91,8 +145,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "HTML5 landmark elements are used to improve navigation",
         "manual": true,
@@ -101,8 +161,14 @@
     },
     {
         "count": {
-            "rcb": 1763,
-            "rco": 7160
+            "rcb": {
+                "misc": 1763,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
         },
         "title": "Visual order on the page follows DOM order",
         "manual": true,
@@ -111,8 +177,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "First Contentful Paint",
         "manual": false,
@@ -121,8 +193,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "First Meaningful Paint",
         "manual": false,
@@ -131,8 +209,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Speed Index",
         "manual": false,
@@ -141,8 +225,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Estimated Input Latency",
         "manual": false,
@@ -151,8 +241,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Total Blocking Time",
         "manual": false,
@@ -161,8 +257,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Max Potential First Input Delay",
         "manual": false,
@@ -171,8 +273,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "First CPU Idle",
         "manual": false,
@@ -181,8 +289,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Time to Interactive",
         "manual": false,
@@ -191,8 +305,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Minimize main-thread work",
         "manual": false,
@@ -201,8 +321,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Reduce JavaScript execution time",
         "manual": false,
@@ -211,8 +337,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Ensure text remains visible during webfont load",
         "manual": false,
@@ -221,8 +353,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Reduce the impact of third-party code",
         "manual": false,
@@ -231,8 +369,14 @@
     },
     {
         "count": {
-            "rcb": 1762,
-            "rco": 7159
+            "rcb": {
+                "misc": 1762,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
         },
         "title": "Serve static assets with an efficient cache policy",
         "manual": false,
@@ -241,8 +385,14 @@
     },
     {
         "count": {
-            "rcb": 1760,
-            "rco": 7158
+            "rcb": {
+                "misc": 1760,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7158,
+                "top": 150
+            }
         },
         "title": "Eliminate render-blocking resources",
         "manual": false,
@@ -251,8 +401,14 @@
     },
     {
         "count": {
-            "rcb": 1756,
-            "rco": 7153
+            "rcb": {
+                "misc": 1756,
+                "top": 142
+            },
+            "rco": {
+                "misc": 7153,
+                "top": 148
+            }
         },
         "title": "Minify JavaScript",
         "manual": false,
@@ -261,8 +417,14 @@
     },
     {
         "count": {
-            "rcb": 1761,
-            "rco": 7134
+            "rcb": {
+                "misc": 1761,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7134,
+                "top": 151
+            }
         },
         "title": "Preconnect to required origins",
         "manual": false,
@@ -271,18 +433,14 @@
     },
     {
         "count": {
-            "rcb": 1752,
-            "rco": 7138
-        },
-        "title": "Remove unused CSS",
-        "manual": false,
-        "description": "Remove dead rules from stylesheets and defer the loading of CSS not used for above-the-fold content to reduce unnecessary bytes consumed by network activity. [Learn more](https://web.dev/unused-css-rules).",
-        "category": "performance"
-    },
-    {
-        "count": {
-            "rcb": 1752,
-            "rco": 7132
+            "rcb": {
+                "misc": 1752,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7132,
+                "top": 151
+            }
         },
         "title": "Image elements do not have `[alt]` attributes",
         "manual": false,
@@ -291,8 +449,30 @@
     },
     {
         "count": {
-            "rcb": 1749,
-            "rco": 7095
+            "rcb": {
+                "misc": 1752,
+                "top": 141
+            },
+            "rco": {
+                "misc": 7138,
+                "top": 145
+            }
+        },
+        "title": "Remove unused CSS",
+        "manual": false,
+        "description": "Remove dead rules from stylesheets and defer the loading of CSS not used for above-the-fold content to reduce unnecessary bytes consumed by network activity. [Learn more](https://web.dev/unused-css-rules).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1749,
+                "top": 141
+            },
+            "rco": {
+                "misc": 7095,
+                "top": 148
+            }
         },
         "title": "Background and foreground colors do not have a sufficient contrast ratio.",
         "manual": false,
@@ -301,8 +481,14 @@
     },
     {
         "count": {
-            "rcb": 1747,
-            "rco": 7049
+            "rcb": {
+                "misc": 1747,
+                "top": 139
+            },
+            "rco": {
+                "misc": 7049,
+                "top": 139
+            }
         },
         "title": "Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
         "manual": false,
@@ -311,18 +497,14 @@
     },
     {
         "count": {
-            "rcb": 1742,
-            "rco": 6881
-        },
-        "title": "Buttons do not have an accessible name",
-        "manual": false,
-        "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn more](https://web.dev/button-name/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": 1752,
-            "rco": 6844
+            "rcb": {
+                "misc": 1752,
+                "top": 143
+            },
+            "rco": {
+                "misc": 6844,
+                "top": 150
+            }
         },
         "title": "Links do not have a discernible name",
         "manual": false,
@@ -331,8 +513,30 @@
     },
     {
         "count": {
-            "rcb": 1744,
-            "rco": 5498
+            "rcb": {
+                "misc": 1742,
+                "top": 138
+            },
+            "rco": {
+                "misc": 6881,
+                "top": 104
+            }
+        },
+        "title": "Buttons do not have an accessible name",
+        "manual": false,
+        "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn more](https://web.dev/button-name/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1744,
+                "top": 140
+            },
+            "rco": {
+                "misc": 5498,
+                "top": 133
+            }
         },
         "title": "Properly size images",
         "manual": false,
@@ -341,8 +545,14 @@
     },
     {
         "count": {
-            "rcb": 1744,
-            "rco": 5170
+            "rcb": {
+                "misc": 1744,
+                "top": 140
+            },
+            "rco": {
+                "misc": 5170,
+                "top": 131
+            }
         },
         "title": "Serve images in next-gen formats",
         "manual": false,
@@ -351,8 +561,14 @@
     },
     {
         "count": {
-            "rcb": 424,
-            "rco": 4582
+            "rcb": {
+                "misc": 424,
+                "top": 70
+            },
+            "rco": {
+                "misc": 4582,
+                "top": 132
+            }
         },
         "title": "Defer offscreen images",
         "manual": false,
@@ -361,8 +577,14 @@
     },
     {
         "count": {
-            "rcb": 1657,
-            "rco": 2606
+            "rcb": {
+                "misc": 1657,
+                "top": 132
+            },
+            "rco": {
+                "misc": 2606,
+                "top": 131
+            }
         },
         "title": "Efficiently encode images",
         "manual": false,
@@ -371,8 +593,14 @@
     },
     {
         "count": {
-            "rcb": 670,
-            "rco": 3412
+            "rcb": {
+                "misc": 670,
+                "top": 67
+            },
+            "rco": {
+                "misc": 3412,
+                "top": 136
+            }
         },
         "title": "Avoids an excessive DOM size",
         "manual": false,
@@ -381,8 +609,14 @@
     },
     {
         "count": {
-            "rcb": 108,
-            "rco": 3721
+            "rcb": {
+                "misc": 108,
+                "top": 30
+            },
+            "rco": {
+                "misc": 3721,
+                "top": 99
+            }
         },
         "title": "Avoids enormous network payloads",
         "manual": false,
@@ -391,8 +625,14 @@
     },
     {
         "count": {
-            "rcb": 337,
-            "rco": 3215
+            "rcb": {
+                "misc": 337,
+                "top": 42
+            },
+            "rco": {
+                "misc": 3215,
+                "top": 70
+            }
         },
         "title": "Minify CSS",
         "manual": false,
@@ -401,8 +641,14 @@
     },
     {
         "count": {
-            "rcb": 1747,
-            "rco": 1621
+            "rcb": {
+                "misc": 1747,
+                "top": 141
+            },
+            "rco": {
+                "misc": 1621,
+                "top": 105
+            }
         },
         "title": "Form elements do not have associated labels",
         "manual": false,
@@ -411,8 +657,14 @@
     },
     {
         "count": {
-            "rcb": 1747,
-            "rco": 147
+            "rcb": {
+                "misc": 1747,
+                "top": 139
+            },
+            "rco": {
+                "misc": 147,
+                "top": 4
+            }
         },
         "title": "`[id]` attributes on the page are not unique",
         "manual": false,
@@ -421,8 +673,14 @@
     },
     {
         "count": {
-            "rcb": 246,
-            "rco": 1359
+            "rcb": {
+                "misc": 246,
+                "top": 19
+            },
+            "rco": {
+                "misc": 1359,
+                "top": 35
+            }
         },
         "title": "Enable text compression",
         "manual": false,
@@ -431,8 +689,14 @@
     },
     {
         "count": {
-            "rcb": 8,
-            "rco": 385
+            "rcb": {
+                "misc": 8,
+                "top": 5
+            },
+            "rco": {
+                "misc": 385,
+                "top": 14
+            }
         },
         "title": "`[aria-*]` attributes do not have valid values",
         "manual": false,
@@ -441,8 +705,14 @@
     },
     {
         "count": {
-            "rcb": 1,
-            "rco": 269
+            "rcb": {
+                "misc": 1,
+                "top": 0
+            },
+            "rco": {
+                "misc": 269,
+                "top": 0
+            }
         },
         "title": "List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements.",
         "manual": false,
@@ -451,8 +721,14 @@
     },
     {
         "count": {
-            "rcb": 12,
-            "rco": 183
+            "rcb": {
+                "misc": 12,
+                "top": 1
+            },
+            "rco": {
+                "misc": 183,
+                "top": 2
+            }
         },
         "title": "Reduce server response times (TTFB)",
         "manual": false,
@@ -461,8 +737,14 @@
     },
     {
         "count": {
-            "rcb": 7,
-            "rco": 151
+            "rcb": {
+                "misc": 7,
+                "top": 0
+            },
+            "rco": {
+                "misc": 151,
+                "top": 12
+            }
         },
         "title": "`<frame>` or `<iframe>` elements do not have a title",
         "manual": false,
@@ -471,8 +753,14 @@
     },
     {
         "count": {
-            "rcb": 20,
-            "rco": 94
+            "rcb": {
+                "misc": 20,
+                "top": 2
+            },
+            "rco": {
+                "misc": 94,
+                "top": 0
+            }
         },
         "title": "Preload key requests",
         "manual": false,
@@ -481,8 +769,14 @@
     },
     {
         "count": {
-            "rcb": 0,
-            "rco": 2
+            "rcb": {
+                "misc": 0,
+                "top": 0
+            },
+            "rco": {
+                "misc": 2,
+                "top": 1
+            }
         },
         "title": "Avoid multiple page redirects",
         "manual": false,
@@ -491,8 +785,14 @@
     },
     {
         "count": {
-            "rcb": 1,
-            "rco": 0
+            "rcb": {
+                "misc": 1,
+                "top": 0
+            },
+            "rco": {
+                "misc": 0,
+                "top": 0
+            }
         },
         "title": "Use video formats for animated content",
         "manual": false,
@@ -501,8 +801,14 @@
     },
     {
         "count": {
-            "rcb": 0,
-            "rco": 1
+            "rcb": {
+                "misc": 0,
+                "top": 0
+            },
+            "rco": {
+                "misc": 1,
+                "top": 0
+            }
         },
         "title": "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than 5.",
         "manual": false,
@@ -511,8 +817,14 @@
     },
     {
         "count": {
-            "rcb": 0,
-            "rco": 1
+            "rcb": {
+                "misc": 0,
+                "top": 0
+            },
+            "rco": {
+                "misc": 1,
+                "top": 0
+            }
         },
         "title": "`<html>` element does not have a `[lang]` attribute",
         "manual": false,
