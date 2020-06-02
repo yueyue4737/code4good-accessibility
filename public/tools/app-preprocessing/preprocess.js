@@ -12,6 +12,7 @@ const SCRIPT_PATH_PREFIX = "./public"
 
 let averages = { rcb: { misc: {}, top: {} }, rco: { misc: {}, top: {} } };
 let tracking = {};
+let nodes = {};
 let filteredJsonData = [];
 
 readForSite('rcb', 'misc');
@@ -22,10 +23,30 @@ readForSite('rco', 'top');
 let arr = Object.values(tracking);
 arr.sort(sortByCount);
 
+let flattenNodes = [];
+Object.keys(nodes).map(key => {
+    Object.keys(nodes[key]).map(key2 => {
+        let flatNode = nodes[key][key2];
+        flatNode.snippet = key;
+        flatNode.selector = key2;
+        flattenNodes.push(flatNode);
+    })
+});
+
+// If nodes are unique to a single page, they should be handled based on page audits.
+flattenNodes = flattenNodes.filter(node => sumCounts(node) > 1);
+flattenNodes.sort(sortByCount);
+
 // arr holds list of issues
 fs.writeFile(
     "./public/scan-results/sites.json",
     JSON.stringify(filteredJsonData, undefined, 4),
+    'utf8',
+    function (err) { if (err) throw err });
+
+fs.writeFile(
+    "./public/scan-results/nodes.json",
+    JSON.stringify(flattenNodes, undefined, 4),
     'utf8',
     function (err) { if (err) throw err });
 
@@ -87,6 +108,26 @@ function readForSite(site, dataSet) {
                                 "description": json.audits[key].description,
                                 "category": category
                             }
+                        }
+                        if (tracking[key].category == "accessibility"
+                            && json.audits[key].scoreDisplayMode == "binary") {
+                            for (let itemIndex in json.audits[key].details.items) {
+                                let item = json.audits[key].details.items[itemIndex];
+                                if (nodes[item.node.snippet] == null) {
+                                    nodes[item.node.snippet] = {};
+                                }
+                                if (nodes[item.node.snippet][item.node.selector] == null) {
+                                    nodes[item.node.snippet][item.node.selector] = {
+                                        auditTriggered: json.audits[key].title,
+                                        label: item.node.nodeLabel,
+                                        "count": { rcb: { misc: 0, top: 0 }, rco: { misc: 0, top: 0 } },
+                                        exampleUrl: json.requestedUrl,
+                                        domPath: item.node.path
+                                    }
+                                }
+                                nodes[item.node.snippet][item.node.selector].count[site][dataSet]++;
+                            }
+
                         }
                         tracking[key].count[site][dataSet]++;
 

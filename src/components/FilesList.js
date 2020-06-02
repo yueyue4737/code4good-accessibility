@@ -1,5 +1,6 @@
 import React from 'react';
 import '../scss/results.scss';
+import CommonElements from './CommonElements.js';
 import FileResults from './FileResults.js';
 import TopIssues from './TopIssues.js';
 import FileAverages from './FileAverages';
@@ -12,6 +13,7 @@ class FilesList extends React.Component {
         super(props);
         this.state = {
             data: [],
+            nodes: [],
             issues: [],
             averageData: {},
             averages: {
@@ -35,9 +37,14 @@ class FilesList extends React.Component {
 
     componentDidMount() {
         fetch(this.state.url + "issues.json")
-            .then(response => response.json())                      
+            .then(response => response.json())
             .then(json => {
                 this.setState({ issues: json });
+            });
+        fetch(this.state.url + "nodes.json")
+            .then(response => response.json())
+            .then(json => {
+                this.setState({ nodes: json });
             });
         fetch(this.state.url + "averages.json")
             .then(response => response.json())
@@ -129,6 +136,7 @@ class FilesList extends React.Component {
                 {this.state.fetchComplete && <div>
                     <FileAverages averages={this.state.averages} />
                     <TopIssues data={this.state.issues} />
+                    <CommonElements data={this.state.nodes} />
                     <div className="section-heading">
                         <FontAwesomeIcon icon={faList} size="lg" /><h2>All Data</h2>
                     </div>
