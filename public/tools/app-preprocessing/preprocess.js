@@ -10,12 +10,14 @@ const SCRIPT_PATH_PREFIX = "./public"
 // TODO(winerip) find a good way to handle top 200 - right now, the json output
 // files are doubled up and appear in both folders.
 
-let averages = {}
+let averages = { rcb: { misc: {}, top: {} }, rco: { misc: {}, top: {} } };
 let tracking = {};
-let filteredJsonData = []
+let filteredJsonData = [];
 
-readForSite('rcb');
-readForSite('rco');
+readForSite('rcb', 'misc');
+readForSite('rco', 'misc');
+readForSite('rcb', 'top');
+readForSite('rco', 'top');
 
 let arr = Object.values(tracking);
 arr.sort(sortByCount);
@@ -41,13 +43,15 @@ fs.writeFile(
 
 // TODO add sorting logic to App side for when we filter data.
 function sortByCount(a, b) {
-    if (a.count.rcb + a.count.rco < b.count.rcb + b.count.rco) return 1;
-    if (a.count.rcb + a.count.rco > b.count.rcb + b.count.rco) return -1;
-    return 0;
+    return sumCounts(a) < sumCounts(b) ? 1 : sumCounts(a) > sumCounts(b) ? -1 : 0;
 }
 
-function readForSite(site) {
-    averages[site] = {
+function sumCounts(json) {
+    return json.count.rcb.misc + json.count.rcb.top + json.count.rco.misc + json.count.rco.top;
+}
+
+function readForSite(site, dataSet) {
+    averages[site][dataSet] = {
         performance: { scores: 0, totals: 0 },
         accessibility: { scores: 0, totals: 0 },
         "best-practices": { scores: 0, totals: 0 },
@@ -55,13 +59,13 @@ function readForSite(site) {
         pwa: { scores: 0, totals: 0 }
     };
 
-    const DATA = `/scan-results/base/${site}.misc/lighthouse/`;
+    const DATA = `/scan-results/base/${site}.${dataSet}/lighthouse/`;
     fs.readdirSync(path.join(SCRIPT_PATH_PREFIX, DATA)).forEach(file => {
         let json = JSON.parse(fs.readFileSync(path.join(SCRIPT_PATH_PREFIX, DATA, file)));
         if (json.requestedUrl) {
             for (let key in json.categories) {
-                averages[site][key].scores += (json.categories[key].score * 100);
-                averages[site][key].totals++;
+                averages[site][dataSet][key].scores += (json.categories[key].score * 100);
+                averages[site][dataSet][key].totals++;
             }
             for (var key in json.audits) {
                 if (json.audits.hasOwnProperty(key)) {
@@ -77,14 +81,14 @@ function readForSite(site) {
                                 }
                             }
                             tracking[key] = {
-                                "count": { rcb: 0, rco: 0 },
+                                "count": { rcb: { misc: 0, top: 0 }, rco: { misc: 0, top: 0 } },
                                 "title": json.audits[key].title,
                                 "manual": json.audits[key].scoreDisplayMode == "manual",
                                 "description": json.audits[key].description,
                                 "category": category
                             }
                         }
-                        tracking[key].count[site]++;
+                        tracking[key].count[site][dataSet]++;
 
                     }
                 }
@@ -93,6 +97,7 @@ function readForSite(site) {
             let filteredJsonEntry = {
                 url: DATA + file,
                 site: site,
+                dataSet: dataSet,
                 requestedUrl: json.requestedUrl,
                 categories: {
                     performance: get_normalized_score(json.categories.performance),
