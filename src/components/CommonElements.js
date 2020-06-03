@@ -3,7 +3,7 @@ import DescriptionPopover from './DescriptionPopover.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
-class TopIssues extends React.Component {
+class CommonElements extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -70,4 +70,4 @@ class TopIssues extends React.Component {
     }
 }
 
-export default TopIssues;
+export default CommonElements;
