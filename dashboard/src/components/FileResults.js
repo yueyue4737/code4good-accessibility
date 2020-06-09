@@ -22,11 +22,14 @@ class FileResults extends React.Component {
     }
     renderData() {
         let id = 1;
+        let rawUrlPrefix = "https://raw.githubusercontent.com/annahinnyc/code4good-accessibility/master";
         let listItems = this.props.data.map((file) => {
             if (file.categories) {
                 return (<tr className="result-item" key={"result-item-" + id++}>
                     <td className="result">
-                        <a href={(window.location.href.includes("localhost") ? file.url : "/code4good-accessibility" + file.url)} target="_blank" rel="noopener noreferrer">{file.requestedUrl}</a>
+                        <a href={rawUrlPrefix + file.url} target="_blank" rel="noopener noreferrer">
+                            {file.requestedUrl}
+                        </a>
                     </td>
                     {this.renderResult(file.categories.performance)}
                     {this.renderResult(file.categories.accessibility)}
