@@ -24,9 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lighthouse": "node public/tools/auto-lighthouse/index.js",
-    "preprocess": "node public/tools/app-preprocessing/preprocess.js",
-    "autolh": "node public/tools/auto-lighthouse/automated.js",
+    "lighthouse": "node scripts/auto-lighthouse/index.js",
+    "preprocess": "node scripts/app-preprocessing/preprocess.js",
+    "autolh": "node scripts/auto-lighthouse/automated.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
