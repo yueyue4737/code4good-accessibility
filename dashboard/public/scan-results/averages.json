@@ -2,12 +2,12 @@
     "rcb": {
         "misc": {
             "performance": {
-                "scores": 50952,
-                "totals": 1763
+                "scores": 50094,
+                "totals": 1732
             },
             "accessibility": {
-                "scores": 127071,
-                "totals": 1763
+                "scores": 124853,
+                "totals": 1732
             },
             "best-practices": {
                 "scores": 0,

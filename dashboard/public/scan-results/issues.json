@@ -2,87 +2,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1763,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7160,
-                "top": 154
-            }
-        },
-        "title": "Custom controls have associated labels",
-        "manual": true,
-        "description": "Custom interactive controls have associated labels, provided by aria-label or aria-labelledby. [Learn more](https://web.dev/custom-controls-labels/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1763,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7160,
-                "top": 154
-            }
-        },
-        "title": "Custom controls have ARIA roles",
-        "manual": true,
-        "description": "Custom interactive controls have appropriate ARIA roles. [Learn more](https://web.dev/custom-control-roles/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1763,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7160,
-                "top": 154
-            }
-        },
-        "title": "User focus is not accidentally trapped in a region",
-        "manual": true,
-        "description": "A user can tab into and out of any control or region without accidentally trapping their focus. [Learn more](https://web.dev/focus-traps/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1763,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7160,
-                "top": 154
-            }
-        },
-        "title": "Interactive controls are keyboard focusable",
-        "manual": true,
-        "description": "Custom interactive controls are keyboard focusable and display a focus indicator. [Learn more](https://web.dev/focusable-controls/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1763,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7160,
-                "top": 154
-            }
-        },
-        "title": "Headings don't skip levels",
-        "manual": true,
-        "description": "Headings are used to create an outline for the page and heading levels are not skipped. [Learn more](https://web.dev/heading-levels/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1763,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
@@ -98,7 +18,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1763,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
@@ -114,39 +34,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1763,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7160,
-                "top": 154
-            }
-        },
-        "title": "The user's focus is directed to new content added to the page",
-        "manual": true,
-        "description": "If new content, such as a dialog, is added to the page, the user's focus is directed to it. [Learn more](https://web.dev/managed-focus/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1763,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7160,
-                "top": 154
-            }
-        },
-        "title": "Offscreen content is hidden from assistive technology",
-        "manual": true,
-        "description": "Offscreen content is hidden with display: none or aria-hidden=true. [Learn more](https://web.dev/offscreen-content-hidden/).",
-        "category": "accessibility"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1763,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
@@ -162,7 +50,39 @@
     {
         "count": {
             "rcb": {
-                "misc": 1763,
+                "misc": 1732,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
+        },
+        "title": "Offscreen content is hidden from assistive technology",
+        "manual": true,
+        "description": "Offscreen content is hidden with display: none or aria-hidden=true. [Learn more](https://web.dev/offscreen-content-hidden/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1732,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7160,
+                "top": 154
+            }
+        },
+        "title": "The user's focus is directed to new content added to the page",
+        "manual": true,
+        "description": "If new content, such as a dialog, is added to the page, the user's focus is directed to it. [Learn more](https://web.dev/managed-focus/).",
+        "category": "accessibility"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
@@ -178,167 +98,87 @@
     {
         "count": {
             "rcb": {
-                "misc": 1762,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
-                "misc": 7159,
-                "top": 151
+                "misc": 7160,
+                "top": 154
             }
         },
-        "title": "First Contentful Paint",
-        "manual": false,
-        "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://web.dev/first-contentful-paint).",
-        "category": "performance"
+        "title": "Headings don't skip levels",
+        "manual": true,
+        "description": "Headings are used to create an outline for the page and heading levels are not skipped. [Learn more](https://web.dev/heading-levels/).",
+        "category": "accessibility"
     },
     {
         "count": {
             "rcb": {
-                "misc": 1762,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
-                "misc": 7159,
-                "top": 151
+                "misc": 7160,
+                "top": 154
             }
         },
-        "title": "First Meaningful Paint",
-        "manual": false,
-        "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://web.dev/first-meaningful-paint).",
-        "category": "performance"
+        "title": "Custom controls have associated labels",
+        "manual": true,
+        "description": "Custom interactive controls have associated labels, provided by aria-label or aria-labelledby. [Learn more](https://web.dev/custom-controls-labels/).",
+        "category": "accessibility"
     },
     {
         "count": {
             "rcb": {
-                "misc": 1762,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
-                "misc": 7159,
-                "top": 151
+                "misc": 7160,
+                "top": 154
             }
         },
-        "title": "Speed Index",
-        "manual": false,
-        "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://web.dev/speed-index).",
-        "category": "performance"
+        "title": "Custom controls have ARIA roles",
+        "manual": true,
+        "description": "Custom interactive controls have appropriate ARIA roles. [Learn more](https://web.dev/custom-control-roles/).",
+        "category": "accessibility"
     },
     {
         "count": {
             "rcb": {
-                "misc": 1762,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
-                "misc": 7159,
-                "top": 151
+                "misc": 7160,
+                "top": 154
             }
         },
-        "title": "Estimated Input Latency",
-        "manual": false,
-        "description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://web.dev/estimated-input-latency).",
-        "category": "performance"
+        "title": "User focus is not accidentally trapped in a region",
+        "manual": true,
+        "description": "A user can tab into and out of any control or region without accidentally trapping their focus. [Learn more](https://web.dev/focus-traps/).",
+        "category": "accessibility"
     },
     {
         "count": {
             "rcb": {
-                "misc": 1762,
+                "misc": 1732,
                 "top": 143
             },
             "rco": {
-                "misc": 7159,
-                "top": 151
+                "misc": 7160,
+                "top": 154
             }
         },
-        "title": "Total Blocking Time",
-        "manual": false,
-        "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds.",
-        "category": "performance"
+        "title": "Interactive controls are keyboard focusable",
+        "manual": true,
+        "description": "Custom interactive controls are keyboard focusable and display a focus indicator. [Learn more](https://web.dev/focusable-controls/).",
+        "category": "accessibility"
     },
     {
         "count": {
             "rcb": {
-                "misc": 1762,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7159,
-                "top": 151
-            }
-        },
-        "title": "Max Potential First Input Delay",
-        "manual": false,
-        "description": "The maximum potential First Input Delay that your users could experience is the duration, in milliseconds, of the longest task. [Learn more](https://developers.google.com/web/updates/2018/05/first-input-delay).",
-        "category": "performance"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1762,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7159,
-                "top": 151
-            }
-        },
-        "title": "First CPU Idle",
-        "manual": false,
-        "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input.  [Learn more](https://web.dev/first-cpu-idle).",
-        "category": "performance"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1762,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7159,
-                "top": 151
-            }
-        },
-        "title": "Time to Interactive",
-        "manual": false,
-        "description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive).",
-        "category": "performance"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1762,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7159,
-                "top": 151
-            }
-        },
-        "title": "Minimize main-thread work",
-        "manual": false,
-        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/mainthread-work-breakdown)",
-        "category": "performance"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1762,
-                "top": 143
-            },
-            "rco": {
-                "misc": 7159,
-                "top": 151
-            }
-        },
-        "title": "Reduce JavaScript execution time",
-        "manual": false,
-        "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/bootup-time).",
-        "category": "performance"
-    },
-    {
-        "count": {
-            "rcb": {
-                "misc": 1762,
+                "misc": 1731,
                 "top": 143
             },
             "rco": {
@@ -354,7 +194,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1762,
+                "misc": 1731,
                 "top": 143
             },
             "rco": {
@@ -370,7 +210,167 @@
     {
         "count": {
             "rcb": {
-                "misc": 1762,
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "First Contentful Paint",
+        "manual": false,
+        "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://web.dev/first-contentful-paint).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "Speed Index",
+        "manual": false,
+        "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://web.dev/speed-index).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "Estimated Input Latency",
+        "manual": false,
+        "description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://web.dev/estimated-input-latency).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "Total Blocking Time",
+        "manual": false,
+        "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds.",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "First Meaningful Paint",
+        "manual": false,
+        "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://web.dev/first-meaningful-paint).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "Max Potential First Input Delay",
+        "manual": false,
+        "description": "The maximum potential First Input Delay that your users could experience is the duration, in milliseconds, of the longest task. [Learn more](https://developers.google.com/web/updates/2018/05/first-input-delay).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "First CPU Idle",
+        "manual": false,
+        "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input.  [Learn more](https://web.dev/first-cpu-idle).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "Time to Interactive",
+        "manual": false,
+        "description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "Minimize main-thread work",
+        "manual": false,
+        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/mainthread-work-breakdown)",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
+                "top": 143
+            },
+            "rco": {
+                "misc": 7159,
+                "top": 151
+            }
+        },
+        "title": "Reduce JavaScript execution time",
+        "manual": false,
+        "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/bootup-time).",
+        "category": "performance"
+    },
+    {
+        "count": {
+            "rcb": {
+                "misc": 1731,
                 "top": 143
             },
             "rco": {
@@ -386,7 +386,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1760,
+                "misc": 1729,
                 "top": 143
             },
             "rco": {
@@ -402,7 +402,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1756,
+                "misc": 1725,
                 "top": 142
             },
             "rco": {
@@ -418,7 +418,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1761,
+                "misc": 1730,
                 "top": 143
             },
             "rco": {
@@ -434,7 +434,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1752,
+                "misc": 1721,
                 "top": 143
             },
             "rco": {
@@ -450,7 +450,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1752,
+                "misc": 1721,
                 "top": 141
             },
             "rco": {
@@ -466,7 +466,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1749,
+                "misc": 1718,
                 "top": 141
             },
             "rco": {
@@ -482,7 +482,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1747,
+                "misc": 1716,
                 "top": 139
             },
             "rco": {
@@ -498,7 +498,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1752,
+                "misc": 1721,
                 "top": 143
             },
             "rco": {
@@ -514,7 +514,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1742,
+                "misc": 1711,
                 "top": 138
             },
             "rco": {
@@ -530,7 +530,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1744,
+                "misc": 1713,
                 "top": 140
             },
             "rco": {
@@ -546,7 +546,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1744,
+                "misc": 1713,
                 "top": 140
             },
             "rco": {
@@ -562,7 +562,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 424,
+                "misc": 415,
                 "top": 70
             },
             "rco": {
@@ -578,7 +578,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1657,
+                "misc": 1627,
                 "top": 132
             },
             "rco": {
@@ -594,7 +594,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 670,
+                "misc": 647,
                 "top": 67
             },
             "rco": {
@@ -610,7 +610,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 108,
+                "misc": 97,
                 "top": 30
             },
             "rco": {
@@ -626,7 +626,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 337,
+                "misc": 329,
                 "top": 42
             },
             "rco": {
@@ -642,7 +642,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1747,
+                "misc": 1716,
                 "top": 141
             },
             "rco": {
@@ -658,7 +658,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 1747,
+                "misc": 1716,
                 "top": 139
             },
             "rco": {
@@ -674,7 +674,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 246,
+                "misc": 239,
                 "top": 19
             },
             "rco": {
@@ -690,7 +690,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 8,
+                "misc": 6,
                 "top": 5
             },
             "rco": {
@@ -754,7 +754,7 @@
     {
         "count": {
             "rcb": {
-                "misc": 20,
+                "misc": 19,
                 "top": 2
             },
             "rco": {
