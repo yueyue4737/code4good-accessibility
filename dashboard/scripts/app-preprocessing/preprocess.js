@@ -80,7 +80,7 @@ function readForSite(site, dataSet) {
         pwa: { scores: 0, totals: 0 }
     };
 
-    const DATA = `/audits/base/${site}.${dataSet}/lighthouse/`;
+    const DATA = `/public/scan-results/base/${site}.${dataSet}/lighthouse/`;
     fs.readdirSync(path.join(SCRIPT_PATH_PREFIX, DATA)).forEach(file => {
         let json = JSON.parse(fs.readFileSync(path.join(SCRIPT_PATH_PREFIX, DATA, file)));
         if (json.requestedUrl) {
