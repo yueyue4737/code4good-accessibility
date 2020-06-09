@@ -1,0 +1,94 @@
+{
+    "rcb": {
+        "misc": {
+            "performance": {
+                "scores": 50094,
+                "totals": 1732
+            },
+            "accessibility": {
+                "scores": 124853,
+                "totals": 1732
+            },
+            "best-practices": {
+                "scores": 0,
+                "totals": 0
+            },
+            "seo": {
+                "scores": 0,
+                "totals": 0
+            },
+            "pwa": {
+                "scores": 0,
+                "totals": 0
+            }
+        },
+        "top": {
+            "performance": {
+                "scores": 4132,
+                "totals": 143
+            },
+            "accessibility": {
+                "scores": 10261,
+                "totals": 143
+            },
+            "best-practices": {
+                "scores": 0,
+                "totals": 0
+            },
+            "seo": {
+                "scores": 0,
+                "totals": 0
+            },
+            "pwa": {
+                "scores": 0,
+                "totals": 0
+            }
+        }
+    },
+    "rco": {
+        "misc": {
+            "performance": {
+                "scores": 193644,
+                "totals": 7160
+            },
+            "accessibility": {
+                "scores": 546383,
+                "totals": 7160
+            },
+            "best-practices": {
+                "scores": 0,
+                "totals": 0
+            },
+            "seo": {
+                "scores": 0,
+                "totals": 0
+            },
+            "pwa": {
+                "scores": 0,
+                "totals": 0
+            }
+        },
+        "top": {
+            "performance": {
+                "scores": 2713,
+                "totals": 154
+            },
+            "accessibility": {
+                "scores": 11264,
+                "totals": 154
+            },
+            "best-practices": {
+                "scores": 0,
+                "totals": 0
+            },
+            "seo": {
+                "scores": 0,
+                "totals": 0
+            },
+            "pwa": {
+                "scores": 0,
+                "totals": 0
+            }
+        }
+    }
+}
