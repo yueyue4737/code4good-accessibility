@@ -21,7 +21,7 @@ flags.defineString('top-urls', null, 'Text file containing top urls.')
 flags.parse();
 
 // TODO: allow for passing custom url list
-const RESULTS_FOLDER = "./public/scan-results";
+const RESULTS_FOLDER = "../public/scan-results";
 const SITEMAPS = {
   rco: 'https://www.redcross.org/sitemap.xml',
   rcb: 'https://www.redcrossblood.org/sitemap.xml'
