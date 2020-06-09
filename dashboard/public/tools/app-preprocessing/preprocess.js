@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require('path');
 
-const SCRIPT_PATH_PREFIX = "./public"
+const SCRIPT_PATH_PREFIX = "../"
 
 // TODO(winerip) dynamically find the newest full run. Alternatively, have
 // lighthouse point this path at the most recent run
@@ -80,7 +80,7 @@ function readForSite(site, dataSet) {
         pwa: { scores: 0, totals: 0 }
     };
 
-    const DATA = `/scan-results/base/${site}.${dataSet}/lighthouse/`;
+    const DATA = `/audits/base/${site}.${dataSet}/lighthouse/`;
     fs.readdirSync(path.join(SCRIPT_PATH_PREFIX, DATA)).forEach(file => {
         let json = JSON.parse(fs.readFileSync(path.join(SCRIPT_PATH_PREFIX, DATA, file)));
         if (json.requestedUrl) {
